@@ -3,6 +3,7 @@
         <h1>这是首页主要布局</h1>
         <!-- 字体图标使用示例 -->
         <i class="iconfont icon-a-dizhi2"></i>
+        <view class="test"></view>
     </view>
 </template>
 
@@ -44,4 +45,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="less">
+     @import "index.less";
+</style>
