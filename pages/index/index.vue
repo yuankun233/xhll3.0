@@ -1,5 +1,6 @@
 <template>
-    <view class="content">
+    <view class="container">
+        <h1>这是首页主要布局</h1>
         <!-- 字体图标使用示例 -->
         <i class="iconfont icon-a-dizhi2"></i>
     </view>
@@ -12,7 +13,8 @@ export default {
         return {}
     },
     onLoad() {
-        this.getList()
+        this.getList1()
+        this.getList2()
     },
     methods: {
         // 示例ajax1  原型方式
