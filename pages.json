@@ -12,197 +12,189 @@
         {
             "path": "pages/index/index",
             "style": {
-                "navigationStyle":"custom"
+                "navigationStyle": "custom"
             }
-        }
-        ,{
-            "path" : "pages/community/community",
-            "style" :                                                                                    
-            {
+        }, {
+            "path": "pages/community/community",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/index/serveList/serveList",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/index/serveList/serveList",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/index/serveDetail/serveDetail",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/index/serveDetail/serveDetail",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/index/nursingStationList/nursingStationList",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/index/nursingStationList/nursingStationList",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/index/nursingStationDetail/nursingStationDetail",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/index/nursingStationDetail/nursingStationDetail",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/index/companyProfile/companyProfile",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/index/companyProfile/companyProfile",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/index/actionDetail/actionDetail",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/index/actionDetail/actionDetail",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/index/nurseList/nurseList",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/index/nurseList/nurseList",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/index/nurseDetail/nurseDetail",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/index/nurseDetail/nurseDetail",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/community/serveCommunity/serveCommunity",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/community/serveCommunity/serveCommunity",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/community/serveIntro/serveIntro",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/community/serveIntro/serveIntro",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/information/information",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/information/information",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/information/articleDetail/articleDetail",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/information/articleDetail/articleDetail",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/information/videoDetail/videoDetail",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/information/videoDetail/videoDetail",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/my/my",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/my/my",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/my/orderList/orderList",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/my/orderList/orderList",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/my/orderDetail/orderDetail",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/my/orderDetail/orderDetail",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/my/adressList/adressList",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/my/adressList/adressList",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/my/adressEdit/adressEdit",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/my/adressEdit/adressEdit",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/my/normalQuestion/normalQuestion",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/my/normalQuestion/normalQuestion",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/my/profileEdit/profileEdit",
-            "style" :                                                                                    
-            {
+
+        }, {
+            "path": "pages/my/profileEdit/profileEdit",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
+
         }
-    ]
+    ],
+    "globalStyle": {
+        "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#000000",
+        "borderStyle": "white",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "static/tabs/index.png",
+                "selectedIconPath": "static/tabs/index-active.png",
+                "text": "首页"
+            }, {
+                "pagePath": "pages/community/community",
+                "iconPath": "static/tabs/community.png",
+                "selectedIconPath": "static/tabs/community-active.png",
+                "text": "俱乐部"
+            },
+            {
+                "pagePath": "pages/information/information",
+                "iconPath": "static/tabs/information.png",
+                "selectedIconPath": "./static/tabs/information-active.png",
+                "text": "资讯"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "iconPath": "static/tabs/my.png",
+                "selectedIconPath": "static/tabs/my-active.png",
+                "text": "我的"
+            }
+        ]
+    }
+
+
 }
