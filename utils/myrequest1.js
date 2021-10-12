@@ -1,6 +1,6 @@
 let ajax = 0 // 用于表示ajax的请求次数
 
-export const myRequest = (options) => { //传入的options是一个json对象
+export const myRequest1 = (options) => { //传入的options是一个json对象
     ajax++
     uni.showLoading({
         title: "加载中..."

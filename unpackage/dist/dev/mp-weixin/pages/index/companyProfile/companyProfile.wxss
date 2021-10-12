@@ -1,0 +1,21 @@
+.container .main .bannerbox {
+  position: relative;
+  height: 468rpx;
+  width: 100%;
+}
+.container .main .bannerbox .banner1 {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+}
+.container .main .bannerbox .banner2 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 10;
+  top: 140rpx;
+  height: 328rpx;
+  width: 652rpx;
+}
+

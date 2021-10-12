@@ -26,5 +26,10 @@ export const rules = {
     authcode: [{
         required: true,
         message: "请输入验证码"
+    }],
+    // 密码
+    password: [{
+        required: true,
+        message: "请输入密码"
     }]
 }

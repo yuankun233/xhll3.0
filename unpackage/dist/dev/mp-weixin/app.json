@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/community/community",
+    "pages/index/serveList/serveList",
+    "pages/index/serveDetail/serveDetail",
+    "pages/index/nursingStationList/nursingStationList",
+    "pages/index/nursingStationDetail/nursingStationDetail",
+    "pages/index/companyProfile/companyProfile",
+    "pages/index/actionDetail/actionDetail",
+    "pages/index/nurseList/nurseList",
+    "pages/index/nurseDetail/nurseDetail",
+    "pages/community/serveCommunity/serveCommunity",
+    "pages/community/serveIntro/serveIntro",
+    "pages/information/information",
+    "pages/information/articleDetail/articleDetail",
+    "pages/information/videoDetail/videoDetail",
+    "pages/my/my",
+    "pages/my/orderList/orderList",
+    "pages/my/orderDetail/orderDetail",
+    "pages/my/adressList/adressList",
+    "pages/my/adressEdit/adressEdit",
+    "pages/my/normalQuestion/normalQuestion",
+    "pages/my/profileEdit/profileEdit",
+    "pages/login/login"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabs/index.png",
+        "selectedIconPath": "static/tabs/index-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "iconPath": "static/tabs/community.png",
+        "selectedIconPath": "static/tabs/community-active.png",
+        "text": "俱乐部"
+      },
+      {
+        "pagePath": "pages/information/information",
+        "iconPath": "static/tabs/information.png",
+        "selectedIconPath": "./static/tabs/information-active.png",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tabs/my.png",
+        "selectedIconPath": "static/tabs/my-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
