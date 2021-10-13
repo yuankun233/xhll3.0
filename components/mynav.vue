@@ -1,8 +1,8 @@
 <template>
     <view class="container">
-        <uniNavBar style="border: none;" title="测试">
+        <uniNavBar style="border: none;" :title="title" :statusBar="true">
             <i class="iconfont icon-back" slot="left"></i>
-
+            <i class="iconfont icon-fenxiang" slot="right"></i>
         </uniNavBar>
     </view>
 </template>
@@ -11,6 +11,7 @@
 import uniNavBar from '@/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue'
 export default {
     name: 'mynav',
+    props:["title"],
     data() {
         return {}
     },
@@ -22,13 +23,16 @@ export default {
 
 <style lang="less">
 .container {
-    .iconfont {
+    .icon-back {
+        font-size: 60rpx;
+        color: #666666;
+        opacity: 1;
+    }
+    .icon-fenxiang{
         font-size: 60rpx;
         color: #666666;
         opacity: 1;
     }
 }
-.uni-navbar--border {
-    border-bottom: unset !important;
-}
+
 </style>

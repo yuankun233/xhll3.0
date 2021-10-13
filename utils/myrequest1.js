@@ -5,7 +5,9 @@ export const myRequest1 = (options) => { //传入的options是一个json对象
     uni.showLoading({
         title: "加载中..."
     }) // 显示加载中提示
+    
     // 定义公共的url
+    
     const baseUrl = "https://www.qycloud.com.cn/bee/open-75661043697254584/"
     return new Promise((resolve, reject) => {
         uni.request({

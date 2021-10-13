@@ -103,10 +103,51 @@ export default {
                 if (valid) {
                     console.log('验证通过,登录模式为', this.pageState)
                     console.log('登录表单数据为', this.form)
+                    // 账号密码登录
+                    if (this.pageState == 'password') {
+                        this.passwordLogin()
+                    }
+                    // 手机号验证码登录
+                    if (this.pageState == 'authcode') {
+                        this.authcodeLogin()
+                    }
                 } else {
                     console.log('验证失败')
                 }
             })
+            
+        },
+        // 手机号密码登录
+        async passwordLogin() {
+            try {
+                const res = await this.$myRequest2({
+                    url: '/enroll/api/userregister',
+                    methods: 'POST',
+                    data: {
+                        userPhone: this.form.tel,
+                        userPassWord: this.form.password
+                    }
+                })
+                console.log(res)
+            } catch (e) {
+                //TODO handle the exception
+            }
+        },
+        // 手机号验证码登录
+        async authcodeLogin() {
+            try {
+                const res = await this.$myRequest2({
+                    url: '/enroll/api/userlogon',
+                    methods: 'POST',
+                    data: {
+                        userPhone: this.form.tel,
+                        usercode: this.form.authcode
+                    }
+                })
+                console.log(res)
+            } catch (e) {
+                //TODO handle the exception
+            }
         },
         // 获取验证码
         async sendCode() {

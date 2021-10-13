@@ -1,6 +1,6 @@
 <template>
     <view class="container">
-        <my-nav></my-nav>
+        <my-nav :title="nav_title"></my-nav>
         <view class="main">
             <!-- <image src="../../../static/index/companyProfile.png" mode="widthFix" style="width: 750rpx;"></image> -->
             <view class="bannerbox">
@@ -48,7 +48,9 @@
 import mynav from '@/components/mynav.vue'
 export default {
     data() {
-        return {}
+        return {
+            nav_title:"公司简介"
+        }
     },
     methods: {},
     components: {

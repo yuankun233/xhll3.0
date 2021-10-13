@@ -1,9 +1,0 @@
-.container .iconfont {
-  font-size: 60rpx;
-  color: #666666;
-  opacity: 1;
-}
-.uni-navbar--border {
-  border-bottom: unset !important;
-}
-

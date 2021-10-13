@@ -133,7 +133,7 @@
 </script>
 
 <style lang="scss" scoped>
-	$nav-height: 44px;
+	$nav-height: 88rpx;
 	.uni-nav-bar-text {
 		/* #ifdef APP-PLUS */
 		font-size: 34rpx;

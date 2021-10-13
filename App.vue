@@ -15,10 +15,17 @@ export default {
 <style lang="scss">
 @import 'uview-ui/index.scss';
 @import 'common/css/iconfont.css';
-@import "common/css/fontfamily.css";
+@import 'common/css/fontfamily.css';
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.container {
+    // 解决溢出隐藏
+    overflow: hidden;
+}
+page {
+    background-color: #f5f5f5;
 }
 </style>
