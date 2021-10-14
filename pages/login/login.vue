@@ -141,7 +141,7 @@ export default {
                     methods: 'POST',
                     data: {
                         userPhone: this.form.tel,
-                        usercode: this.form.authcode
+                        code: this.form.authcode
                     }
                 })
                 console.log(res)
@@ -177,7 +177,6 @@ export default {
             try {
                 const res = await this.$myRequest2({
                     url: '/enroll/api/checkmsg',
-                    methods: 'POST',
                     data: {
                         userPhone
                     }

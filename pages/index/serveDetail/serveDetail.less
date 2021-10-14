@@ -10,11 +10,19 @@
     }
 
     // 状态栏高度
-    .statusbar {
-        height: 20px;
+    // .statusbar {
+    //     height: 20px;
+    // }
+    
+    // 设置空盒子把导航位置顶下来
+    .nav_wrap{
+        height: 200rpx;
     }
-    // 顶部导航
+    // 顶部导航固定到顶部
     .navtop {
+        z-index: 99;
+        position: fixed;
+        top:88rpx;
         width: 750rpx;
         height: 88rpx;
         background-color: #fff;

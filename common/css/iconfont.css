@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2841027 */
-  src: url('//at.alicdn.com/t/font_2841027_p3u69kcimz.woff2?t=1634111903766') format('woff2'),
-       url('//at.alicdn.com/t/font_2841027_p3u69kcimz.woff?t=1634111903766') format('woff'),
-       url('//at.alicdn.com/t/font_2841027_p3u69kcimz.ttf?t=1634111903766') format('truetype');
+  src: url('//at.alicdn.com/t/font_2841027_rm84b95iss.woff2?t=1634204904063') format('woff2'),
+       url('//at.alicdn.com/t/font_2841027_rm84b95iss.woff?t=1634204904063') format('woff'),
+       url('//at.alicdn.com/t/font_2841027_rm84b95iss.ttf?t=1634204904063') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ditu:before {
+  content: "\e618";
+}
+
+.icon-go:before {
+  content: "\e601";
+}
+
+.icon-yiwancheng:before {
+  content: "\e617";
 }
 
 .icon-zhankai:before {
@@ -39,10 +51,6 @@
 
 .icon-fenxiang:before {
   content: "\e607";
-}
-
-.icon-yiwancheng:before {
-  content: "\e608";
 }
 
 .icon-daifukuan:before {
@@ -75,10 +83,6 @@
 
 .icon-daohang:before {
   content: "\e610";
-}
-
-.icon-ditu:before {
-  content: "\e606";
 }
 
 .icon-back:before {
