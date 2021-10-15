@@ -3,7 +3,6 @@
         <!-- 页面主体结构 -->
         <!-- 状态栏组件 -->
         <statusbar></statusbar>
-
         <!-- 顶部导航 -->
         <view class="top">
             <view class="navtop">
@@ -83,7 +82,7 @@
         <!-- 优惠券 -->
         <view class="selectNum discount">
             <view class="title common_title">优惠券</view>
-            <input type="text" value="" class="input" placeholder="暂无优惠券" :placeholder-style="placeholder" />
+            <input type="text" value="" class="input" placeholder="暂无优惠券" :placeholder-style="placeholder" :disabled="disabled" />
         </view>
         <!-- 备注 -->
         <view class="remark">
@@ -100,7 +99,9 @@
             <view class="title">服务流程</view>
             <view class="content"><view v-for="item in 6" :key="this">1.预约上门</view></view>
             <view class="title">操作流程</view>
-            <view class="content"><view v-for="item in 12" :key="this">1.核对患者直观信息及维护单</view></view>
+            <view class="content">
+                <view v-for="item in xdlc" :key="this">{{ item.text }}</view>
+            </view>
             <view class="title">服务须知</view>
             <view class="content2"><view>护士上门为患者进行维护，需提供维护记录单，本服务只提供技术，耗材需自备</view></view>
             <image src="http://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" :lazy-load="true" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
@@ -278,7 +279,9 @@ export default {
             // 下单时的信息弹窗复选框是否禁用
             checkbox_disabled: true,
             // 下单信息复选框是否选中
-            checkbox_checked: false
+            checkbox_checked: false,
+            // 操作流程
+            xdlc: [{ text: '1.预约上门' }, { text: '2.首诊评估' }, { text: '3.签订知情通知书' }, { text: '4.专项操作' }, { text: '5.宣教指导' }, { text: '6.记录、评价' }]
         }
     },
     components: {
@@ -301,7 +304,7 @@ export default {
                     url: 'xhll/ServiceList/selectServiceList',
                     methods: 'POST',
                     data: {
-                        serviceId:this.form.projecetId
+                        serviceId: this.form.projecetId
                     }
                 }).then(res => {
                     console.log('获取服务详情:', res)
@@ -440,9 +443,9 @@ export default {
             }
         },
         // 8 导航栏返回按钮
-        back(){
+        back() {
             uni.navigateBack({
-                delta:1
+                delta: 1
             })
         }
     },
