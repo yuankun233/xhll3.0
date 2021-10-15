@@ -1,13 +1,13 @@
 let ajax = 0 // 用于表示ajax的请求次数
 
-export const myRequest2 = (options) => { //传入的options是一个json对象
+export const myRequest3 = (options) => { //传入的options是一个json对象
     ajax++
     uni.showLoading({
         title: "加载中..."
     }) // 显示加载中提示
     // 定义公共的url
-    // 王博鑫の接口1
-    const baseUrl = "https://www.qycloud.com.cn/bee/open-81607552621215821/"
+    // 王博鑫の接口2
+    const baseUrl = "https://www.qycloud.com.cn/bee/open-81607552621215806/"
     return new Promise((resolve, reject) => {
         uni.request({
             url: baseUrl + options.url,

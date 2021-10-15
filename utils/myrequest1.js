@@ -15,7 +15,7 @@ export const myRequest1 = (options) => { //传入的options是一个json对象
             method: options.methods || "GET", // 从options取出请求方法
             data: options.data || {}, // 从options对象中取出数据
             success: (res) => {
-                resolve(res)
+                resolve(res.data)
             }, // 不需要传失败的回调，仅判断成功回调就可以完成。
             complete: (res) => {
                 ajax--

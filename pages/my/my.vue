@@ -1,6 +1,65 @@
 <template>
-	<view>
-		<h1>这是我的主要布局</h1>
+	<view class="container">
+		<!-- 头部 -->
+		<view class="myMes">
+			<view class="myMes_box">
+					<view class="myMes_1">
+						<view  class="myMes_1_1">
+							<text>暂定</text>
+							<text>已认证</text>
+						</view>
+						<view   class="myMes_1_2">
+							这是你加入小护的第1天
+						</view>
+					</view>
+					<view  class="myMes_2">
+						<image class="imageRadio" src="../../static/index/da.png" mode=""></image>
+					</view>
+			</view>
+			<view class="myMes_box_1">
+				<view class="yhq">
+					<view>5</view>
+					<view>优惠券</view>
+				</view>
+				<view class="yhq">
+					<view>122</view>
+					<view>积分</view>
+				</view>
+				<view class="yhq">
+					<view>3</view>
+					<view>关注</view>
+				</view>
+			</view>
+		</view>
+		<!-- 订单框架 -->
+		<view class="orderMes">
+			<view class="orderMes_box">
+				<view class="orderMes_1">
+					<view class="iconfont icon-daifukuan"></view>
+					<view>待付款</view>
+				</view>
+				<view class="orderMes_1">
+					<view class="iconfont icon-daifuwu"></view>
+					<view>待付款</view>
+				</view>
+				<view class="orderMes_1">
+					<view class="iconfont icon-daipingjia "></view>
+					<view>待付款</view>
+				</view>
+				<view class="orderMes_1">
+					<view class="iconfont icon-yiwancheng"></view>
+					<view>待付款</view>
+				</view>
+			</view>
+		</view>
+		<!-- 常用功能 -->
+		<view class="inMes" v-for="(item,index) in inMes" :key="item.mes" @click="goFun(index)">
+			<view class="inMes_box">
+				<view :class="item.img"></view>
+				<view>{{item.mes}}</view>
+				<view class="iconfont icon-go"></view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -8,15 +67,38 @@
 	export default {
 		data() {
 			return {
-				
+				inMes:[
+					{
+						img:"icon-ditu iconfont",
+						mes:"常见问题"
+					},
+					{
+						img:"icon-a-dizhi2 iconfont",
+						mes:"地址管理"
+					},
+					{
+						img:"icon-dadianhua iconfont",
+						mes:"客服电话"
+					},
+					{
+						img:"icon-shezhi iconfont",
+						mes:"设置"
+					},
+				]
 			}
 		},
 		methods: {
-			
+			goFun(index) {
+				if(index == 3) {
+					uni.navigateTo({
+						url:"profileEdit/profileEdit"
+					})
+				}
+			}
 		}
 	}
 </script>
 
-<style>
-
+<style lang="less">
+@import "my.less";
 </style>

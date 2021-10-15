@@ -1,0 +1,210 @@
+.nurseBox {
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+  padding-bottom: 20rpx;
+  overflow: hidden;
+}
+.index {
+  margin-left: 30rpx;
+}
+.nurseList {
+  width: 690rpx;
+  height: 380rpx;
+  background: #FFFFFF;
+  margin-top: 32rpx;
+}
+.nurseTop {
+  padding-top: 36rpx;
+  margin-left: 28rpx;
+  display: flex;
+}
+.nurseTop_1 {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+}
+.nurseTop_1 image {
+  width: 100%;
+  height: 100%;
+}
+.nurseTop_2 {
+  margin-top: 6rpx;
+}
+.nurseTop_2 view {
+  margin-left: 14rpx;
+}
+.nurseTop_2 > view:nth-child(1) text:nth-child(1) {
+  font-size: 32rpx;
+  color: #000000;
+}
+.nurseTop_2 > view:nth-child(1) text:nth-child(2) {
+  font-size: 24rpx;
+  color: #FFFFFF;
+  background: #41D9CD;
+  padding: 4rpx 8rpx 4rpx 8rpx;
+  border-radius: 4px;
+  margin-left: 14rpx;
+}
+.nurseTop_2 > view:nth-child(2) {
+  margin-top: 8rpx;
+}
+.nurseTop_2 > view:nth-child(2) text {
+  font-size: 24rpx;
+  color: #000000;
+}
+.nurseTop_2 > view:nth-child(2) text:nth-child(2) {
+  margin-left: 16rpx;
+}
+.serveIn {
+  margin-top: 22rpx;
+  margin-left: 28rpx;
+}
+.serveIn text:nth-child(2n-1) {
+  font-size: 24rpx;
+  color: #666666;
+  margin-left: 16rpx;
+}
+.serveIn text:nth-child(2n) {
+  font-size: 26rpx;
+  color: #41D9CD;
+  margin-left: 8rpx;
+}
+.textIn {
+  width: 634rpx;
+  height: 134rpx;
+  margin-top: 20rpx;
+  margin-left: 28rpx;
+  color: #000000;
+  font-size: 24rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.serveData {
+  width: 690rpx;
+  height: 278rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  margin: 28rpx  0rpx 0rpx 30rpx;
+  overflow: hidden;
+}
+.serveDataTitle {
+  font-weight: 500;
+  font-size: 36rpx;
+  color: #000000;
+  margin: 28rpx  0rpx 0rpx 28rpx;
+  font-style: normal;
+}
+.serveData_1 {
+  width: 668rpx;
+  margin: 31rpx 0rpx 0rpx 11rpx;
+  display: flex;
+}
+.serveData_1 view {
+  flex: 1;
+  font-weight: 600;
+  font-size: 36rpx;
+  color: #000000;
+  text-align: center;
+  height: 67rpx;
+  line-height: 67rpx;
+  border-right: 2rpx solid rgba(153, 153, 153, 0.2);
+}
+.serveData_1 view:nth-child(3) {
+  border: none!important;
+}
+.serveData_2 {
+  width: 668rpx;
+  margin: 15rpx 0rpx 0rpx 11rpx;
+  display: flex;
+}
+.serveData_2 view {
+  flex: 1;
+  font-size: 28rpx;
+  color: #666666;
+  text-align: center;
+}
+.serveEvaluate {
+  width: 690rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  margin: 28rpx  0rpx 0rpx 30rpx;
+  overflow: hidden;
+  margin-bottom: 224rpx;
+}
+.serveEvaluateTitle {
+  margin: 28rpx  0rpx 0rpx 28rpx;
+  width: 634rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.serveEvaluateTitle view:nth-child(1) text:nth-child(1) {
+  font-weight: 500;
+  font-size: 36rpx;
+  color: #000000;
+}
+.serveEvaluateTitle view:nth-child(1) text:nth-child(2) {
+  font-size: 28rpx;
+  color: #999999;
+}
+.serveEvaluateTitle view:nth-child(2) {
+  font-size: 28rpx;
+  color: #999999;
+}
+.serveEvaluate_1 {
+  margin: 26rpx  0rpx 0rpx 28rpx;
+  width: 634rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 2rpx solid rgba(153, 153, 153, 0.2);
+}
+.serveEvaluate_1:last-child {
+  border: none;
+}
+.serveEvaluate_1 > view:nth-child(1) {
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 4rpx;
+}
+.serveEvaluate_1 > view:nth-child(1) > image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.serveEvaluate_1 > view:nth-child(2) {
+  margin-left: 24rpx;
+}
+.serveEvaluate_1 view:nth-child(2) > view:nth-child(1) {
+  width: 326rpx;
+}
+.serveEvaluate_1 view:nth-child(2) > view:nth-child(1) > text:nth-child(1) {
+  font-size: 28rpx;
+  color: #000000;
+}
+.serveEvaluate_1 view:nth-child(2) > view:nth-child(1) > text:nth-child(2) {
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 20rpx;
+}
+.serveEvaluate_1 view:nth-child(2) > view:nth-child(1) > image {
+  width: 20rpx;
+  height: 18rpx;
+  margin-left: 10rpx;
+}
+.serveEvaluate_1 view:nth-child(2) > view:nth-child(2) text {
+  font-size: 24rpx;
+  color: #999999;
+}
+.serveEvaluate_1 view:nth-child(3) {
+  line-height: 78rpx;
+}
+.serveText {
+  margin-top: 26rpx;
+  margin-bottom: 26rpx;
+}

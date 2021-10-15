@@ -119,7 +119,7 @@ export default {
         // 手机号密码登录
         async passwordLogin() {
             try {
-                const res = await this.$myRequest2({
+                const res = await this.$myRequest3({
                     url: 'enroll/api/userregister',
                     methods: 'POST',
                     data: {
@@ -135,7 +135,7 @@ export default {
         // 手机号验证码登录
         async authcodeLogin() {
             try {
-                const res = await this.$myRequest2({
+                const res = await this.$myRequest3({
                     url: 'enroll/api/userlogon',
                     methods: 'POST',
                     data: {
@@ -174,7 +174,7 @@ export default {
             }
             // 获取验证码
             try {
-                const res = await this.$myRequest2({
+                const res = await this.$myRequest3({
                     url: 'enroll/api/checkmsg',
                     data: {
                         userPhone

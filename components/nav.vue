@@ -1,8 +1,8 @@
 <template>
     <view class="container">
-        <uniNavBar style="border: none;" :title="title" :statusBar="true">
+        <uniNavBar border="true" :title="title" :statusBar="true" color="#333333">
             <i class="iconfont icon-back" slot="left" @click="back"></i>
-            <i class="iconfont icon-fenxiang" slot="right"></i>
+            <i class="iconfont icon-fenxiang" slot="right" v-show="ifFx"></i>
         </uniNavBar>
     </view>
 </template>
@@ -11,20 +11,21 @@
 import uniNavBar from '@/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue'
 export default {
     name: 'mynav',
-    props:["title"],
+    props:["title","ifFx"],
     data() {
         return {}
     },
     components: {
         uniNavBar
     },
-    methods:{
-        back(){
-            uni.navigateBack({
-                delta:1
-            })
-        }
-    }
+	methods: {
+		back() {
+			console.log(1)
+			uni.navigateBack({
+				delta:1
+			})
+		}
+	}
 }
 </script>
 

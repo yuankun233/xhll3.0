@@ -27,5 +27,12 @@ export default {
 }
 page {
     background-color: #f5f5f5;
+    font-weight: normal;
+}
+//圆形图片
+.imageRadio {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 </style>

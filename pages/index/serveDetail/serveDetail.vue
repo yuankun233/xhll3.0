@@ -7,7 +7,7 @@
         <!-- 顶部导航 -->
         <view class="top">
             <view class="navtop">
-                <i class="iconfont icon-back"></i>
+                <i class="iconfont icon-back" @click="back"></i>
                 <view class="options">
                     <view :class="navState == 1 ? 'option option_click' : 'option'" @click="navCheckout(1)">规格</view>
                     <view :class="navState == 2 ? 'option option_click' : 'option'" @click="navCheckout(2)">详情</view>
@@ -305,9 +305,9 @@ export default {
                     }
                 }).then(res => {
                     console.log('获取服务详情:', res)
-                    this.serveDetail = res.data.data.selectItems[0]
+                    this.serveDetail = res.data.selectItems[0]
                     // 保存单价到data
-                    this.form.projecetPrice = res.data.data.selectItems[0].servicePrice
+                    this.form.projecetPrice = res.data.selectItems[0].servicePrice
                 })
             } catch (e) {
                 //TODO handle the exception
@@ -325,7 +325,7 @@ export default {
                 }).then(res => {
                     console.log('获取患者健康档案:', res)
                     // 获取所有健康档案
-                    let patients = res.data.data.selectPatient.data
+                    let patients = res.data.selectPatient.data
                     // 组装数据
                     let patientnames = []
                     patients.forEach(item => {
@@ -438,6 +438,12 @@ export default {
                     this.form.num -= 1
                 }
             }
+        },
+        // 8 导航栏返回按钮
+        back(){
+            uni.navigateBack({
+                delta:1
+            })
         }
     },
     onLoad(options) {
