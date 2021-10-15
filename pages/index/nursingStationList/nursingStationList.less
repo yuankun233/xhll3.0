@@ -1,0 +1,123 @@
+.container {
+	width: 100%;
+	.banner {
+		width: 690rpx;
+		margin:46rpx 0rpx 0rpx 30rpx ;
+		display: flex;
+		justify-content: space-between;
+		view{
+			width: 324rpx;
+			height: 172rpx;
+			image{
+				width: 100%;
+				height: 100%;
+			}
+			text {
+				position: absolute;
+				font-size: 32rpx;
+				color: #FFFFFF;
+				margin-top: 16rpx;
+				margin-left:20rpx ;
+			}
+		}
+		view:nth-child(1) {
+			background: url(../../../static/index/hzjgbanner3.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		view:nth-child(2) {
+			background: url(../../../static/index/hzjgbanner4.png) no-repeat;
+			background-size: 100% 100%;
+		}
+	}
+	//护理站列表
+	.nursingStatList {
+		width: 690rpx;
+		height: 200rpx;
+		background-color: #FFFFFF;
+		border-radius: 8rpx;
+		margin-top: 28rpx;
+		margin-left: 30rpx;
+		padding-top:26rpx ;
+		display: flex;
+		.nursingStatList_1 {
+			margin-left: 36rpx;
+			width: 138rpx;
+			height: 138rpx;
+			image{
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+			}
+		}
+		.nursingStatList_2 {
+			margin-left:34rpx;
+			width: 324rpx;
+			view:nth-child(1) {
+				font-size: 28rpx;
+				color: #000000;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			view:nth-child(2) {
+				image{
+					width: 20rpx;
+					height: 18rpx;
+					margin-right: 8rpx;
+				}
+			}
+			view:nth-child(3) {
+				font-size: 20rpx;
+				color: #999999;
+			}
+			view:nth-child(4) {
+				font-size: 22rpx;
+				color: #000000;
+				margin-top: 12rpx;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+		.nursingStatList_3 {
+			margin-left: 24rpx;
+			font-size: 24rpx;
+			color:#999999 ;
+			line-height: 150rpx;
+			font-weight: normal;
+		}
+	}
+	.xhLogo {
+		width:160rpx ;
+		height: 122rpx;
+		margin: 26rpx auto;
+		image {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.xhJs{
+		display: flex;
+		width: 580rpx;
+		height: 34rpx;
+		margin: 6rpx auto;
+		justify-content: space-between;
+		view:nth-child(1) {
+			width:96rpx ;
+			height: 2rpx;
+			background:rgba(0, 0, 0, 0.05);
+			margin-top: 17rpx;
+		}
+		view:nth-child(2) {
+			font-size: 24rpx;
+			color:#D4D4D4;
+			line-height: 34rpx;
+		}
+		view:nth-child(3) {
+			width:96rpx ;
+			height: 2rpx;
+			background:rgba(0, 0, 0, 0.05);
+			margin-top: 17rpx;
+		}
+	}
+}

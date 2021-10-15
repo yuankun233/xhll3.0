@@ -1,0 +1,470 @@
+.container {
+    position: relative;
+    // 定义公共标题样式
+    .common_title {
+        font-size: 30rpx;
+        font-family: PingFang SC-Regular, PingFang SC;
+        color: #000000;
+        // line-height: 35rpx;
+        letter-spacing: 1rpx;
+    }
+
+    // 状态栏高度
+    // .statusbar {
+    //     height: 20px;
+    // }
+
+    // 设置空盒子把导航位置顶下来
+    .nav_wrap {
+        height: 200rpx;
+    }
+    // 顶部导航固定到顶部
+    .navtop {
+        z-index: 99;
+        position: fixed;
+        top: 88rpx;
+        width: 750rpx;
+        height: 88rpx;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        .icon-back {
+            margin-left: 30rpx;
+            margin-right: 154rpx;
+            font-size: 60rpx;
+            color: #666666;
+            opacity: 1;
+        }
+        .options {
+            display: flex;
+            align-items: center;
+            width: 266rpx;
+            justify-content: space-between;
+            .option {
+                padding: 0 6rpx;
+                width: 86rpx;
+                height: 88rpx;
+                font-size: 36rpx;
+                font-family: PingFang SC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #999999;
+                line-height: 88rpx;
+            }
+            .option_click {
+                border-bottom: solid 4rpx #41d9cd;
+                color: #41d9cd;
+            }
+        }
+    }
+    // 选择地址
+    .top_adress {
+        .notice {
+            display: flex;
+            width: 750rpx;
+            height: 58rpx;
+            background: #fffef1;
+            border-radius: 0rpx;
+            opacity: 1;
+            .icon-notice {
+                font-size: 26rpx;
+                line-height: 58rpx;
+                margin-left: 38rpx;
+                margin-right: 10rpx;
+                color: #fa7c42;
+            }
+            .text {
+                font-size: 26rpx;
+                font-family: PingFang SC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #fa7c42;
+                line-height: 58rpx;
+            }
+        }
+        .adress_box {
+            height: 152rpx;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 26rpx 30rpx 0 34rpx;
+
+            .title {
+                font-size: 32rpx;
+                font-family: PingFang SC-Semibold, PingFang SC;
+                font-weight: 600;
+                color: #000000;
+                line-height: 38rpx;
+                margin-bottom: 20rpx;
+            }
+            .flex {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .adress {
+                    font-size: 26rpx;
+                    font-family: PingFang SC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #666666;
+                    line-height: 30rpx;
+                }
+                .adress_select {
+                    font-size: 26rpx;
+                    font-family: PingFang SC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #999999;
+                    line-height: 30rpx;
+                }
+            }
+        }
+    }
+
+    // 项目信息
+    .top_servedetail {
+        margin-top: 20rpx;
+        background-color: #fff;
+        padding: 20rpx 30rpx 30rpx;
+        .top {
+            display: flex;
+            align-items: center;
+            border-bottom: solid 2rpx #f3f3f3;
+            padding-bottom: 20rpx;
+            .logo {
+                height: 52rpx;
+                width: 40rpx;
+                margin-right: 26rpx;
+                margin-left: 15rpx;
+            }
+            .text {
+                font-size: 28rpx;
+                font-family: PingFang SC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #000000;
+                line-height: 33rpx;
+            }
+        }
+
+        .content {
+            display: flex;
+            // overflow: hidden;
+            padding-top: 22rpx;
+            .left {
+                width: 140rpx;
+                height: 140rpx;
+                margin-right: 22rpx;
+            }
+            .right {
+                width: 100%;
+                .project_name {
+                    font-size: 30rpx;
+                    font-family: PingFang SC-Semibold, PingFang SC;
+                    font-weight: 600;
+                    color: #000000;
+                    line-height: 35rpx;
+                    margin-bottom: 45rpx;
+                }
+                .flex {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .project_num {
+                        font-size: 24rpx;
+                        font-family: PingFang SC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #666666;
+                        line-height: 28rpx;
+                    }
+                    .project_price {
+                        font-size: 30rpx;
+                        font-family: PingFang SC-Semibold, PingFang SC;
+                        font-weight: 600;
+                        color: #000000;
+                        line-height: 35rpx;
+                    }
+                }
+            }
+        }
+    }
+
+    // 服务信息选择
+    .selectServeMessage {
+        margin-top: 20rpx;
+        background-color: #ffffff;
+        padding: 0 30rpx;
+        .item {
+            display: flex;
+            padding: 28rpx 0;
+            border-bottom: solid #f3f3f3 2rpx;
+            .label {
+                margin-right: 76rpx;
+            }
+            .input::placeholder {
+                font-size: 30rpx;
+                font-family: PingFang SC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #18b566;
+                line-height: 35rpx;
+                letter-spacing: 1rpx;
+            }
+        }
+        .item:nth-of-type(3) {
+            border-bottom: unset;
+        }
+    }
+
+    // 服务次数选择
+    .selectNum {
+        background-color: #fff;
+        margin-top: 24rpx;
+        height: 104rpx;
+        padding: 0 28rpx 0 30rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+        }
+        .handle {
+            display: flex;
+            align-items: center;
+            // justify-content: space-between;
+            .num {
+                margin: 0 14rpx;
+                text-align: center;
+            }
+            .iconfont {
+                color: #41d9cd;
+            }
+        }
+    }
+    // 优惠券
+    .discount {
+        justify-content: unset;
+        .input {
+            margin-left: 108rpx;
+        }
+    }
+
+    // 备注
+    .remark {
+        overflow: hidden;
+        margin-top: 20rpx;
+        padding: 0 30rpx;
+        width: 750rpx;
+        height: 392rpx;
+        background: #ffffff;
+        border-radius: 0px 0px 0px 0px;
+        opacity: 1;
+        .title {
+            margin-top: 28rpx;
+            margin-bottom: 32rpx;
+        }
+        .textarea {
+            width: 690rpx;
+            height: 220rpx;
+            background-color: #f7f7f7;
+            padding: 20rpx 28rpx 0 28rpx !important;
+        }
+    }
+
+    // 服务须知等信息
+    .bottom_message {
+        width: 750rpx;
+        overflow: hidden;
+        background: #ffffff;
+        margin-top: 21rpx;
+        padding-left: 24rpx;
+        padding-top: 15rpx;
+        padding-bottom: 20rpx;
+        .order_eight_21 {
+            width: 129rpx;
+            height: 27rpx;
+            font-size: 28rpx;
+            font-family: PingFang SC;
+            font-weight: 600;
+            color: #333333;
+            line-height: 27rpx;
+        }
+        .title {
+            height: 27rpx;
+            line-height: 27rpx;
+            font-size: 28rpx;
+            font-family: PingFang-SC-Medium;
+            color: #4178f0;
+            padding-left: 10rpx;
+            border-left: 4px solid #ff9c00;
+            margin-top: 20rpx;
+        }
+
+        .content {
+            width: 696rpx;
+            margin-top: 15rpx;
+            view {
+                font-size: 26rpx;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: #585858;
+                line-height: 60rpx;
+            }
+        }
+
+        .content2 {
+            margin-top: 22rpx;
+            padding-top: 10rpx;
+            padding-left: 17rpx;
+            width: 702rpx;
+            background: #f7f7f7;
+            border-radius: 10rpx;
+            font-size: 26rpx;
+            font-family: PingFangSC-Regular;
+            font-weight: 300;
+            color: #303030;
+            line-height: 48rpx;
+            margin-bottom: 30rpx;
+        }
+    }
+
+    // 底部结算信息
+    .bottom_wrap {
+        width: 100%;
+        height: 110rpx;
+    }
+    .bottom_payBar {
+        position: fixed;
+        bottom: 0;
+        padding-left: 36rpx;
+        padding-right: 28rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 110rpx;
+        background: #ffffff;
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            font-size: 48rpx;
+            font-family: PingFang SC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: #f7434e;
+            .rmb {
+                font-size: 30rpx;
+            }
+        }
+        .flex {
+            display: flex;
+            align-items: center;
+
+            .detail {
+                display: flex;
+                align-items: center;
+                font-size: 32rpx;
+                font-family: PingFang SC-Regular, PingFang SC;
+                color: #999999;
+                line-height: 38rpx;
+                .arrow_icon {
+                    width: 19rpx;
+                    height: 12rpx;
+                    margin-left: 12rpx;
+                    margin-right: 12rpx;
+                }
+            }
+
+            .submit {
+                width: 350rpx;
+                height: 80rpx;
+                background: #41d9cd;
+                border-radius: 76rpx;
+            }
+        }
+    }
+
+    // 明细弹出层
+    .priceDetail {
+        position: fixed;
+        bottom: 110rpx;
+        background-color: #ffffff;
+        width: 750rpx;
+        padding: 20rpx 30rpx 0 30rpx;
+        .toptitle {
+            font-size: 30rpx;
+            font-family: PingFangSC-Regular;
+            color: #999999;
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 24rpx;
+            font-family: PingFangSC-Regular;
+            color: #999999;
+            margin-top: 15rpx;
+            margin-bottom: 15rpx;
+        }
+    }
+
+    // 下单提示信息弹窗
+    .orderPop {
+        .content {
+            padding: 0 44rpx 0 42rpx;
+            width: 632rpx;
+            height: 1000rpx;
+            background: #ffffff;
+            .top {
+                .poptop {
+                    margin: 0 auto;
+                    display: block;
+                    width: 216rpx;
+                }
+                .title {
+                    margin-top: 12rpx;
+                    margin-bottom: 20rpx;
+                    text-align: center;
+                    font-size: 36rpx;
+                    font-family: PingFang SC-Semibold, PingFang SC;
+                    font-weight: 600;
+                    color: #000000;
+                    letter-spacing: 1px;
+                }
+            }
+            // 警告信息
+            .content {
+                overflow-y: auto;
+                width: 546rpx;
+                height: 544rpx;
+                background: #f4f4f4;
+                border-radius: 16rpx;
+                .message {
+                    width: 471rpx;
+                    white-space: pre-wrap;
+                    font-size: 26rpx;
+                    font-family: PingFang SC;
+                    color: #ef6161;
+                    line-height: 48rpx;
+                    text-align: left;
+                    margin-top: 10rpx;
+                }
+            }
+
+            // 底部单选
+            .bottom_tools {
+                padding-top: 20rpx;
+            }
+            // 取消,同意按钮
+            .btns {
+                margin-top: 20rpx;
+                display: flex;
+                align-items: center;
+                .btn {
+                    width: 260rpx;
+                    height: 80rpx;
+                    border-radius: 76rpx;
+                }
+                .cancel {
+                    background: #f4f4f4;
+                    color: #000000;
+                }
+                .submit {
+                    background: #41d9cd;
+                }
+            }
+        }
+    }
+}

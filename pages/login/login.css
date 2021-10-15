@@ -1,0 +1,100 @@
+.container {
+  overflow: hidden;
+}
+.container .banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+.container .main {
+  position: relative;
+  overflow: hidden;
+  margin-top: 528rpx;
+  padding: 0 94rpx 100rpx 96rpx;
+  width: 750rpx;
+  min-height: 805rpx;
+  background: #fff;
+  border-radius: 72rpx 72rpx 0rpx 0;
+  opacity: 1;
+}
+.container .main .title {
+  margin-top: 96rpx;
+  margin-bottom: 62rpx;
+  text-align: center;
+  font-size: 50rpx;
+  font-family: PingFang SC-Light;
+  color: #26486f;
+}
+.container .main .form .item .label {
+  font-size: 32rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 38px;
+}
+.container .main .form .item .form_item {
+  padding: unset;
+  padding: 0 32rpx;
+  width: 560rpx;
+  height: 96rpx;
+  background: rgba(153, 153, 153, 0.1);
+  border-radius: 30rpx 30rpx 30rpx 30rpx;
+  border: 2rpx solid rgba(102, 102, 102, 0.2);
+}
+.container .main .form .item .form_item .iconfont {
+  margin-right: 20rpx;
+}
+.container .main .form .item .wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .main .form .item .wrap .getauthcode {
+  margin: unset;
+  width: 260rpx;
+  height: 96rpx;
+  background: #41d9cd;
+  font-size: 38rpx;
+  border-radius: 30rpx;
+  opacity: 1;
+}
+.container .main .loginbtn {
+  margin-top: 72rpx;
+  width: 560rpx;
+  height: 96rpx;
+  background: #41d9cd;
+  border-radius: 30rpx;
+}
+.container .main .textline {
+  position: absolute;
+  top: 758rpx;
+  left: 90rpx;
+  display: flex;
+  width: 580rpx;
+  align-items: center;
+}
+.container .main .textline .text {
+  margin: 0 15rpx;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  text-align: center;
+  color: #999999;
+}
+.container .main .textline .line {
+  height: 1rpx;
+  width: 178rpx;
+  background-color: #999999;
+}
+.container .main .logincheckout {
+  margin-top: 104rpx;
+  width: 560rpx;
+  height: 68rpx;
+  background: #274c82;
+  border-radius: 40rpx;
+  opacity: 1;
+}
