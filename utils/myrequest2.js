@@ -7,7 +7,7 @@ export const myRequest2 = (options) => { //传入的options是一个json对象
     }) // 显示加载中提示
     // 定义公共的url
     // 王博鑫の3.0app接口
-    const baseUrl = "https://www.qycloud.com.cn/bee/open-81607552621215806"
+    const baseUrl = "https://www.qycloud.com.cn/bee/open-81607552621215806/"
     return new Promise((resolve, reject) => {
         uni.request({
             url: baseUrl + options.url,

@@ -1212,7 +1212,8 @@ try {
   components = {
     uInput: __webpack_require__(/*! @/uview-ui/components/u-input/u-input.vue */ 27).default,
     uButton: __webpack_require__(/*! @/uview-ui/components/u-button/u-button.vue */ 43).default,
-    uPicker: __webpack_require__(/*! @/uview-ui/components/u-picker/u-picker.vue */ 51).default
+    uPicker: __webpack_require__(/*! @/uview-ui/components/u-picker/u-picker.vue */ 51).default,
+    uPopup: __webpack_require__(/*! @/uview-ui/components/u-popup/u-popup.vue */ 54).default
   }
 } catch (e) {
   if (
@@ -1353,7 +1354,12 @@ var render = function() {
             [
               _c("v-uni-image", {
                 staticClass: _vm._$g(21, "sc"),
-                attrs: { src: _vm._$g(21, "a-src"), mode: "widthFix", _i: 21 }
+                attrs: {
+                  src: _vm._$g(21, "a-src"),
+                  mode: "widthFix",
+                  "lazy-load": true,
+                  _i: 21
+                }
               }),
               _c(
                 "v-uni-view",
@@ -1369,7 +1375,12 @@ var render = function() {
             [
               _c("v-uni-image", {
                 staticClass: _vm._$g(24, "sc"),
-                attrs: { src: _vm._$g(24, "a-src"), mode: "widthFix", _i: 24 }
+                attrs: {
+                  src: _vm._$g(24, "a-src"),
+                  mode: "widthFix",
+                  "lazy-load": true,
+                  _i: 24
+                }
               }),
               _c(
                 "v-uni-view",
@@ -1378,7 +1389,7 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
-                    [_vm._v("腹膜透析")]
+                    [_vm._v(_vm._$g(26, "t0-0"))]
                   ),
                   _c(
                     "v-uni-view",
@@ -1435,6 +1446,13 @@ var render = function() {
                   "placeholder-style": _vm._$g(33, "a-placeholder-style"),
                   disabled: _vm._$g(33, "a-disabled"),
                   _i: 33
+                },
+                model: {
+                  value: _vm._$g(33, "v-model"),
+                  callback: function($$v) {
+                    _vm.$handleVModelEvent(33, $$v)
+                  },
+                  expression: "form.archiveName"
                 }
               })
             ],
@@ -1686,55 +1704,100 @@ var render = function() {
             },
             attrs: {
               src: "http://xiaohulaile.com/wxcx/tuikuan/tuikuan.png",
+              "lazy-load": true,
               _i: 65
             }
           })
         ],
         1
       ),
-      _c("i", {
-        staticClass: _vm._$g(66, "sc"),
-        staticStyle: { "font-size": "50rpx", color: "#007AFF" },
-        attrs: { _i: 66 }
-      }),
-      _c("v-uni-view", { staticClass: _vm._$g(67, "sc"), attrs: { _i: 67 } }),
+      _c("v-uni-view", { staticClass: _vm._$g(66, "sc"), attrs: { _i: 66 } }),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(68, "sc"), attrs: { _i: 68 } },
+        { staticClass: _vm._$g(67, "sc"), attrs: { _i: 67 } },
         [
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(69, "sc"), attrs: { _i: 69 } },
+            { staticClass: _vm._$g(68, "sc"), attrs: { _i: 68 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(70, "sc"), attrs: { _i: 70 } },
+                { staticClass: _vm._$g(69, "sc"), attrs: { _i: 69 } },
                 [_vm._v("￥")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(71, "sc"), attrs: { _i: 71 } },
-                [_vm._v(_vm._$g(71, "t0-0"))]
+                { staticClass: _vm._$g(70, "sc"), attrs: { _i: 70 } },
+                [_vm._v(_vm._$g(70, "t0-0"))]
               )
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(72, "sc"), attrs: { _i: 72 } },
+            { staticClass: _vm._$g(71, "sc"), attrs: { _i: 71 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(73, "sc"), attrs: { _i: 73 } },
+                {
+                  staticClass: _vm._$g(72, "sc"),
+                  attrs: { _i: 72 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [
                   _vm._v("明细"),
-                  _c("i", { staticClass: _vm._$g(74, "sc"), attrs: { _i: 74 } })
+                  _c("v-uni-image", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm._$g(73, "v-show"),
+                        expression: "_$g(73,'v-show')"
+                      }
+                    ],
+                    staticClass: _vm._$g(73, "sc"),
+                    attrs: {
+                      src: _vm._$g(73, "a-src"),
+                      mode: "widthFix",
+                      "lazy-load": true,
+                      _i: 73
+                    }
+                  }),
+                  _c("v-uni-image", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm._$g(74, "v-show"),
+                        expression: "_$g(74,'v-show')"
+                      }
+                    ],
+                    staticClass: _vm._$g(74, "sc"),
+                    attrs: {
+                      src: _vm._$g(74, "a-src"),
+                      mode: "widthFix",
+                      "lazy-load": true,
+                      _i: 74
+                    }
+                  })
                 ],
                 1
               ),
               _c(
                 "u-button",
-                { staticClass: _vm._$g(75, "sc"), attrs: { _i: 75 } },
+                {
+                  staticClass: _vm._$g(75, "sc"),
+                  attrs: { _i: 75 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [_vm._v("提交订单")]
               )
             ],
@@ -1743,32 +1806,254 @@ var render = function() {
         ],
         1
       ),
+      _c(
+        "v-uni-view",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm._$g(76, "v-show"),
+              expression: "_$g(76,'v-show')"
+            }
+          ],
+          staticClass: _vm._$g(76, "sc"),
+          attrs: { _i: 76 }
+        },
+        [
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(77, "sc"), attrs: { _i: 77 } },
+            [_vm._v("费用明细")]
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(78, "sc"), attrs: { _i: 78 } },
+            [
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(79, "sc"), attrs: { _i: 79 } },
+                [_vm._v("服务费×" + _vm._$g(79, "t0-0"))]
+              ),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(80, "sc"), attrs: { _i: 80 } },
+                [_vm._v("￥" + _vm._$g(80, "t0-0"))]
+              )
+            ],
+            1
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(81, "sc"), attrs: { _i: 81 } },
+            [
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(82, "sc"), attrs: { _i: 82 } },
+                [_vm._v("优惠金额")]
+              ),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(83, "sc"), attrs: { _i: 83 } },
+                [_vm._v("-￥0.00")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
       _c("u-picker", {
-        attrs: { _i: 76 },
+        attrs: { _i: 84 },
         on: {
           confirm: function($event) {
             return _vm.$handleViewEvent($event)
           }
         },
         model: {
-          value: _vm._$g(76, "v-model"),
+          value: _vm._$g(84, "v-model"),
+          callback: function() {},
+          expression: "picker.patient"
+        }
+      }),
+      _c("u-picker", {
+        attrs: { _i: 85 },
+        on: {
+          confirm: function($event) {
+            return _vm.$handleViewEvent($event)
+          }
+        },
+        model: {
+          value: _vm._$g(85, "v-model"),
+          callback: function() {},
+          expression: "picker.time"
+        }
+      }),
+      _c("u-picker", {
+        attrs: { _i: 86 },
+        on: {
+          confirm: function($event) {
+            return _vm.$handleViewEvent($event)
+          }
+        },
+        model: {
+          value: _vm._$g(86, "v-model"),
           callback: function() {},
           expression: "picker.date"
         }
       }),
-      _c("u-picker", {
-        attrs: { _i: 77 },
-        on: {
-          confirm: function($event) {
-            return _vm.$handleViewEvent($event)
+      _c(
+        "u-popup",
+        {
+          staticClass: _vm._$g(87, "sc"),
+          attrs: { _i: 87 },
+          model: {
+            value: _vm._$g(87, "v-model"),
+            callback: function() {},
+            expression: "orderPop"
           }
         },
-        model: {
-          value: _vm._$g(77, "v-model"),
-          callback: function() {},
-          expression: "picker.time"
-        }
-      })
+        [
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(88, "sc"), attrs: { _i: 88 } },
+            [
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(89, "sc"), attrs: { _i: 89 } },
+                [
+                  _c("v-uni-image", {
+                    staticClass: _vm._$g(90, "sc"),
+                    attrs: {
+                      src: _vm._$g(90, "a-src"),
+                      mode: "widthFix",
+                      "lazy-load": true,
+                      _i: 90
+                    }
+                  }),
+                  _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(91, "sc"), attrs: { _i: 91 } },
+                    [_vm._v("预约须知")]
+                  )
+                ],
+                1
+              ),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(92, "sc"), attrs: { _i: 92 } },
+                [
+                  _c(
+                    "v-uni-scroll-view",
+                    {
+                      staticStyle: { height: "544rpx" },
+                      attrs: { "scroll-y": "true", _i: 93 },
+                      on: {
+                        scrolltolower: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(94, "sc"), attrs: { _i: 94 } },
+                        [
+                          _vm._v(
+                            "尊敬的先生/女士： 为了更好的给您和您的家人提供优质的居家专业服务，请务必仔细阅读本须知："
+                          ),
+                          _c("br", { attrs: { _i: 95 } }),
+                          _vm._v(
+                            "一、请如实告知疾病诊断，不要隐瞒传染类、精神类疾病等病史，或可能影响服务人员和自身安全的因素。"
+                          ),
+                          _c("br", { attrs: { _i: 96 } }),
+                          _vm._v(
+                            "二、请在服务人员的服务时间内，尽可能保证有二人或二人以上人员在家。三、安全告知：小护来了居家服务项目都是常规专业内容，是帮助患者维护健康所采取的医学护理服务。由于个体的差异性、疾病的复杂性及不可抗拒的因素等，服务人员不能预测服务中或服务后患者的并发症等不良事件发生，特告知如下:"
+                          ),
+                          _c("br", { attrs: { _i: 97 } }),
+                          _vm._v("1、心脑疾病的突发；"),
+                          _c("br", { attrs: { _i: 98 } }),
+                          _vm._v("2、伤口出血、疼痛、感染、异常生长等；"),
+                          _c("br", { attrs: { _i: 99 } }),
+                          _vm._v(
+                            "3、肠造口出血感染，造口狭窄，造口突出等并发症；"
+                          ),
+                          _c("br", { attrs: { _i: 100 } }),
+                          _vm._v("4、导管滑脱、移位、堵塞、感染等；"),
+                          _c("br", { attrs: { _i: 101 } }),
+                          _vm._v("5、康复功能恢复不良等；"),
+                          _c("br", { attrs: { _i: 102 } }),
+                          _vm._v("6、其他意外情况发生：如跌倒等。"),
+                          _c("br", { attrs: { _i: 103 } }),
+                          _vm._v(
+                            "四、您在下单后如需要更改服务时间，请提前6小时联系客服。"
+                          ),
+                          _c("br", { attrs: { _i: 104 } }),
+                          _vm._v(
+                            "五、若服务人员已经接单，则所支付的金额不能全额退回。特告知："
+                          ),
+                          _c("br", { attrs: { _i: 105 } }),
+                          _vm._v("1.服务人员已接单，扣除支付金额的30%"),
+                          _c("br", { attrs: { _i: 106 } }),
+                          _vm._v("2.服务人员已出发，扣除支付金额的50%"),
+                          _c("br", { attrs: { _i: 107 } }),
+                          _vm._v("3.服务人员已到达，扣除支付金额的80%"),
+                          _c("br", { attrs: { _i: 108 } }),
+                          _vm._v(
+                            "4.若用户下了多个订单，已服务过的项目正常结算。 请仔细阅读确认后下单。谢谢配合！"
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(109, "sc"), attrs: { _i: 109 } },
+                [
+                  _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(110, "sc"), attrs: { _i: 110 } },
+                    [
+                      _c("v-uni-checkbox", {
+                        attrs: { disabled: _vm._$g(111, "a-disabled"), _i: 111 }
+                      }),
+                      _c("v-uni-text", { attrs: { _i: 112 } }, [
+                        _vm._v("下滑到底并勾选，即同意“预约须知”")
+                      ])
+                    ],
+                    1
+                  ),
+                  _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(113, "sc"), attrs: { _i: 113 } },
+                    [
+                      _c(
+                        "u-button",
+                        { staticClass: _vm._$g(114, "sc"), attrs: { _i: 114 } },
+                        [_vm._v("取消")]
+                      ),
+                      _c(
+                        "u-button",
+                        { staticClass: _vm._$g(115, "sc"), attrs: { _i: 115 } },
+                        [_vm._v("同意")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
     1
   )
@@ -4936,7 +5221,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../软件安装包/HBuilderX.2.8.11.20200907.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".container[data-v-5ab843db] {\n  position: relative;\n}\n.container .common_title[data-v-5ab843db] {\n  font-size: 30rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  color: #000000;\n  letter-spacing: 1rpx;\n}\n.container .nav_wrap[data-v-5ab843db] {\n  height: 200rpx;\n}\n.container .navtop[data-v-5ab843db] {\n  z-index: 99;\n  position: fixed;\n  top: 88rpx;\n  width: 750rpx;\n  height: 88rpx;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .navtop .icon-back[data-v-5ab843db] {\n  margin-left: 30rpx;\n  margin-right: 154rpx;\n  font-size: 60rpx;\n  color: #666666;\n  opacity: 1;\n}\n.container .navtop .options[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  width: 266rpx;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.container .navtop .options .option[data-v-5ab843db] {\n  padding: 0 6rpx;\n  width: 86rpx;\n  height: 88rpx;\n  font-size: 36rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #999999;\n  line-height: 88rpx;\n}\n.container .navtop .options .option_click[data-v-5ab843db] {\n  border-bottom: solid 4rpx #41d9cd;\n  color: #41d9cd;\n}\n.container .top_adress .notice[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  width: 750rpx;\n  height: 58rpx;\n  background: #fffef1;\n  border-radius: 0rpx;\n  opacity: 1;\n}\n.container .top_adress .notice .icon-notice[data-v-5ab843db] {\n  font-size: 26rpx;\n  line-height: 58rpx;\n  margin-left: 38rpx;\n  margin-right: 10rpx;\n  color: #fa7c42;\n}\n.container .top_adress .notice .text[data-v-5ab843db] {\n  font-size: 26rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #fa7c42;\n  line-height: 58rpx;\n}\n.container .top_adress .adress_box[data-v-5ab843db] {\n  height: 152rpx;\n  width: 100%;\n  background-color: #ffffff;\n  padding: 26rpx 30rpx 0 34rpx;\n}\n.container .top_adress .adress_box .title[data-v-5ab843db] {\n  font-size: 32rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #000000;\n  line-height: 38rpx;\n  margin-bottom: 20rpx;\n}\n.container .top_adress .adress_box .flex[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .top_adress .adress_box .flex .adress[data-v-5ab843db] {\n  font-size: 26rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #666666;\n  line-height: 30rpx;\n}\n.container .top_adress .adress_box .flex .adress_select[data-v-5ab843db] {\n  font-size: 26rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #999999;\n  line-height: 30rpx;\n}\n.container .top_servedetail[data-v-5ab843db] {\n  margin-top: 20rpx;\n  background-color: #fff;\n  padding: 20rpx 30rpx 30rpx;\n}\n.container .top_servedetail .top[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  border-bottom: solid 2rpx #f3f3f3;\n  padding-bottom: 20rpx;\n}\n.container .top_servedetail .top .logo[data-v-5ab843db] {\n  height: 52rpx;\n  width: 40rpx;\n  margin-right: 26rpx;\n  margin-left: 15rpx;\n}\n.container .top_servedetail .top .text[data-v-5ab843db] {\n  font-size: 28rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #000000;\n  line-height: 33rpx;\n}\n.container .top_servedetail .content[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  padding-top: 22rpx;\n}\n.container .top_servedetail .content .left[data-v-5ab843db] {\n  width: 140rpx;\n  height: 140rpx;\n  margin-right: 22rpx;\n}\n.container .top_servedetail .content .right[data-v-5ab843db] {\n  width: 100%;\n}\n.container .top_servedetail .content .right .project_name[data-v-5ab843db] {\n  font-size: 30rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #000000;\n  line-height: 35rpx;\n  margin-bottom: 45rpx;\n}\n.container .top_servedetail .content .right .flex[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.container .top_servedetail .content .right .flex .project_num[data-v-5ab843db] {\n  font-size: 24rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #666666;\n  line-height: 28rpx;\n}\n.container .top_servedetail .content .right .flex .project_price[data-v-5ab843db] {\n  font-size: 30rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #000000;\n  line-height: 35rpx;\n}\n.container .selectServeMessage[data-v-5ab843db] {\n  margin-top: 20rpx;\n  background-color: #ffffff;\n  padding: 0 30rpx;\n}\n.container .selectServeMessage .item[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  padding: 28rpx 0;\n  border-bottom: solid #f3f3f3 2rpx;\n}\n.container .selectServeMessage .item .label[data-v-5ab843db] {\n  margin-right: 76rpx;\n}\n.container .selectServeMessage .item .input[data-v-5ab843db]::-webkit-input-placeholder {\n  font-size: 30rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #18b566;\n  line-height: 35rpx;\n  letter-spacing: 1rpx;\n}\n.container .selectServeMessage .item .input[data-v-5ab843db]::placeholder {\n  font-size: 30rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #18b566;\n  line-height: 35rpx;\n  letter-spacing: 1rpx;\n}\n.container .selectServeMessage .item[data-v-5ab843db]:nth-of-type(3) {\n  border-bottom: unset;\n}\n.container .selectNum[data-v-5ab843db] {\n  background-color: #fff;\n  margin-top: 24rpx;\n  height: 104rpx;\n  padding: 0 28rpx 0 30rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .selectNum .handle[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .selectNum .handle .num[data-v-5ab843db] {\n  margin: 0 14rpx;\n}\n.container .selectNum .handle .iconfont[data-v-5ab843db] {\n  color: #41d9cd;\n}\n.container .discount[data-v-5ab843db] {\n  -webkit-box-pack: unset;\n  -webkit-justify-content: unset;\n          justify-content: unset;\n}\n.container .discount .input[data-v-5ab843db] {\n  margin-left: 108rpx;\n}\n.container .remark[data-v-5ab843db] {\n  overflow: hidden;\n  margin-top: 20rpx;\n  padding: 0 30rpx;\n  width: 750rpx;\n  height: 392rpx;\n  background: #ffffff;\n  border-radius: 0px 0px 0px 0px;\n  opacity: 1;\n}\n.container .remark .title[data-v-5ab843db] {\n  margin-top: 28rpx;\n  margin-bottom: 32rpx;\n}\n.container .remark .textarea[data-v-5ab843db] {\n  width: 690rpx;\n  height: 220rpx;\n  background-color: #f7f7f7;\n  padding: 20rpx 28rpx 0 28rpx !important;\n}\n.container .bottom_message[data-v-5ab843db] {\n  width: 750rpx;\n  overflow: hidden;\n  background: #ffffff;\n  margin-top: 21rpx;\n  padding-left: 24rpx;\n  padding-top: 15rpx;\n  padding-bottom: 20rpx;\n}\n.container .bottom_message .order_eight_21[data-v-5ab843db] {\n  width: 129rpx;\n  height: 27rpx;\n  font-size: 28rpx;\n  font-family: PingFang SC;\n  font-weight: 600;\n  color: #333333;\n  line-height: 27rpx;\n}\n.container .bottom_message .title[data-v-5ab843db] {\n  height: 27rpx;\n  line-height: 27rpx;\n  font-size: 28rpx;\n  font-family: PingFang-SC-Medium;\n  color: #4178f0;\n  padding-left: 10rpx;\n  border-left: 4px solid #ff9c00;\n  margin-top: 20rpx;\n}\n.container .bottom_message .content[data-v-5ab843db] {\n  width: 696rpx;\n  margin-top: 15rpx;\n}\n.container .bottom_message .content uni-view[data-v-5ab843db] {\n  font-size: 26rpx;\n  font-family: PingFangSC-Regular;\n  font-weight: 400;\n  color: #585858;\n  line-height: 60rpx;\n}\n.container .bottom_message .content2[data-v-5ab843db] {\n  margin-top: 22rpx;\n  padding-top: 10rpx;\n  padding-left: 17rpx;\n  width: 702rpx;\n  background: #f7f7f7;\n  border-radius: 10rpx;\n  font-size: 26rpx;\n  font-family: PingFangSC-Regular;\n  font-weight: 300;\n  color: #303030;\n  line-height: 48rpx;\n  margin-bottom: 30rpx;\n}\n.container .bottom_wrap[data-v-5ab843db] {\n  width: 100%;\n  height: 110rpx;\n}\n.container .bottom_payBar[data-v-5ab843db] {\n  position: fixed;\n  bottom: 0;\n  padding-left: 36rpx;\n  padding-right: 28rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  width: 100%;\n  height: 110rpx;\n  background: #ffffff;\n}\n.container .bottom_payBar .price[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: baseline;\n  -webkit-align-items: baseline;\n          align-items: baseline;\n  font-size: 48rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #f7434e;\n}\n.container .bottom_payBar .price .rmb[data-v-5ab843db] {\n  font-size: 30rpx;\n}\n.container .bottom_payBar .flex[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .bottom_payBar .flex .detail[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  font-size: 32rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  color: #999999;\n  line-height: 38rpx;\n}\n.container .bottom_payBar .flex .detail .iconfont[data-v-5ab843db] {\n  font-size: 15rpx;\n  padding-bottom: 12rpx;\n  margin-left: 12rpx;\n  margin-right: 12rpx;\n}\n.container .bottom_payBar .flex .submit[data-v-5ab843db] {\n  width: 350rpx;\n  height: 80rpx;\n  background: #41d9cd;\n  border-radius: 76rpx;\n}\n", ""]);
+exports.push([module.i, ".container[data-v-5ab843db] {\n  position: relative;\n}\n.container .common_title[data-v-5ab843db] {\n  font-size: 30rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  color: #000000;\n  letter-spacing: 1rpx;\n}\n.container .nav_wrap[data-v-5ab843db] {\n  height: 200rpx;\n}\n.container .navtop[data-v-5ab843db] {\n  z-index: 99;\n  position: fixed;\n  top: 88rpx;\n  width: 750rpx;\n  height: 88rpx;\n  background-color: #fff;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .navtop .icon-back[data-v-5ab843db] {\n  margin-left: 30rpx;\n  margin-right: 154rpx;\n  font-size: 60rpx;\n  color: #666666;\n  opacity: 1;\n}\n.container .navtop .options[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  width: 266rpx;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.container .navtop .options .option[data-v-5ab843db] {\n  padding: 0 6rpx;\n  width: 86rpx;\n  height: 88rpx;\n  font-size: 36rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #999999;\n  line-height: 88rpx;\n}\n.container .navtop .options .option_click[data-v-5ab843db] {\n  border-bottom: solid 4rpx #41d9cd;\n  color: #41d9cd;\n}\n.container .top_adress .notice[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  width: 750rpx;\n  height: 58rpx;\n  background: #fffef1;\n  border-radius: 0rpx;\n  opacity: 1;\n}\n.container .top_adress .notice .icon-notice[data-v-5ab843db] {\n  font-size: 26rpx;\n  line-height: 58rpx;\n  margin-left: 38rpx;\n  margin-right: 10rpx;\n  color: #fa7c42;\n}\n.container .top_adress .notice .text[data-v-5ab843db] {\n  font-size: 26rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #fa7c42;\n  line-height: 58rpx;\n}\n.container .top_adress .adress_box[data-v-5ab843db] {\n  height: 152rpx;\n  width: 100%;\n  background-color: #ffffff;\n  padding: 26rpx 30rpx 0 34rpx;\n}\n.container .top_adress .adress_box .title[data-v-5ab843db] {\n  font-size: 32rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #000000;\n  line-height: 38rpx;\n  margin-bottom: 20rpx;\n}\n.container .top_adress .adress_box .flex[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .top_adress .adress_box .flex .adress[data-v-5ab843db] {\n  font-size: 26rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #666666;\n  line-height: 30rpx;\n}\n.container .top_adress .adress_box .flex .adress_select[data-v-5ab843db] {\n  font-size: 26rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #999999;\n  line-height: 30rpx;\n}\n.container .top_servedetail[data-v-5ab843db] {\n  margin-top: 20rpx;\n  background-color: #fff;\n  padding: 20rpx 30rpx 30rpx;\n}\n.container .top_servedetail .top[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  border-bottom: solid 2rpx #f3f3f3;\n  padding-bottom: 20rpx;\n}\n.container .top_servedetail .top .logo[data-v-5ab843db] {\n  height: 52rpx;\n  width: 40rpx;\n  margin-right: 26rpx;\n  margin-left: 15rpx;\n}\n.container .top_servedetail .top .text[data-v-5ab843db] {\n  font-size: 28rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #000000;\n  line-height: 33rpx;\n}\n.container .top_servedetail .content[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  padding-top: 22rpx;\n}\n.container .top_servedetail .content .left[data-v-5ab843db] {\n  width: 140rpx;\n  height: 140rpx;\n  margin-right: 22rpx;\n}\n.container .top_servedetail .content .right[data-v-5ab843db] {\n  width: 100%;\n}\n.container .top_servedetail .content .right .project_name[data-v-5ab843db] {\n  font-size: 30rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #000000;\n  line-height: 35rpx;\n  margin-bottom: 45rpx;\n}\n.container .top_servedetail .content .right .flex[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.container .top_servedetail .content .right .flex .project_num[data-v-5ab843db] {\n  font-size: 24rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #666666;\n  line-height: 28rpx;\n}\n.container .top_servedetail .content .right .flex .project_price[data-v-5ab843db] {\n  font-size: 30rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #000000;\n  line-height: 35rpx;\n}\n.container .selectServeMessage[data-v-5ab843db] {\n  margin-top: 20rpx;\n  background-color: #ffffff;\n  padding: 0 30rpx;\n}\n.container .selectServeMessage .item[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  padding: 28rpx 0;\n  border-bottom: solid #f3f3f3 2rpx;\n}\n.container .selectServeMessage .item .label[data-v-5ab843db] {\n  margin-right: 76rpx;\n}\n.container .selectServeMessage .item .input[data-v-5ab843db]::-webkit-input-placeholder {\n  font-size: 30rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #18b566;\n  line-height: 35rpx;\n  letter-spacing: 1rpx;\n}\n.container .selectServeMessage .item .input[data-v-5ab843db]::placeholder {\n  font-size: 30rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  font-weight: 400;\n  color: #18b566;\n  line-height: 35rpx;\n  letter-spacing: 1rpx;\n}\n.container .selectServeMessage .item[data-v-5ab843db]:nth-of-type(3) {\n  border-bottom: unset;\n}\n.container .selectNum[data-v-5ab843db] {\n  background-color: #fff;\n  margin-top: 24rpx;\n  height: 104rpx;\n  padding: 0 28rpx 0 30rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .selectNum .handle[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .selectNum .handle .num[data-v-5ab843db] {\n  margin: 0 14rpx;\n  text-align: center;\n}\n.container .selectNum .handle .iconfont[data-v-5ab843db] {\n  color: #41d9cd;\n}\n.container .discount[data-v-5ab843db] {\n  -webkit-box-pack: unset;\n  -webkit-justify-content: unset;\n          justify-content: unset;\n}\n.container .discount .input[data-v-5ab843db] {\n  margin-left: 108rpx;\n}\n.container .remark[data-v-5ab843db] {\n  overflow: hidden;\n  margin-top: 20rpx;\n  padding: 0 30rpx;\n  width: 750rpx;\n  height: 392rpx;\n  background: #ffffff;\n  border-radius: 0px 0px 0px 0px;\n  opacity: 1;\n}\n.container .remark .title[data-v-5ab843db] {\n  margin-top: 28rpx;\n  margin-bottom: 32rpx;\n}\n.container .remark .textarea[data-v-5ab843db] {\n  width: 690rpx;\n  height: 220rpx;\n  background-color: #f7f7f7;\n  padding: 20rpx 28rpx 0 28rpx !important;\n}\n.container .bottom_message[data-v-5ab843db] {\n  width: 750rpx;\n  overflow: hidden;\n  background: #ffffff;\n  margin-top: 21rpx;\n  padding-left: 24rpx;\n  padding-top: 15rpx;\n  padding-bottom: 20rpx;\n}\n.container .bottom_message .order_eight_21[data-v-5ab843db] {\n  width: 129rpx;\n  height: 27rpx;\n  font-size: 28rpx;\n  font-family: PingFang SC;\n  font-weight: 600;\n  color: #333333;\n  line-height: 27rpx;\n}\n.container .bottom_message .title[data-v-5ab843db] {\n  height: 27rpx;\n  line-height: 27rpx;\n  font-size: 28rpx;\n  font-family: PingFang-SC-Medium;\n  color: #4178f0;\n  padding-left: 10rpx;\n  border-left: 4px solid #ff9c00;\n  margin-top: 20rpx;\n}\n.container .bottom_message .content[data-v-5ab843db] {\n  width: 696rpx;\n  margin-top: 15rpx;\n}\n.container .bottom_message .content uni-view[data-v-5ab843db] {\n  font-size: 26rpx;\n  font-family: PingFangSC-Regular;\n  font-weight: 400;\n  color: #585858;\n  line-height: 60rpx;\n}\n.container .bottom_message .content2[data-v-5ab843db] {\n  margin-top: 22rpx;\n  padding-top: 10rpx;\n  padding-left: 17rpx;\n  width: 702rpx;\n  background: #f7f7f7;\n  border-radius: 10rpx;\n  font-size: 26rpx;\n  font-family: PingFangSC-Regular;\n  font-weight: 300;\n  color: #303030;\n  line-height: 48rpx;\n  margin-bottom: 30rpx;\n}\n.container .bottom_wrap[data-v-5ab843db] {\n  width: 100%;\n  height: 110rpx;\n}\n.container .bottom_payBar[data-v-5ab843db] {\n  position: fixed;\n  bottom: 0;\n  padding-left: 36rpx;\n  padding-right: 28rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  width: 100%;\n  height: 110rpx;\n  background: #ffffff;\n}\n.container .bottom_payBar .price[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: baseline;\n  -webkit-align-items: baseline;\n          align-items: baseline;\n  font-size: 48rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #f7434e;\n}\n.container .bottom_payBar .price .rmb[data-v-5ab843db] {\n  font-size: 30rpx;\n}\n.container .bottom_payBar .flex[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .bottom_payBar .flex .detail[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  font-size: 32rpx;\n  font-family: PingFang SC-Regular, PingFang SC;\n  color: #999999;\n  line-height: 38rpx;\n}\n.container .bottom_payBar .flex .detail .arrow_icon[data-v-5ab843db] {\n  width: 19rpx;\n  height: 12rpx;\n  margin-left: 12rpx;\n  margin-right: 12rpx;\n}\n.container .bottom_payBar .flex .submit[data-v-5ab843db] {\n  width: 350rpx;\n  height: 80rpx;\n  background: #41d9cd;\n  border-radius: 76rpx;\n}\n.container .priceDetail[data-v-5ab843db] {\n  position: fixed;\n  bottom: 110rpx;\n  background-color: #ffffff;\n  width: 750rpx;\n  padding: 20rpx 30rpx 0 30rpx;\n}\n.container .priceDetail .toptitle[data-v-5ab843db] {\n  font-size: 30rpx;\n  font-family: PingFangSC-Regular;\n  color: #999999;\n}\n.container .priceDetail .flex[data-v-5ab843db] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  font-size: 24rpx;\n  font-family: PingFangSC-Regular;\n  color: #999999;\n  margin-top: 15rpx;\n  margin-bottom: 15rpx;\n}\n.container .orderPop .content[data-v-5ab843db] {\n  padding: 0 44rpx 0 42rpx;\n  width: 632rpx;\n  height: 1000rpx;\n  background: #ffffff;\n}\n.container .orderPop .content .top .poptop[data-v-5ab843db] {\n  margin: 0 auto;\n  display: block;\n  width: 216rpx;\n}\n.container .orderPop .content .top .title[data-v-5ab843db] {\n  margin-top: 12rpx;\n  margin-bottom: 20rpx;\n  text-align: center;\n  font-size: 36rpx;\n  font-family: PingFang SC-Semibold, PingFang SC;\n  font-weight: 600;\n  color: #000000;\n  letter-spacing: 1px;\n}\n.container .orderPop .content .content[data-v-5ab843db] {\n  overflow-y: auto;\n  width: 546rpx;\n  height: 544rpx;\n  background: #f4f4f4;\n  border-radius: 16rpx;\n}\n.container .orderPop .content .content .message[data-v-5ab843db] {\n  width: 471rpx;\n  white-space: pre-wrap;\n  font-size: 26rpx;\n  font-family: PingFang SC;\n  color: #ef6161;\n  line-height: 48rpx;\n  text-align: left;\n  margin-top: 10rpx;\n}\n.container .orderPop .content .bottom_tools[data-v-5ab843db] {\n  padding-top: 20rpx;\n}\n.container .orderPop .content .btns[data-v-5ab843db] {\n  margin-top: 20rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.container .orderPop .content .btns .btn[data-v-5ab843db] {\n  width: 260rpx;\n  height: 80rpx;\n  border-radius: 76rpx;\n}\n.container .orderPop .content .btns .cancel[data-v-5ab843db] {\n  background: #f4f4f4;\n  color: #000000;\n}\n.container .orderPop .content .btns .submit[data-v-5ab843db] {\n  background: #41d9cd;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

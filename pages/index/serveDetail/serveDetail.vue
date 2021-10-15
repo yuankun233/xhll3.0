@@ -37,13 +37,13 @@
         <!-- 项目信息 -->
         <view class="top_servedetail">
             <view class="top">
-                <image src="../../../static/index/logo.png" mode="widthFix" class="logo"></image>
+                <image src="../../../static/index/logo.png" mode="widthFix" class="logo" :lazy-load="true"></image>
                 <view class="text">小护来了</view>
             </view>
             <view class="content">
-                <image src="../../../static/index/project.png" mode="widthFix" class="left"></image>
+                <image :src="serveDetail.servicePicurl" mode="widthFix" class="left" :lazy-load="true"></image>
                 <view class="right">
-                    <view class="project_name">腹膜透析</view>
+                    <view class="project_name">{{ serveDetail.serviceName }}</view>
                     <view class="flex">
                         <view class="project_num">已选×{{ form.num }}</view>
                         <view class="project_price">￥{{ form.projecetPrice }}</view>
@@ -56,11 +56,11 @@
         <view class="selectServeMessage">
             <view class="serve_patient item" @click="picker.patient = true">
                 <view class="label common_title">服务对象</view>
-                <input type="text" class="input" placeholder="请选择信息" :placeholder-style="placeholder" :disabled="disabled" />
+                <input type="text" v-model="form.archiveName" class="input" placeholder="请选择信息" :placeholder-style="placeholder" :disabled="disabled" />
             </view>
             <view class="serve_patient item" @click="picker.date = true">
                 <view class="label common_title">服务日期</view>
-                <input type="text" class="input" v-model="form.date" placeholder="请选择服务日期" :placeholder-style="placeholder" :disabled="disabled" />
+                <input type="text" v-model="form.date" class="input" placeholder="请选择服务日期" :placeholder-style="placeholder" :disabled="disabled" />
             </view>
             <view class="serve_patient item" @click="picker.time = true">
                 <view class="label common_title">服务时间</view>
@@ -103,11 +103,11 @@
             <view class="content"><view v-for="item in 12" :key="this">1.核对患者直观信息及维护单</view></view>
             <view class="title">服务须知</view>
             <view class="content2"><view>护士上门为患者进行维护，需提供维护记录单，本服务只提供技术，耗材需自备</view></view>
-            <image src="http://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
+            <image src="http://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" :lazy-load="true" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
         </view>
 
         <!-- 底部固定结算栏 -->
-        <i class="iconfont icon-ditu" style="font-size: 50rpx;color: #007AFF;"></i>
+        <!-- <i class="iconfont icon-ditu" style="font-size: 50rpx;color: #007AFF;"></i> -->
         <view class="bottom_wrap"></view>
         <view class="bottom_payBar">
             <view class="price">
@@ -115,22 +115,93 @@
                 <view class="price">{{ totalOrderFee }}</view>
             </view>
             <view class="flex">
-                <view class="detail">
+                <view class="detail" @click="orderDetailPop = !orderDetailPop">
                     明细
-                    <i class="iconfont icon-zhankai"></i>
+                    <!-- <i class="iconfont icon-zhankai"></i> -->
+                    <image src="../../../static/index/up.png" mode="widthFix" v-show="orderDetailPop == false" class="arrow_icon" :lazy-load="true"></image>
+                    <image src="../../../static/index/down.png" mode="widthFix" v-show="orderDetailPop" class="arrow_icon" :lazy-load="true"></image>
                 </view>
-                <u-button type="primary" class="submit" :ripple="true">提交订单</u-button>
+                <u-button type="primary" class="submit" :ripple="true" @click="orderPopup()">提交订单</u-button>
             </view>
         </view>
         <!-- 页面主体结束 -->
 
         <!-- 页面隐藏结构 -->
+        <!-- 费用明细 -->
+        <view class="priceDetail" v-show="orderDetailPop">
+            <view class="toptitle">费用明细</view>
+            <view class="flex">
+                <view class="title">服务费×{{ form.num }}</view>
+                <view class="price">￥{{ totalOrderFee }}</view>
+            </view>
+            <view class="flex">
+                <view class="title">优惠金额</view>
+                <view class="price">-￥0.00</view>
+            </view>
+        </view>
 
         <!-- 选择器 -->
+        <!-- 服务对象选择 -->
+        <u-picker v-model="picker.patient" mode="selector" :range="picker_patient" @confirm="pickerCallback1"></u-picker>
         <!-- 时间选择 -->
+        <u-picker v-model="picker.time" mode="selector" :range="pickerDate_time" @confirm="pickerCallback2"></u-picker>
+        <!-- 日期选择 -->
         <u-picker v-model="picker.date" mode="time" @confirm="pickerDate"></u-picker>
 
-        <u-picker v-model="picker.time" mode="selector" :range="pickerDate_time" @confirm="pickerCallback"></u-picker>
+        <!-- 提交订单弹窗 -->
+        <u-popup mode="center" v-model="orderPop" class="orderPop" border-radius="24">
+            <view class="content">
+                <view class="top">
+                    <image src="../../../static/index/orderPopTop.png" class="poptop" mode="widthFix" :lazy-load="true"></image>
+                    <view class="title">预约须知</view>
+                </view>
+                <view class="content">
+                    <scroll-view scroll-y="true" @scrolltolower="scrollbottom" style="height: 544rpx;width: 546rpx;">
+                        <view class="message">
+                            尊敬的先生/女士： 为了更好的给您和您的家人提供优质的居家专业服务，请务必仔细阅读本须知：
+                            <br />
+                            一、请如实告知疾病诊断，不要隐瞒传染类、精神类疾病等病史，或可能影响服务人员和自身安全的因素。
+                            <br />
+                            二、请在服务人员的服务时间内，尽可能保证有二人或二人以上人员在家。三、安全告知：小护来了居家服务项目都是常规专业内容，是帮助患者维护健康所采取的医学护理服务。由于个体的差异性、疾病的复杂性及不可抗拒的因素等，服务人员不能预测服务中或服务后患者的并发症等不良事件发生，特告知如下:
+                            <br />
+                            1、心脑疾病的突发；
+                            <br />
+                            2、伤口出血、疼痛、感染、异常生长等；
+                            <br />
+                            3、肠造口出血感染，造口狭窄，造口突出等并发症；
+                            <br />
+                            4、导管滑脱、移位、堵塞、感染等；
+                            <br />
+                            5、康复功能恢复不良等；
+                            <br />
+                            6、其他意外情况发生：如跌倒等。
+                            <br />
+                            四、您在下单后如需要更改服务时间，请提前6小时联系客服。
+                            <br />
+                            五、若服务人员已经接单，则所支付的金额不能全额退回。特告知：
+                            <br />
+                            1.服务人员已接单，扣除支付金额的30%
+                            <br />
+                            2.服务人员已出发，扣除支付金额的50%
+                            <br />
+                            3.服务人员已到达，扣除支付金额的80%
+                            <br />
+                            4.若用户下了多个订单，已服务过的项目正常结算。 请仔细阅读确认后下单。谢谢配合！
+                        </view>
+                    </scroll-view>
+                </view>
+                <view class="bottom_tools">
+                    <view class="checkbox">
+                        <u-checkbox :disabled="checkbox_disabled" v-model="checkbox_checked"></u-checkbox>
+                        <text>下滑到底并勾选，即同意“预约须知”</text>
+                    </view>
+                    <view class="btns">
+                        <u-button type="primary" class="cancel btn" :ripple="true" @click="orderPop = false">取消</u-button>
+                        <u-button type="primary" class="submit btn" :ripple="true" @click="submitOrder">同意</u-button>
+                    </view>
+                </view>
+            </view>
+        </u-popup>
     </view>
 </template>
 
@@ -153,7 +224,7 @@ export default {
                 //项目id
                 projecetId: '',
                 //项目价格
-                projecetPrice: 66,
+                projecetPrice: '',
                 //服务项目
                 body: '',
                 //服务次数
@@ -172,12 +243,16 @@ export default {
                 remarks: '',
                 //订单价格
                 // orderFee:this.data.total_fee,
-                orderFee: 0, //订单价格
+                orderFee: '', //订单价格
                 remark: '' //备注
             },
+            // 服务详情的信息
+            serveDetail: '',
+
+            //  以下都是页面布局样式所需要的数据变量
+
             // 输入框是否禁用
             disabled: true,
-            //  以下都是页面布局样式所需要的数据变量
             // 顶部状态栏高度
             statusBarHeight: 20,
             // 顶部导航规格和详情切换
@@ -193,7 +268,17 @@ export default {
                 time: false
             },
             // 服务时间段pickerdata
-            pickerDate_time: ['08:00-12:00', '13:00-18:00', '18:00-22:00']
+            pickerDate_time: ['08:00-12:00', '13:00-18:00', '18:00-22:00'],
+            //患者信息
+            picker_patient: [],
+            // 订单明细弹出层
+            orderDetailPop: false,
+            // 下单时的提示信息弹窗
+            orderPop: false,
+            // 下单时的信息弹窗复选框是否禁用
+            checkbox_disabled: true,
+            // 下单信息复选框是否选中
+            checkbox_checked: false
         }
     },
     components: {
@@ -209,7 +294,95 @@ export default {
         }
     },
     methods: {
-        // 页面导航切换
+        // 1  获取服务详情
+        getServeDetail() {
+            try {
+                this.$myRequest1({
+                    url: 'xhll/ServiceList/selectServiceList',
+                    methods: 'POST',
+                    data: {
+                        serviceId:this.form.projecetId
+                    }
+                }).then(res => {
+                    console.log('获取服务详情:', res)
+                    this.serveDetail = res.data.data.selectItems[0]
+                    // 保存单价到data
+                    this.form.projecetPrice = res.data.data.selectItems[0].servicePrice
+                })
+            } catch (e) {
+                //TODO handle the exception
+            }
+        },
+        // 2  获取用户健康档案
+        async getPatientMessage() {
+            try {
+                this.$myRequest1({
+                    url: 'xhll/patient/selectPatient',
+                    methods: 'POST',
+                    data: {
+                        userId: '2'
+                    }
+                }).then(res => {
+                    console.log('获取患者健康档案:', res)
+                    // 获取所有健康档案
+                    let patients = res.data.data.selectPatient.data
+                    // 组装数据
+                    let patientnames = []
+                    patients.forEach(item => {
+                        patientnames.push(item.archivesName)
+                    })
+                    // 储存健康档案
+                    this.picker_patient = patientnames
+                })
+            } catch (e) {
+                //TODO handle the exception
+            }
+        },
+        // 3 正式提交订单，并调起支付
+        submitOrder() {
+            if (this.checkbox_checked == false) {
+                uni.showToast({
+                    title: '请先同意预约须知',
+                    icon: 'none'
+                })
+                return
+            }
+            console.log('执行付款相关操作')
+        },
+        //  1 提示弹窗滚动到底部触发事件
+        scrollbottom() {
+            console.log('提示信息到底了!')
+            // 将复选框变为可用
+            this.checkbox_disabled = false
+        },
+        //  2 校验表单并弹出弹窗
+        orderPopup() {
+            // 非空验证
+            if (this.form.archiveName == '') {
+                uni.showToast({
+                    title: '请选择患者',
+                    icon: 'none'
+                })
+                return
+            }
+            if (this.form.date == '') {
+                uni.showToast({
+                    title: '请选择服务日期',
+                    icon: 'none'
+                })
+                return
+            }
+            if (this.form.timeSlot == '') {
+                uni.showToast({
+                    title: '请选择服务时间段',
+                    icon: 'none'
+                })
+                return
+            }
+            // 打开弹出层
+            this.orderPop = true
+        },
+        // 3 页面导航切换
         navCheckout(state) {
             this.navState = state
             // 1 滚动到规格(页面顶部)
@@ -227,7 +400,7 @@ export default {
                 })
             }
         },
-        // 选择框赋值回调
+        // 4 选择框赋值回调
         pickerDate(e) {
             // 日期选择
             console.log(e)
@@ -235,15 +408,22 @@ export default {
             console.log(date)
             this.form.date = date
         },
-        // 时间选择
-        pickerCallback(e) {
+        //  5 患者选择
+        pickerCallback1(e) {
+            console.log(e)
+            let index = e[0]
+            // 赋值给form
+            this.form.archiveName = this.picker_patient[index]
+        },
+        // 6 时间选择
+        pickerCallback2(e) {
             console.log(e)
             let index = e[0]
             // 赋值给form
             this.form.timeSlot = this.pickerDate_time[index]
         },
 
-        // 所选数量变化
+        // 7 所选数量变化
         changeNum(mode) {
             // 数量增加
             if (mode == 'add') {
@@ -258,27 +438,16 @@ export default {
                     this.form.num -= 1
                 }
             }
-        },
-        // 获取服务详情
-        getServeDetail() {
-            try {
-                this.$myRequest2({
-                    url: '/xhll/ServiceList/selectServiceList',
-                    methods: 'POST',
-                    data: {
-                        serviceId: 45
-                    }
-                }).then(res => {
-                    console.log('获取服务详情:', res)
-                })
-            } catch (e) {
-                //TODO handle the exception
-            }
         }
     },
-    onLoad() {
+    onLoad(options) {
+        console.log(options)
+        // 获取传过来的项目id
+        this.form.projecetId = options.projecetId
         // 获取服务详情
         this.getServeDetail()
+        // 获取用户健康档案
+        this.getPatientMessage()
     },
     mounted() {
         // 在vue示例挂载时获取到详情模块的位置

@@ -4,7 +4,7 @@
 // 表单校验错误提示
 export const errorType = ['toast']
 
-// 表单校验规则
+// 登录表单校验规则
 export const rules = {
     // 手机号码
     tel: [{
@@ -31,5 +31,25 @@ export const rules = {
     password: [{
         required: true,
         message: "请输入密码"
+    }]
+}
+
+
+// 详情页表单校验规则
+export const serveDetailRules = {
+    // 患者名称
+    archiveName: [{
+        required: true,
+        message: '请选择患者'
+    }],
+    // 服务时间
+    timeSlot: [{
+        required: true,
+        message: "请选择服务时间"
+    }],
+    // 服务日期
+    date: [{
+        required: true,
+        message: "请选择服务日期"
     }]
 }

@@ -204,6 +204,7 @@
 }
 .container .selectNum .handle .num {
   margin: 0 14rpx;
+  text-align: center;
 }
 .container .selectNum .handle .iconfont {
   color: #41d9cd;
@@ -326,9 +327,9 @@
   color: #999999;
   line-height: 38rpx;
 }
-.container .bottom_payBar .flex .detail .iconfont {
-  font-size: 15rpx;
-  padding-bottom: 12rpx;
+.container .bottom_payBar .flex .detail .arrow_icon {
+  width: 19rpx;
+  height: 12rpx;
   margin-left: 12rpx;
   margin-right: 12rpx;
 }
@@ -337,4 +338,84 @@
   height: 80rpx;
   background: #41d9cd;
   border-radius: 76rpx;
+}
+.container .priceDetail {
+  position: fixed;
+  bottom: 110rpx;
+  background-color: #ffffff;
+  width: 750rpx;
+  padding: 20rpx 30rpx 0 30rpx;
+}
+.container .priceDetail .toptitle {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: #999999;
+}
+.container .priceDetail .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: #999999;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+.container .orderPop .content {
+  padding: 0 44rpx 0 42rpx;
+  width: 632rpx;
+  height: 1000rpx;
+  background: #ffffff;
+}
+.container .orderPop .content .top .poptop {
+  margin: 0 auto;
+  display: block;
+  width: 216rpx;
+}
+.container .orderPop .content .top .title {
+  margin-top: 12rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-family: PingFang SC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 1px;
+}
+.container .orderPop .content .content {
+  overflow-y: auto;
+  width: 546rpx;
+  height: 544rpx;
+  background: #f4f4f4;
+  border-radius: 16rpx;
+}
+.container .orderPop .content .content .message {
+  width: 471rpx;
+  white-space: pre-wrap;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  color: #ef6161;
+  line-height: 48rpx;
+  text-align: left;
+  margin-top: 10rpx;
+}
+.container .orderPop .content .bottom_tools {
+  padding-top: 20rpx;
+}
+.container .orderPop .content .btns {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.container .orderPop .content .btns .btn {
+  width: 260rpx;
+  height: 80rpx;
+  border-radius: 76rpx;
+}
+.container .orderPop .content .btns .cancel {
+  background: #f4f4f4;
+  color: #000000;
+}
+.container .orderPop .content .btns .submit {
+  background: #41d9cd;
 }

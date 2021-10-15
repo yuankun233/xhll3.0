@@ -115,13 +115,12 @@ export default {
                     console.log('验证失败')
                 }
             })
-            
         },
         // 手机号密码登录
         async passwordLogin() {
             try {
                 const res = await this.$myRequest2({
-                    url: '/enroll/api/userregister',
+                    url: 'enroll/api/userregister',
                     methods: 'POST',
                     data: {
                         userPhone: this.form.tel,
@@ -137,7 +136,7 @@ export default {
         async authcodeLogin() {
             try {
                 const res = await this.$myRequest2({
-                    url: '/enroll/api/userlogon',
+                    url: 'enroll/api/userlogon',
                     methods: 'POST',
                     data: {
                         userPhone: this.form.tel,
@@ -176,7 +175,7 @@ export default {
             // 获取验证码
             try {
                 const res = await this.$myRequest2({
-                    url: '/enroll/api/checkmsg',
+                    url: 'enroll/api/checkmsg',
                     data: {
                         userPhone
                     }
