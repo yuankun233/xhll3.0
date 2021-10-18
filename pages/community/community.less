@@ -1,0 +1,190 @@
+.container {
+    // 顶部背景以及搜索
+    .top {
+        height: auto;
+        position: relative;
+        font-size: 0;
+        .banner {
+            width: 100%;
+            z-index: 1;
+        }
+        .search_box {
+            position: absolute;
+            bottom: -70rpx;
+            left: 30rpx;
+            padding: 36rpx 66rpx 36rpx 72rpx;
+            z-index: 9;
+            width: 690rpx;
+            height: 142rpx;
+            background: #ffffff;
+            box-shadow: 0px 10rpx 12rpx 2rpx rgba(32, 231, 214, 0.07000000029802322);
+            border-radius: 32rpx;
+            .flex {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .search_input {
+                width: 402rpx;
+                height: 70rpx;
+                background: #f4f4f4;
+                border-radius: 60rpx;
+                display: flex;
+                align-items: center;
+                padding: 0 36rpx;
+                .input {
+                    height: 70rpx;
+                    line-height: 70rpx;
+
+                    font-size: 24rpx;
+                    font-family: PingFang SC-Light, PingFang SC;
+                    font-weight: 300;
+                    color: #333333;
+                }
+                .iconfont {
+                    margin-right: 16rpx;
+                    font-size: 26rpx;
+                    color: #333333;
+                }
+            }
+            .search_btn {
+                width: 118rpx;
+                height: 70rpx;
+                background: #41d9cd;
+                border-radius: 60rpx;
+
+                font-size: 24rpx;
+                font-family: PingFang SC-Light, PingFang SC;
+                font-weight: 300;
+                color: #ffffff;
+                line-height: 28rpx;
+            }
+        }
+    }
+
+    // 主要内容布局
+    .main {
+        margin-top: 104rpx;
+        padding: 0 30rpx;
+        // 模块标题
+        .title_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .left {
+                font-size: 36rpx;
+                font-family: PingFang SC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #000000;
+
+                .line {
+                    width: 100rpx;
+                    height: 8rpx;
+                    background: #41d9cd;
+                    border-radius: 8rpx;
+                }
+            }
+            .right {
+                font-size: 22rpx;
+                font-family: PingFang SC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #333333;
+                .iconfont {
+                    font-size: 5rpx;
+                }
+            }
+        }
+        // 专科护理内容布局
+        .content1 {
+            margin-top: 34rpx;
+            display: flex;
+            .left {
+                margin-right: 18rpx;
+                image {
+                    width: 262rpx;
+                }
+            }
+            .right {
+                .option_item {
+                    margin-bottom: 16rpx;
+                    padding: 0 rpx;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 410rpx;
+                    height: 90rpx;
+                    background: #ffffff;
+                    border-radius: 16rpx;
+                    .flex {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .title {
+                        font-size: 24rpx;
+                        font-family: PingFang SC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #000000;
+                    }
+                    .label {
+                        font-size: 10rpx;
+                        font-family: PingFang SC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #666666;
+                    }
+                    .limg {
+                        width: 60rpx;
+                        margin-right: 15rpx;
+                        margin-left: 24rpx;
+                    }
+                    .rimg {
+                        width: 34rpx;
+                        margin-right: 20rpx;
+                    }
+                }
+                .option_item:nth-of-type(3) {
+                    margin: 0;
+                }
+            }
+        }
+
+        // 其他专科内容布局
+        .content2 {
+            margin-top: 34rpx;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .serveitem {
+                margin-bottom: 14rpx;
+                width: 328rpx;
+                height: 180rpx;
+                background: #ffffff;
+                border-radius: 32rpx;
+                padding: 16rpx 50rpx 16rpx 54rpx;
+                .top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .icon {
+                        width: 50rpx;
+                    }
+                    .title {
+                        font-size: 26rpx;
+                        font-family: PingFang SC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #000000;
+                    }
+                    margin-bottom: 20rpx;
+                }
+                .text {
+                    font-size: 18rpx;
+                    font-family: PingFang SC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #666666;
+                }
+            }
+        }
+    }
+}

@@ -35,4 +35,8 @@ page {
     height: 100%;
     border-radius: 50%;
 }
+// 去除uview按钮的自带margin
+.u-btn{
+    margin: unset;
+}
 </style>

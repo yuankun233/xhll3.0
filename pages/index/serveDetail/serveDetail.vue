@@ -87,7 +87,7 @@
         <!-- 备注 -->
         <view class="remark">
             <view class="common_title title">备注信息</view>
-            <u-input class="textarea" v-model="form.remark" type="textarea" placeholder="如需备注，请说明情况……" maxlength="84" />
+            <u-input class="textarea" v-model="form.remark" type="textarea" placeholder="如需备注，请说明情况……" maxlength="100" />
         </view>
 
         <!-- 服务须知等信息 -->

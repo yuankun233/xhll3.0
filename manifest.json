@@ -46,11 +46,11 @@
             "sdkConfigs" : {
                 "ad" : {}
             }
-        },
-        "statusbar": {  
-            "immersed": false,
-            "style":"light"
         }
+        // "statusbar": {  
+        //     "immersed": false,
+        //     "style":"light"
+        // }
     },
     /* 快应用特有相关 */
     "quickapp" : {},
