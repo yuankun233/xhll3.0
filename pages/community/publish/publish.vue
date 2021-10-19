@@ -1,9 +1,8 @@
 <template>
     <view class="container">
         <my-nav :title="nav_title"></my-nav>
-        <image src="../../../static/index/onlineinquiry_banner.png" mode="widthFix" class="banner"></image>
         <view class="main">
-            <view class="message"><u-input v-model="form.message" type="textarea" class="textarea" placeholder="请描述你的病情" /></view>
+            <view class="message"><u-input v-model="form.message" type="textarea" class="textarea" placeholder="请在这里输入……" /></view>
             <!-- 标签 -->
             <view class="tabs">
                 <view class="item" v-for="(item, index) in tabs" :key="index" @click="addTag(index)">{{ item.label }}</view>
@@ -25,7 +24,7 @@
                 class="uploadImg"
             ></u-upload>
             <view class="text">保护用户隐私，内容仅医生可见</view>
-            <u-button type="primary" :ripple="true" class="nextStep" @click="popup = true">下一步</u-button>
+            <u-button type="primary" :ripple="true" class="nextStep" @click="popup = true">立即发布</u-button>
         </view>
         <!-- 提交成功弹出层 -->
         <u-popup ref="popup" mode="center" v-model="popup" class="popup" border-radius="12">
@@ -45,7 +44,7 @@ import mynav from '@/components/mynav.vue'
 export default {
     data() {
         return {
-            nav_title: '图文问诊',
+            nav_title: '',
             form: {
                 message: ''
             },
@@ -112,12 +111,10 @@ export default {
 
 <style lang="less" scoped>
 .container {
+    height:100%;
     font-size: 0;
     background-color: #ffffff;
-    height: 100%;
-    .banner {
-        width: 100%;
-    }
+
     // 发帖功能部分
     .main {
         margin-top: 30rpx;
@@ -203,6 +200,7 @@ export default {
                 }
                 .backindex {
                     margin: 24rpx auto;
+
                     display: block;
                     width: 280rpx;
                     height: 64rpx;

@@ -1,6 +1,6 @@
 <template>
     <view class="container">
-        <my-nav :title="nav_title"></my-nav>
+        <my-nav :title="nav_title" :isShare="true"></my-nav>
         <view class="main">
             <!-- <image src="../../../static/index/companyProfile.png" mode="widthFix" style="width: 750rpx;"></image> -->
             <view class="bannerbox">

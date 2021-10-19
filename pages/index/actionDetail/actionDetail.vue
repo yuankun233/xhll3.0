@@ -1,6 +1,6 @@
 <template>
     <view class="container">
-        <my-nav :title="nav_title"></my-nav>
+        <my-nav :title="nav_title" :isShare="true"></my-nav>
         <image src="../../../static/index/warefal_banner.png" mode="widthFix" class="banner"></image>
     </view>
 </template>

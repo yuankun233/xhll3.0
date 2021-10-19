@@ -1,8 +1,8 @@
 <template>
     <view class="container">
-        <uniNavBar style="border: none;" :title="title" :statusBar="true">
+        <uniNavBar  :title="title" :statusBar="true" :border="false">
             <i class="iconfont icon-back" slot="left" @click="back"></i>
-            <i class="iconfont icon-fenxiang" slot="right"></i>
+            <i class="iconfont icon-fenxiang" slot="right" v-if="isShare"></i>
         </uniNavBar>
     </view>
 </template>
@@ -11,7 +11,7 @@
 import uniNavBar from '@/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue'
 export default {
     name: 'mynav',
-    props:["title"],
+    props:["title","isShare"],
     data() {
         return {}
     },

@@ -1,0 +1,73 @@
+.container .main {
+  padding: 0 30rpx;
+}
+.container .main .content1 {
+  margin-top: 44rpx;
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 32rpx;
+}
+.container .main .content1 .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .main .content1 .top .text .title {
+  font-size: 52rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.container .main .content1 .top .text .label {
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #666666;
+}
+.container .main .content1 .top .logo {
+  width: 126rpx;
+  height: 60rpx;
+}
+.container .main .content1 .detail {
+  margin-top: 40rpx;
+}
+.container .main .content1 .detail .text {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #666666;
+}
+.container .main .content2 {
+  margin-top: 30rpx;
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 32rpx;
+}
+.container .main .content2 .section1 .text {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #000000;
+}
+.container .main .content2 .section1 .banner {
+  margin-top: 35rpx;
+  width: 100%;
+}
+.container .main .content2 .section2 .text {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #000000;
+}
+.container .topic .title {
+  font-size: 32rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #000000;
+}
+.container .topic .line {
+  margin-top: 8rpx;
+  width: 40rpx;
+  height: 8rpx;
+  background: #41d9cd;
+  border-radius: 8rpx;
+}

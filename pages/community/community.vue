@@ -29,7 +29,7 @@
                 </view>
             </view>
             <view class="content1">
-                <view class="left"><image src="../../static/community/fmtx.png" mode="widthFix" :lazy-load="true"></image></view>
+                <view class="left" @click="toServeCommunity()"><image src="../../static/community/fmtx.png" mode="widthFix" :lazy-load="true"></image></view>
                 <view class="right">
                     <view class="option_item">
                         <view class="flex">
@@ -131,6 +131,13 @@ export default {
                     text: 'PICC导管维护、术后维护、术后指导维护，身体检查。'
                 }
             ]
+        }
+    },
+    methods:{
+        toServeCommunity(){
+            uni.navigateTo({
+                url:"/pages/community/serveCommunity/serveCommunity"
+            })
         }
     }
 }
