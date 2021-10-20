@@ -1,0 +1,102 @@
+.container {
+  width: 100%;
+}
+.container .top {
+  width: 100%;
+  height: 88rpx;
+  background-color: #ffffff;
+  padding-left: 50rpx;
+}
+.container .top .title {
+  line-height: 88rpx;
+  font-size: 40rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.container .articleList {
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+.container .articleList .article1 {
+  position: relative;
+  padding-bottom: 30rpx;
+}
+.container .articleList .article1 .cover1 {
+  width: 690rpx;
+  height: 344rpx;
+  background: url(../../static/information/cover1.png) no-repeat;
+  background-size: 100%;
+}
+.container .articleList .article1 text {
+  top: 290rpx;
+  left: 12rpx;
+  position: absolute;
+  font-size: 32rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #ffffff;
+}
+.container .articleList .articleitem {
+  border-top: 2rpx #eaeaea solid;
+  padding: 22rpx 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.container .articleList .articleitem .left {
+  height: 162rpx;
+  width: 468rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .articleList .articleitem .left .title {
+  font-size: 32rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #0c0c0c;
+}
+.container .articleList .articleitem .left .desc {
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #999999;
+}
+.container .articleList .articleitem .left .desc text {
+  margin-right: 1rem;
+}
+.container .articleList .articleitem .right .cover {
+  width: 214rpx;
+  height: 162rpx;
+  border-radius: 12rpx;
+}
+.container .xhLogo {
+  width: 160rpx;
+  height: 122rpx;
+  margin: 26rpx auto;
+}
+.container .xhLogo image {
+  width: 100%;
+  height: 100%;
+}
+.container .xhJs {
+  display: flex;
+  width: 580rpx;
+  height: 34rpx;
+  margin: 6rpx auto;
+  justify-content: space-between;
+}
+.container .xhJs view:nth-child(1) {
+  width: 96rpx;
+  height: 2rpx;
+  background: rgba(0, 0, 0, 0.05);
+  margin-top: 17rpx;
+}
+.container .xhJs view:nth-child(2) {
+  font-size: 24rpx;
+  color: #d4d4d4;
+  line-height: 34rpx;
+}
+.container .xhJs view:nth-child(3) {
+  width: 96rpx;
+  height: 2rpx;
+  background: rgba(0, 0, 0, 0.05);
+  margin-top: 17rpx;
+}
