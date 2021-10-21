@@ -1,22 +1,76 @@
 <template>
-	<view>
-		
-	</view>
+    <view class="container">
+        <my-nav :title="nav_title" :isShare="true"></my-nav>
+        <!-- 内容 -->
+        <view class="main">
+            <!-- 概述 -->
+            <view class="content1">
+                <view class="top">
+                    <view class="text">
+                        <view class="title">腹膜透析</view>
+                        <view class="label">适应症： 急性肾损伤、慢性肾衰竭</view>
+                    </view>
+
+                    <image src="../../../static/community/logo2.png" class="logo" mode="widthFix" :lazy-load="true"></image>
+                </view>
+                <view class="detail">
+                    <view class="topic">
+                        <view class="title">概述</view>
+                        <view class="line"></view>
+                    </view>
+                    <view class="text">
+                        腹膜透析(PD)是利用腹膜作为半渗透膜的特性，通过重力作用将配制好的透析液规律、定时经导管灌入患者的腹膜腔，由于在腹膜两侧存在溶质的浓度梯度差，高浓度一侧的溶质向低浓度一侧移动(弥散作用)；水分则从低渗一侧向高渗一侧移动(渗透作用)。通过腹腔透析液不断地更换，以达到清除体内代谢产物、毒性物质及纠正水、电解质平衡紊乱的目的。
+                    </view>
+                </view>
+            </view>
+
+            <!-- 原理、适应症 -->
+            <view class="content2">
+                <view class="section1">
+                    <view class="topic">
+                        <view class="title">原理</view>
+                        <view class="line"></view>
+                    </view>
+                    <view class="text">
+                        腹膜透析的基本原理是利用腹膜作为透析膜，把灌入腹腔的透析液与血液分开，腹膜有半透膜性质，并且具有面积大、毛细血管丰富等特点，浸泡在透析液中的腹膜毛细血管腔内的血液与透析液进行广泛的物质交换，以达到清除体内代谢产物和毒物，纠正水电解质、酸碱平衡失调的目的。在腹膜透析中，溶质进行物质交换的方式主要是弥散和对流，水分的清除主要依靠提高渗透压进行超滤。
+                    </view>
+                    <image class="banner" src="../../../static/community/serveinfo_banner.png" mode="widthFix" :lazy-load="true"></image>
+                </view>
+
+                <view class="section2">
+                    <view class="topic">
+                        <view class="title">适应症</view>
+                        <view class="line"></view>
+                    </view>
+                    <view class="text">
+                        1.急性肾损伤
+                        对急性肾损伤应提倡早期透析，主要适用于非高分解代谢型，如存在下列临床表现或各项生化指标达下述水平时，应行腹膜透析治疗：①少尿3天或无尿2天；②存在弥散性血管内凝血；③明显水钠潴留；④严重水肿、脑水肿、急性肺水肿；⑤尿毒症症状明显；⑥严重电解质紊乱、酸碱失衡如高血钾、代谢性酸中毒等；⑦血清肌酐>354μmol/L、血清尿素氮>23.8mmo/L。
+                        2.慢性肾衰竭 内生肌酐清除率Ccr< 10ml/min，血肌酐≥707.2μmol/L，并伴尿毒症症状时即可开始腹膜透析治疗。 （1）尿毒症：当Ccr<
+                        10ml/min，或Scr≥707.2μmol/L(8mgl/dl)，并伴有下列情况之一者：①明显的尿毒症症状（如恶心、呕吐)；②明显的水钠潴留表现（高度水肿、高血容量性心力衰竭或高血压）；③严重的电解质紊乱(如血钾≥6.5mmol/L)；严重的代谢性酸中毒(CO2-CP≤15mmol/L)；④肾移植前后；⑤几种特殊情况的慢性肾功能衰竭：糖尿病肾病；儿童患者；老年患者。
+                        （2）急性药物和毒物中毒：腹膜透析能清除具有下列性质的药物和毒物：①可透析性，分子量小于5000道尔顿；②以非结合形式存在于血液中。腹透与血透和血液灌流相比，治疗中毒的作用较弱，在无上述设备时，可试用。
+                        （3）其他：急性药物或毒物中毒无血液净化设备时；水电解质紊乱、酸碱平衡失调、甲状腺功能亢进、重症急性胰腺炎、广泛化脓性腹膜炎、肝性脑病、高胆红素血症、顽固性心力衰竭、多发性骨髓瘤、银屑病（牛皮癣）等。
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		methods: {
-			
-		}
-	}
+import mynav from '@/components/mynav.vue'
+export default {
+    data() {
+        return {
+            nav_title: '腹膜透析'
+        }
+    },
+    components: {
+        'my-nav': mynav
+    },
+    methods: {}
+}
 </script>
 
-<style>
-
+<style lang="less">
+@import 'serveIntro.less';
 </style>

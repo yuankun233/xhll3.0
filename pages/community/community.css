@@ -1,0 +1,173 @@
+.container .top {
+  height: auto;
+  position: relative;
+  font-size: 0;
+}
+.container .top .banner {
+  width: 100%;
+  z-index: 1;
+}
+.container .top .search_box {
+  position: absolute;
+  bottom: -70rpx;
+  left: 30rpx;
+  padding: 36rpx 66rpx 36rpx 72rpx;
+  z-index: 9;
+  width: 690rpx;
+  height: 142rpx;
+  background: #ffffff;
+  box-shadow: 0px 10rpx 12rpx 2rpx rgba(32, 231, 214, 0.07);
+  border-radius: 32rpx;
+}
+.container .top .search_box .flex {
+  display: flex;
+  justify-content: space-between;
+}
+.container .top .search_box .search_input {
+  width: 402rpx;
+  height: 70rpx;
+  background: #f4f4f4;
+  border-radius: 60rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 36rpx;
+}
+.container .top .search_box .search_input .input {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC-Light, PingFang SC;
+  font-weight: 300;
+  color: #333333;
+}
+.container .top .search_box .search_input .iconfont {
+  margin-right: 16rpx;
+  font-size: 26rpx;
+  color: #333333;
+}
+.container .top .search_box .search_btn {
+  width: 118rpx;
+  height: 70rpx;
+  background: #41d9cd;
+  border-radius: 60rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC-Light, PingFang SC;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 28rpx;
+}
+.container .main {
+  margin-top: 104rpx;
+  padding: 0 30rpx;
+}
+.container .main .title_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .main .title_item .left {
+  font-size: 36rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #000000;
+}
+.container .main .title_item .left .line {
+  width: 100rpx;
+  height: 8rpx;
+  background: #41d9cd;
+  border-radius: 8rpx;
+}
+.container .main .title_item .right {
+  font-size: 22rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.container .main .title_item .right .iconfont {
+  font-size: 5rpx;
+}
+.container .main .content1 {
+  margin-top: 34rpx;
+  display: flex;
+}
+.container .main .content1 .left {
+  margin-right: 18rpx;
+}
+.container .main .content1 .left image {
+  width: 262rpx;
+}
+.container .main .content1 .right .option_item {
+  margin-bottom: 16rpx;
+  padding: 0 rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 410rpx;
+  height: 90rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+}
+.container .main .content1 .right .option_item .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .main .content1 .right .option_item .title {
+  font-size: 24rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #000000;
+}
+.container .main .content1 .right .option_item .label {
+  font-size: 10rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}
+.container .main .content1 .right .option_item .limg {
+  width: 60rpx;
+  margin-right: 15rpx;
+  margin-left: 24rpx;
+}
+.container .main .content1 .right .option_item .rimg {
+  width: 34rpx;
+  margin-right: 20rpx;
+}
+.container .main .content1 .right .option_item:nth-of-type(3) {
+  margin: 0;
+}
+.container .main .content2 {
+  margin-top: 34rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.container .main .content2 .serveitem {
+  margin-bottom: 14rpx;
+  width: 328rpx;
+  height: 180rpx;
+  background: #ffffff;
+  border-radius: 32rpx;
+  padding: 16rpx 50rpx 16rpx 54rpx;
+}
+.container .main .content2 .serveitem .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.container .main .content2 .serveitem .top .icon {
+  width: 50rpx;
+}
+.container .main .content2 .serveitem .top .title {
+  font-size: 26rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #000000;
+}
+.container .main .content2 .serveitem .text {
+  font-size: 18rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}

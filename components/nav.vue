@@ -1,6 +1,6 @@
 <template>
     <view class="container">
-        <uniNavBar border="true" :title="title" :statusBar="true" color="#333333">
+        <uniNavBar border="true" :title="title" :statusBar="true" color="#333333" :border="false">
             <i class="iconfont icon-back" slot="left" @click="back"></i>
             <i class="iconfont icon-fenxiang" slot="right" v-show="ifFx"></i>
         </uniNavBar>

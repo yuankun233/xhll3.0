@@ -1,0 +1,72 @@
+.container .photo {
+  width: 100%;
+  height: 200rpx;
+  background: #FFFFFF;
+  padding: 26rpx 30rpx 0rpx 30rpx;
+  margin-top: 28rpx;
+}
+.container .photo .photo_box {
+  height: 146rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.container .photo .photo_box .photo_1 {
+  font-size: 30rpx;
+  color: #000000;
+  line-height: 146rpx;
+}
+.container .photo .photo_box .photo_2 {
+  width: 146rpx;
+  height: 146rpx;
+  border-radius: 12rpx;
+  margin-left: 420rpx;
+}
+.container .photo .photo_box .photo_2 image {
+  width: 100%;
+  height: 100%;
+}
+.container .photo .photo_box .icon-go {
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 146rpx;
+}
+.container .Mes {
+  width: 100%;
+  padding: 0rpx 30rpx 0rpx 30rpx;
+  background: #FFFFFF;
+  margin-top: 28rpx;
+}
+.container .Mes .Mes_box {
+  height: 98rpx;
+  border-bottom: 2rpx solid #F3F3F3;
+}
+.container .Mes .Mes_box .Mes_1 {
+  display: inline-block;
+  width: 128rpx;
+  font-size: 30rpx;
+  color: #000000;
+  line-height: 98rpx;
+}
+.container .Mes .Mes_box .Mes_2 {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #999999;
+  line-height: 98rpx;
+  float: right;
+  margin-right: 24rpx;
+}
+.container .Mes .Mes_box .icon-go {
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 98rpx;
+  float: right;
+}
+.container .Mes1 {
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.container .Mes1 .Mes1_1 {
+  font-size: 28rpx;
+  color: #000000;
+}

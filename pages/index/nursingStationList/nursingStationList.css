@@ -57,6 +57,9 @@
 .container .nursingStatList .nursingStatList_2 view:nth-child(1) {
   font-size: 28rpx;
   color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .container .nursingStatList .nursingStatList_2 view:nth-child(2) image {
   width: 20rpx;
@@ -71,6 +74,9 @@
   font-size: 22rpx;
   color: #000000;
   margin-top: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .container .nursingStatList .nursingStatList_3 {
   margin-left: 24rpx;
@@ -93,6 +99,7 @@
   width: 580rpx;
   height: 34rpx;
   margin: 6rpx auto;
+  margin-bottom: 218rpx;
   justify-content: space-between;
 }
 .container .xhJs view:nth-child(1) {

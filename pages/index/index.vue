@@ -165,11 +165,12 @@
 			},
 			//点击在线医生拨打电话和跳转到预约项目页面
 			goSpecialty(index) {
-				// if(index == 0){
-				// 	uni.navigateTo({
-				// 		url:'/page'
-				// 	})
-				// }
+				if(index == 0){
+                    // 前往极速问诊
+					uni.navigateTo({
+						url:'/pages/index/onlineInquiry/onlineInquiry'
+					})
+				}
 				if (index == 1) {
 					uni.makePhoneCall({
 						phoneNumber: '4009155291',
@@ -228,6 +229,6 @@
 		},
 	}
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	@import 'index.less';
 </style>

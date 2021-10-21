@@ -122,6 +122,7 @@ export default {
                 const res = await this.$myRequest3({
                     url: 'enroll/api/userregister',
                     methods: 'POST',
+                    header:"",
                     data: {
                         userPhone: this.form.tel,
                         userPassWord: this.form.password
