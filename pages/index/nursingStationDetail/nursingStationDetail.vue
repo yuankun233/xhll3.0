@@ -87,7 +87,7 @@
 			//拨打电话
 			getPhone() {
 				uni.makePhoneCall({
-					phoneNumber: '4009155291',
+					phoneNumber: this.getDetails.nursingTel,
 					// 成功回调
 					success: (res) => {
 						console.log('调用成功!')

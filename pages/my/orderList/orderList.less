@@ -1,94 +1,101 @@
-
-	.orderList{
-		width: 690rpx;
-		height: 244rpx;
-		margin: 28rpx auto;
-		position: relative;
-		background-color: #FFFFFF;
-		border-radius: 12rpx;
-		padding: 18rpx 28rpx 0rpx 34rpx;
-		.title {
-			font-size: 30rpx;
-			color: #000000;
-			font-weight:500 ;
-			display: flex;
-			justify-content: space-between;
-			view:nth-child(2) {
-				font-weight: normal;
-			}
-		}
-		.orderList_box {
-			display: flex;
-			margin-top: 20rpx;
-			.orderList_1 {
-				width: 132rpx;
-				height: 132rpx;
-				image {
-					width: 100%;
-					height: 100%;
-					border-radius: 12rpx;
-				}
-			}
-			.orderList_2 {
-				margin-left: 32rpx;
-				text {
-					display: block;
-					color: #000000;
-				}
-				text:nth-child(1) {
-					font-size: 28rpx;
-				}
-				text:nth-child(2) {
+	.container{
+		
+		.swiper_box{
+			flex: 1;
+			.orderList{
+				width: 690rpx;
+				height: 244rpx;
+				margin: 28rpx auto;
+				position: relative;
+				background-color: #FFFFFF;
+				border-radius: 12rpx;
+				padding: 18rpx 28rpx 0rpx 34rpx;
+				.title {
 					font-size: 30rpx;
-					margin-top: 32rpx;
-					font-weight: 500;
+					color: #000000;
+					font-weight:500 ;
+					display: flex;
+					justify-content: space-between;
+					view:nth-child(2) {
+						font-weight: normal;
+					}
 				}
-				text:nth-child(3) {
-					font-size: 24rpx;
-					color: #999999;
-				}
-			}
-	
-		}
-		.orderList_3 {
+				.orderList_box {
+					display: flex;
+					margin-top: 20rpx;
+					.orderList_1 {
+						width: 132rpx;
+						height: 132rpx;
+						image {
+							width: 100%;
+							height: 100%;
+							border-radius: 12rpx;
+						}
+					}
+					.orderList_2 {
+						margin-left: 32rpx;
+						text {
+							display: block;
+							color: #000000;
+						}
+						text:nth-child(1) {
+							font-size: 28rpx;
+						}
+						text:nth-child(2) {
+							font-size: 30rpx;
+							margin-top: 32rpx;
+							font-weight: 500;
+						}
+						text:nth-child(3) {
+							font-size: 24rpx;
+							color: #999999;
+						}
+					}
 			
-			view {
-				position: absolute;
-				top: 80rpx;
-				left: 384rpx;
-				width: 128rpx;
-				height: 48rpx;
-				line-height: 48rpx;
+				}
+				.orderList_3 {
+					
+					view {
+						position: absolute;
+						top: 80rpx;
+						left: 384rpx;
+						width: 128rpx;
+						height: 48rpx;
+						line-height: 48rpx;
+						text-align: center;
+						font-size: 24rpx;
+						border-radius: 14rpx;
+						margin-top: 96rpx;
+					}
+					view:nth-child(1) {
+						border: 2rpx solid #999999;
+						color: #999999;
+					}
+					view:nth-child(2) {
+						top: 80rpx;
+						left: 530rpx;
+						background-color: #41D9CD;
+						color: #FFFFFF;
+						margin-left: 10rpx;
+					}
+				}
+				//切换待评价只显示订单详情
+				.qh {
+					top: 80rpx!important;
+					left: 530rpx!important;
+				}
+			}
+			.zwImg {
+				width: 420rpx;
+				height: 420rpx;
+				margin-left: 165rpx;
+				margin-top: 252rpx;
+			}
+			.toLoad {
+				font-size: 30rpx;
 				text-align: center;
-				font-size: 24rpx;
-				border-radius: 14rpx;
-				margin-top: 96rpx;
-			}
-			view:nth-child(1) {
-				border: 2rpx solid #999999;
-				color: #999999;
-			}
-			view:nth-child(2) {
-				top: 80rpx;
-				left: 530rpx;
-				background-color: #41D9CD;
-				color: #FFFFFF;
-				margin-left: 10rpx;
 			}
 		}
-		//切换待评价只显示订单详情
-		.qh {
-			top: 80rpx!important;
-			left: 530rpx!important;
-		}
+		
 	}
-	.zwImg {
-		width: 420rpx;
-		height: 420rpx;
-		margin-left: 165rpx;
-		margin-top: 252rpx;
-	}
-	.toLoad {
-		font-size: 30rpx;
-		text-align: center;
-	}
+	

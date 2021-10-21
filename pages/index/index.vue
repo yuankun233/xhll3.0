@@ -1,11 +1,9 @@
 <template>
 	<view class="container">
 		<view class="indexBox">
+			<view class="top_box"></view>
 			<view class="top">
-
 				<!-- 背景图片 -->
-				<view class="backImg"></view>
-
 				<!-- 定位图标 -->
 				<view class="location">
 					<view>
@@ -165,10 +163,10 @@
 			},
 			//点击在线医生拨打电话和跳转到预约项目页面
 			goSpecialty(index) {
-				if(index == 0){
-                    // 前往极速问诊
+				if (index == 0) {
+					// 前往极速问诊
 					uni.navigateTo({
-						url:'/pages/index/onlineInquiry/onlineInquiry'
+						url: '/pages/index/onlineInquiry/onlineInquiry'
 					})
 				}
 				if (index == 1) {
@@ -194,7 +192,7 @@
 			//跳转项目详情
 			goOrder(id) {
 				uni.navigateTo({
-					url: '/pages/index/serveDetail/serveDetail?projecetId='+id
+					url: '/pages/index/serveDetail/serveDetail?projecetId=' + id
 				})
 			},
 			//跳转合作机构和明星护士
@@ -210,22 +208,22 @@
 					})
 				}
 			},
-            // 轮播图
-            tobanner1(){
-                uni.navigateTo({
-                	url: '/pages/index/companyProfile/companyProfile'
-                })
-            },
-            // 轮播图
-            tobanner2(){
-               
-            },
-            // 轮播图
-            tobanner3(){
-                uni.navigateTo({
-                	url: '/pages/index/actionDetail/actionDetail'
-                })
-            }
+			// 轮播图
+			tobanner1() {
+				uni.navigateTo({
+					url: '/pages/index/companyProfile/companyProfile'
+				})
+			},
+			// 轮播图
+			tobanner2() {
+
+			},
+			// 轮播图
+			tobanner3() {
+				uni.navigateTo({
+					url: '/pages/index/actionDetail/actionDetail'
+				})
+			}
 		},
 	}
 </script>

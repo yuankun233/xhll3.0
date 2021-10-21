@@ -44,5 +44,6 @@ page {
 .status_bar {
     width: 100%;
     height: var(--status-bar-height);
+	background-color: #FFFFFF;
 }
 </style>

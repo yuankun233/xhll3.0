@@ -7,13 +7,10 @@
   color: #000000;
   letter-spacing: 1rpx;
 }
-.container .nav_wrap {
-  height: 200rpx;
-}
 .container .navtop {
   z-index: 99;
   position: fixed;
-  top: 88rpx;
+  top: var(--status-bar-height);
   width: 750rpx;
   height: 88rpx;
   background-color: #fff;

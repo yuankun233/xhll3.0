@@ -1,5 +1,8 @@
 <template>
     <view class="container">
+        <view class="status_bar" style="background-color: #6BD8CD;z-index: 50;position: fixed;"></view>
+        <view class="status_bar"></view>
+
         <!-- 顶部背景和搜索框 -->
         <view class="top">
             <image src="../../static/community/community_banner.png" :lazy-load="true" mode="widthFix" class="banner"></image>
@@ -133,10 +136,10 @@ export default {
             ]
         }
     },
-    methods:{
-        toServeCommunity(){
+    methods: {
+        toServeCommunity() {
             uni.navigateTo({
-                url:"/pages/community/serveCommunity/serveCommunity"
+                url: '/pages/community/serveCommunity/serveCommunity'
             })
         }
     }

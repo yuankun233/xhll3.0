@@ -3,12 +3,20 @@
 		
         <!-- 状态栏 -->
        <!-- <statusbar></statusbar> -->
-       <view class="statusbar">
+   
            
-       </view>
+      
         <!-- 顶部标题 -->
         <view class="top">
+            <view class="status_bar"></view>
+            
             <view class="title">健康园地</view>
+        </view>
+        <!-- 顶部导航和状态栏占位高度 -->
+        <view class="heightBox">
+            <view class="status_bar"></view>
+            
+           
         </view>
         
 		<!-- 选项卡切换 -->
@@ -81,6 +89,30 @@
                    orgin:"问上医",
                    commentNum:"62",
                    issueTime:"昨天"
+               },
+               {
+                   id:3,
+                   title:"世界上两大抗生素：阿莫西林和头孢，你知道他们的区别么？",
+                   cover:"../../static/information/cover3.png",
+                   orgin:"问上医",
+                   commentNum:"62",
+                   issueTime:"昨天"
+               },
+               {
+                   id:4,
+                   title:"世界上两大抗生素：阿莫西林和头孢，你知道他们的区别么？",
+                   cover:"../../static/information/cover3.png",
+                   orgin:"问上医",
+                   commentNum:"62",
+                   issueTime:"昨天"
+               },
+               {
+                   id:5,
+                   title:"世界上两大抗生素：阿莫西林和头孢，你知道他们的区别么？",
+                   cover:"../../static/information/cover3.png",
+                   orgin:"问上医",
+                   commentNum:"62",
+                   issueTime:"昨天"
                }
                ],
          
@@ -128,10 +160,7 @@
 	}
 </script>
 
-<style lang="less">
-    .statusbar{
-         height: var(--status-bar-height);
-         width: 100%;
-    }
+<style lang="less" scoped>
+   
 	@import "information.less";
 </style>
