@@ -6,7 +6,7 @@
 			<view class="myMes_box">
 				<view class="myMes_1">
 					<view class="myMes_1_1">
-						<text>暂定</text>
+						<text>{{user.userPhone}}</text>
 						<text>已认证</text>
 					</view>
 					<view class="myMes_1_2">
@@ -14,7 +14,7 @@
 					</view>
 				</view>
 				<view class="myMes_2">
-					<image class="imageRadio" src="../../static/index/da.png" mode=""></image>
+					<image  @click='previewImg' class="imageRadio" src="../../static/index/da.png" mode=""></image>
 				</view>
 			</view>
 			<view class="myMes_box_1">
@@ -84,8 +84,19 @@
 						img: "icon-shezhi iconfont",
 						mes: "设置"
 					},
-				]
+				],
+				//用户信息
+				user:null
 			}
+		},
+		onLoad() {
+			uni.getStorage({
+				key:"user",
+				success:(res) => {
+					this.user = res.data
+				}
+			})
+			console.log(this.user)
 		},
 		methods: {
 			//跳转功能
@@ -121,7 +132,15 @@
 				uni.navigateTo({
 					url: 'orderList/orderList?id='+index
 				})
-			}
+			},
+			//查看图片
+			// previewImg() {
+			// 	console.log(111)
+			// 	uni.previewImage({
+			// 		current:this.chooseImg[0],
+			// 		urls:this.chooseImg,
+			// 	})
+			// }
 		}
 	}
 </script>

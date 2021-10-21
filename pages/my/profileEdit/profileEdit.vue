@@ -5,8 +5,8 @@
 		<view class="photo">
 			<view class="photo_box">
 				<view class="photo_1">头像</view>
-				<view class="photo_2">
-					<image src="../../../static/index/da.png" mode=""></image>
+				<view class="photo_2"  @click="getImg">
+					<image :src="chooseImg[0]" mode=""></image>
 				</view>
 				<view class="iconfont icon-go"></view>
 			</view>
@@ -79,12 +79,12 @@
 				ifFx: false,
 				//数据
 				inMes: {
-					name: '1',
-					sex: '1',
-					date: '1',
-					phone: '1',
-					city: '1',
-					region: '1'
+					name: '',
+					sex: '',
+					date: '',
+					phone: '',
+					city: '',
+					region: ''
 				}, 
 				setInMes:{
 					setname:'',
@@ -127,11 +127,19 @@
 				//点击下标
 				id:'',
 				//修改title
-				setTitle:''
+				setTitle:'',
+				//头像
+				chooseImg:[]
 			}
 		},
 		onLoad() {
-			
+			//获取用户信息
+			uni.getStorage({
+				key:"user",
+				success:(res) => {
+					this.inMes.name = res.data.userPhone
+				}
+			})
 		},
 		components: {
 			navB,
@@ -144,6 +152,7 @@
 					if(index == 0) {
 						this.modShow = true
 						this.setTitle = '修改昵称'
+						this.setInMes.setname = this.inMes.name
 					}else if(index == 3) {
 						this.modShow = true
 						this.setTitle = '修改手机号码'
@@ -223,6 +232,19 @@
 						this.inMes.region = this.setInMes.setregion;
 					};
 				}
+			},
+			//上传头像
+			getImg() {
+					uni.chooseImage({
+						count:1,
+						success:res => {
+							this.chooseImg = res.tempFilePaths
+							console.log(res.tempFilePaths[0])
+						}
+						
+					})
+				
+				
 			},
 		},
 	}
