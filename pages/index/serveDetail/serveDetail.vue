@@ -1,10 +1,12 @@
 <template>
     <view class="container">
         <!-- 页面主体结构 -->
-        <!-- 状态栏组件 -->
-        <statusbar></statusbar>
+
         <!-- 顶部导航 -->
         <view class="top">
+            <!-- 顶部状态栏占位 -->
+            <view class="status_bar" style="background-color: #fff;z-index: 50;position: fixed;"></view>
+            <view class="status_bar" style="margin-bottom: 88rpx;"></view>
             <view class="navtop">
                 <i class="iconfont icon-back" @click="back"></i>
                 <view class="options">
@@ -12,8 +14,6 @@
                     <view :class="navState == 2 ? 'option option_click' : 'option'" @click="navCheckout(2)">详情</view>
                 </view>
             </view>
-
-            <view class="nav_wrap"></view>
         </view>
 
         <view class="statusbar" :style="{ height: statusBarHeight }"></view>
@@ -104,7 +104,7 @@
                 <view v-for="item in xdlc" :key="this">{{ item.text }}</view>
             </view>
             <view class="title">服务须知</view>
-            <view class="content2"><view>护士上门为患者进行维护，需提供维护记录单，本服务只提供技术，耗材需自备</view></view>
+            <view class="content2"><view>{{serveDetail.serviceNotice}}</view></view>
             <image src="http://xiaohulaile.com/wxcx/tuikuan/tuikuan.png" :lazy-load="true" style="width:662rpx;height:602rpx;margin-left:18rpx"></image>
         </view>
 
@@ -160,35 +160,45 @@
                 <view class="content">
                     <scroll-view scroll-y="true" @scrolltolower="scrollbottom" style="height: 544rpx;width: 546rpx;">
                         <view class="message">
-                            尊敬的先生/女士： 为了更好的给您和您的家人提供优质的居家专业服务，请务必仔细阅读本须知：
+                            感谢信任，我们将竭诚为您提供优质的专业护理服务，为确保您能顺利接受护理服务并保障您和护士的执业安全，特将以下内容告知：
                             <br />
-                            一、请如实告知疾病诊断，不要隐瞒传染类、精神类疾病等病史，或可能影响服务人员和自身安全的因素。
+                            1、 请家属按预约护理时间提前做好准备工作。如：擦拭桌面、地面、保护被服务者不受凉的情况下，开窗通风、备好护士操作用的台面。
                             <br />
-                            二、请在服务人员的服务时间内，尽可能保证有二人或二人以上人员在家。三、安全告知：小护来了居家服务项目都是常规专业内容，是帮助患者维护健康所采取的医学护理服务。由于个体的差异性、疾病的复杂性及不可抗拒的因素等，服务人员不能预测服务中或服务后患者的并发症等不良事件发生，特告知如下:
+                            2、 护士将按时为您提供治疗。双方如遇特殊情况需要更改上门时间和服务内容，均应提前6小时进行沟通协商。
                             <br />
-                            1、心脑疾病的突发；
+                            3、 护士入户提供上门服务，按照居家护理服务规范流程执行服务内容。
                             <br />
-                            2、伤口出血、疼痛、感染、异常生长等；
+                            4、 护士将根据病情和服务内容的需要采集您的个人信息和生命体征并如实记录。
                             <br />
-                            3、肠造口出血感染，造口狭窄，造口突出等并发症；
+                            5、 请您按照护士的指导认真执行相关的护理服务后的内容及注意事项。
                             <br />
-                            4、导管滑脱、移位、堵塞、感染等；
+                            6、 抗生素、生物制品（如脂肪乳等）、化疗药品、各种疫苗、血液制品、以及其他需皮试的药物不在家中使用。
                             <br />
-                            5、康复功能恢复不良等；
+                            7、 护士按照护理需求执行服务，客户及家属不得强行要求护士进行预约项目以外的护理操作。
                             <br />
-                            6、其他意外情况发生：如跌倒等。
+                            8、 除规定的护理服务外，如有其他护理需求，应向派单老师提出，统一安排。不允许私下和护理人员口头协议，如因私下协议造成的损失，我们不承担相应的责任。
                             <br />
-                            四、您在下单后如需要更改服务时间，请提前6小时联系客服。
+                            9、 客户和家属如对护理人员服务有任何意见和建议，可及时向我们反映，我们会认真调查处理并及时反馈。
                             <br />
-                            五、若服务人员已经接单，则所支付的金额不能全额退回。特告知：
+                            10、为保证服务质量、提供优质服务，护理期间或结束后我们会进行不定期电话回访或上门回访请您配合。
                             <br />
-                            1.服务人员已接单，扣除支付金额的30%
+                            11、护理服务期间家属需全程看护患者，听从护士安排。
                             <br />
-                            2.服务人员已出发，扣除支付金额的50%
+                            12、治疗操作后30分钟内，应避免被服务者体位的突然变化。
                             <br />
-                            3.服务人员已到达，扣除支付金额的80%
+                            13、按照要求妥善保管所需的药品。
                             <br />
-                            4.若用户下了多个订单，已服务过的项目正常结算。 请仔细阅读确认后下单。谢谢配合！
+                            14、如您使用的药品或者耗材是自行提供，应符合如下要求：
+                            <br />
+                            （1） 您的药品或者耗材应由标准批准文号、生产厂家：药品名称、剂量、规格、日期、有效期标识清晰、符合要求
+                            <br />
+                            （2） 提供在本市正规医疗机构的治疗证明
+                            <br />
+                            （3） 提供正规的购买发票
+                            <br />
+                            （4） 护士在评估后确认能保证医疗安全后方可进行治疗。
+                            <br />
+                          
                         </view>
                     </scroll-view>
                 </view>
@@ -468,7 +478,7 @@ export default {
             .boundingClientRect(data => {
                 // console.log("得到布局位置信息" + JSON.stringify(data));
                 console.log('节点离页面顶部的距离为' + data.top)
-                this.bottom_message_top = data.top
+                this.bottom_message_top = data.top - 88
             })
             .exec()
     }

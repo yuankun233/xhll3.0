@@ -2,7 +2,7 @@
 	<view class="container">
 		<!-- 头部 -->
 		<view class="status_bar"></view>
-		<view class="myMes">
+		<view class="myMes" @click="goMes">
 			<view class="myMes_box">
 				<view class="myMes_1">
 					<view class="myMes_1_1">
@@ -14,20 +14,20 @@
 					</view>
 				</view>
 				<view class="myMes_2">
-					<image  @click='previewImg' class="imageRadio" src="../../static/index/da.png" mode=""></image>
+					<image class="imageRadio" :src="photo" mode=""></image>
 				</view>
 			</view>
 			<view class="myMes_box_1">
 				<view class="yhq">
-					<view>5</view>
+					<view>0</view>
 					<view>优惠券</view>
 				</view>
 				<view class="yhq">
-					<view>122</view>
+					<view>0</view>
 					<view>积分</view>
 				</view>
 				<view class="yhq">
-					<view>3</view>
+					<view>0</view>
 					<view>关注</view>
 				</view>
 			</view>
@@ -86,7 +86,8 @@
 					},
 				],
 				//用户信息
-				user:null
+				user:null,
+				photo:''
 			}
 		},
 		onLoad() {
@@ -94,6 +95,11 @@
 				key:"user",
 				success:(res) => {
 					this.user = res.data
+					if(res.data.userHeadLogo === '') {
+						this.photo = '../../static/my/tx.png';
+					}else {
+						this.photo = res.data.userHeadLogo
+					}
 				}
 			})
 			console.log(this.user)
@@ -102,9 +108,7 @@
 			//跳转功能
 			goFun(index) {
 				if (index == 3) {
-					uni.navigateTo({
-						url: "profileEdit/profileEdit"
-					})
+					
 				} else if (index == 2) {
 					uni.makePhoneCall({
 						phoneNumber: '4009155291',
@@ -133,14 +137,12 @@
 					url: 'orderList/orderList?id='+index
 				})
 			},
-			//查看图片
-			// previewImg() {
-			// 	console.log(111)
-			// 	uni.previewImage({
-			// 		current:this.chooseImg[0],
-			// 		urls:this.chooseImg,
-			// 	})
-			// }
+			//跳转编辑资料
+			goMes() {
+				uni.navigateTo({
+					url: "profileEdit/profileEdit"
+				})
+			}
 		}
 	}
 </script>

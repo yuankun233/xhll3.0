@@ -146,13 +146,15 @@ export default {
                 })
 				//如果验证成功把个人信息保存到本地然后跳转到首页
 				if(res.response.message === "成功") {
-					uni.switchTab({
-						url: "../index/index"
-					})
 					console.log(res.response.message)
 					uni.setStorage({
 						key:'user',
-						data:res.response.data[0]
+						data:res.response.data[0],
+						success: (res) => {
+							uni.switchTab({
+								url: "../index/index"
+							})
+						}
 					})
 				}
             } catch (e) {

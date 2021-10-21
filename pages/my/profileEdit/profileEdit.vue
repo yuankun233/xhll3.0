@@ -3,10 +3,10 @@
 		<navB :title="title" :ifFx="ifFx"></navB>
 		<!-- 头像区域 -->
 		<view class="photo">
-			<view class="photo_box">
+			<view class="photo_box"   @click="getImg">
 				<view class="photo_1">头像</view>
-				<view class="photo_2"  @click="getImg">
-					<image :src="chooseImg[0]" mode=""></image>
+				<view class="photo_2">
+					<image :src="chooseImg" mode=""></image>
 				</view>
 				<view class="iconfont icon-go"></view>
 			</view>
@@ -129,7 +129,7 @@
 				//修改title
 				setTitle:'',
 				//头像
-				chooseImg:[]
+				chooseImg:'',
 			}
 		},
 		onLoad() {
@@ -137,7 +137,14 @@
 			uni.getStorage({
 				key:"user",
 				success:(res) => {
-					this.inMes.name = res.data.userPhone
+					this.inMes.name = res.data.userPhone;
+					this.inMes.sex = res.data.userSex;
+					this.inMes.phone = res.data.userPhone;
+					if(res.data.userHeadLogo === '') {
+						this.chooseImg = '../../../static/my/tx.png'
+					} else {
+						this.chooseImg = res.data.userHeadLogo
+					}
 				}
 			})
 		},
@@ -156,9 +163,11 @@
 					}else if(index == 3) {
 						this.modShow = true
 						this.setTitle = '修改手机号码'
+						this.setInMes.setphone = this.inMes.phone
 					}else if(index == 5) {
 						this.modShow = true
 						this.setTitle = '修改地址'
+						this.setInMes.setregion = this.inMes.region
 					}
 				if (index == 1) {
 					this.show = true;
@@ -238,8 +247,7 @@
 					uni.chooseImage({
 						count:1,
 						success:res => {
-							this.chooseImg = res.tempFilePaths
-							console.log(res.tempFilePaths[0])
+							this.chooseImg = res.tempFilePaths[0]
 						}
 						
 					})

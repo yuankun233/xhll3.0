@@ -1,273 +1,268 @@
 {
 
 
-    "easycom": {
-        // 下载安装的方式需要前面的"@/"，npm安装的方式无需"@/"
-        // 下载安装方式
-        "^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
-        // npm安装方式
-        // "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
-    },
-    "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"easycom": {
+		// 下载安装的方式需要前面的"@/"，npm安装的方式无需"@/"
+		// 下载安装方式
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		// npm安装方式
+		// "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        {
-            "path": "pages/index/index",
-            "style": {
-                "navigationStyle": "custom"
-            }
-        }, {
-            "path": "pages/community/community",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
 
-        }, {
-            "path": "pages/index/serveList/serveList",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+			}
+		}, {
+			"path": "pages/community/community",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/index/serveDetail/serveDetail",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/index/serveList/serveList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/index/nursingStationList/nursingStationList",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/index/serveDetail/serveDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/index/nursingStationDetail/nursingStationDetail",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/index/nursingStationList/nursingStationList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/index/companyProfile/companyProfile",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/index/nursingStationDetail/nursingStationDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/index/actionDetail/actionDetail",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/index/companyProfile/companyProfile",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/index/nurseList/nurseList",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/index/actionDetail/actionDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/index/nurseDetail/nurseDetail",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/index/nurseList/nurseList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/community/serveCommunity/serveCommunity",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/index/nurseDetail/nurseDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/community/serveIntro/serveIntro",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/community/serveCommunity/serveCommunity",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/information/information",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/community/serveIntro/serveIntro",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/information/articleDetail/articleDetail",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/information/information",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/information/videoDetail/videoDetail",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		}, {
+			"path": "pages/information/articleDetail/articleDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-        }, {
-            "path": "pages/my/my",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
-                "app-plus": {
-                    "renderer": "native"
-                }
-            }
+		}, {
+			"path": "pages/information/videoDetail/videoDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 
-
-        }, {
-            "path": "pages/my/orderList/orderList",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        }, {
-            "path": "pages/my/orderDetail/orderDetail",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        }, {
-            "path": "pages/my/adressList/adressList",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        }, {
-            "path": "pages/my/adressEdit/adressEdit",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        }, {
-            "path": "pages/my/normalQuestion/normalQuestion",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        }, {
-            "path": "pages/my/profileEdit/profileEdit",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        }
-
-        , {
-            "path": "pages/login/login",
-            "style": {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-
-        }
-        ,{
-            "path" : "pages/index/onlineInquiry/onlineInquiry",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-       
-        ,{
-            "path" : "pages/community/reply/reply",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/community/publish/publish",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
-    "globalStyle": {
-        "navigationStyle": "custom"
-        
-    },
-    "tabBar": {
-        "color": "#999999",
-        "selectedColor": "#000000",
-        "borderStyle": "white",
-        "list": [{
-                "pagePath": "pages/index/index",
-                "iconPath": "static/tabs/index.png",
-                "selectedIconPath": "static/tabs/index-active.png",
-                "text": "首页"
-            }, {
-                "pagePath": "pages/community/community",
-                "iconPath": "static/tabs/community.png",
-                "selectedIconPath": "static/tabs/community-active.png",
-                "text": "俱乐部"
-            },
-            {
-                "pagePath": "pages/information/information",
-                "iconPath": "static/tabs/information.png",
-                "selectedIconPath": "./static/tabs/information-active.png",
-                "text": "资讯"
-            },
-            {
-                "pagePath": "pages/my/my",
-                "iconPath": "static/tabs/my.png",
-                "selectedIconPath": "static/tabs/my-active.png",
-                "text": "我的"
-            }
-        ]
-    },
-    "condition": { //模式配置，仅开发期间生效
-        "current": 4, //当前激活的模式(list 的索引项)
-        "list": [{
-                "name": "登录页", //模式名称
-                "path": "pages/login/login", //启动页面，必选
-                "query": "" //启动参数，在页面的onLoad函数里面得到
-            },
-            {
-                "name": "企业简介", //模式名称
-                "path": "pages/index/companyProfile/companyProfile", //启动页面，必选
-                "query": "" //启动参数，在页面的onLoad函数里面得到
-            },
-            {
-                "name": "项目详情", //模式名称
-                "path": "pages/index/serveDetail/serveDetail", //启动页面，必选
-                "query": "" //启动参数，在页面的onLoad函数里面得到
-            },
-            {
-                "name": "在线问诊", //模式名称
-                "path": "pages/index/onlineInquiry/onlineInquiry", //启动页面，必选
-                "query": "" //启动参数，在页面的onLoad函数里面得到
-            },
-            {
-                "name": "小护社区对应服务模块", //模式名称
-                "path": "pages/community/serveCommunity/serveCommunity", //启动页面，必选
-                "query": "" //启动参数，在页面的onLoad函数里面得到
-            }
-
-        ]
-    }
+		}, {
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"renderer": "native"
+				}
+			}
 
 
+		}, {
+			"path": "pages/my/orderList/orderList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/orderDetail/orderDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/adressList/adressList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/adressEdit/adressEdit",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/normalQuestion/normalQuestion",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/profileEdit/profileEdit",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+
+		, {
+			"path": "pages/index/onlineInquiry/onlineInquiry",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+
+		, {
+			"path": "pages/community/reply/reply",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/community/publish/publish",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "black"
+
+	},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#000000",
+		"borderStyle": "white",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabs/index.png",
+				"selectedIconPath": "static/tabs/index-active.png",
+				"text": "首页"
+			}, {
+				"pagePath": "pages/community/community",
+				"iconPath": "static/tabs/community.png",
+				"selectedIconPath": "static/tabs/community-active.png",
+				"text": "俱乐部"
+			},
+			{
+				"pagePath": "pages/information/information",
+				"iconPath": "static/tabs/information.png",
+				"selectedIconPath": "./static/tabs/information-active.png",
+				"text": "资讯"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"iconPath": "static/tabs/my.png",
+				"selectedIconPath": "static/tabs/my-active.png",
+				"text": "我的"
+			}
+		]
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 4, //当前激活的模式(list 的索引项)
+		"list": [{
+				"name": "登录页", //模式名称
+				"path": "pages/login/login", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "企业简介", //模式名称
+				"path": "pages/index/companyProfile/companyProfile", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "项目详情", //模式名称
+				"path": "pages/index/serveDetail/serveDetail", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "在线问诊", //模式名称
+				"path": "pages/index/onlineInquiry/onlineInquiry", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			},
+			{
+				"name": "小护社区对应服务模块", //模式名称
+				"path": "pages/community/serveCommunity/serveCommunity", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+
+		]
+	}
 }

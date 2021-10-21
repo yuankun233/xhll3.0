@@ -19,7 +19,7 @@
 			</u-tabs>
 		</view>
 		<!-- 护理站列表 -->
-		<view class="nursingStatList" v-for="(item,index) in nursingStatList" :key="item.id">
+		<view class="nursingStatList" v-for="(item,index) in nursingStatList" :key="item.id" @click="goDetail(item.id)">
 			<view class="nursingStatList_1">
 				<image :src="item.nursingPicurl" mode=""></image>
 			</view>
@@ -32,7 +32,7 @@
 				<view>距离：11.33km</view>
 				<view>{{item.nursingAddress}}</view>
 			</view>
-			<view class="nursingStatList_3" @click="goDetail(item.id)">查看详情</view>
+			<view class="nursingStatList_3" >查看详情</view>
 		</view>
 		<!-- 小护logo -->
 		<view class="xhLogo">
