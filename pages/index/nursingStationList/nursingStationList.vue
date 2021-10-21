@@ -129,6 +129,6 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	@import "nursingStationList.less";
 </style>

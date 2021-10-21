@@ -77,7 +77,6 @@
 				title: "编辑资料",
 				//是否分享
 				ifFx: false,
-				
 				//数据
 				inMes: {
 					name: '1',
@@ -164,7 +163,7 @@
 				if (index == 4) {
 					this.show = true;
 					this.pickerMode = "region";
-					this.ifs = "true"
+					this.ifs = "true";
 				}
 			},
 			//给页面赋值
@@ -189,13 +188,42 @@
 			// 给修改的数据赋值
 			getInMes() {
 				if(this.setTitle === '修改昵称') {
-					this.inMes.name = this.setInMes.setname
+					if(this.setInMes.setname === '') {
+						this.modShow = true;
+						uni.showToast({
+							title:"昵称格式不对",
+							icon:"error",
+							duration:2000
+						})
+						return
+					}else{
+						this.inMes.name = this.setInMes.setname;
+					}	
 				}else if(this.setTitle === '修改手机号码') {
-					this.inMes.phone = this.setInMes.setphone
+					var isPhone = /^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/;
+					if(this.setInMes.setphone === '' || !isPhone.test(this.setInMes.setphone)) {
+						this.modShow = true;
+						uni.showToast({
+							title:"手机号码格式不对",
+							duration:2000,
+						})
+					}else {
+						this.inMes.phone = this.setInMes.setphone;
+					}
 				}else if(this.setTitle === '修改地址'){
-					this.inMes.region = this.setInMes.setregion
+					if(this.setInMes.setregion === '') {
+						this.modShow = true;
+						uni.showToast({
+							title:"地址不能为空",
+							icon:"error",
+							duration:2000
+						})
+						return
+					}else {
+						this.inMes.region = this.setInMes.setregion;
+					};
 				}
-			}
+			},
 		},
 	}
 </script>

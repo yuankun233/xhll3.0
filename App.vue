@@ -36,7 +36,13 @@ page {
     border-radius: 50%;
 }
 // 去除uview按钮的自带margin
-.u-btn{
+.u-btn {
     margin: unset;
+}
+
+//不包含状态栏
+.status_bar {
+    width: 100%;
+    height: var(--status-bar-height);
 }
 </style>

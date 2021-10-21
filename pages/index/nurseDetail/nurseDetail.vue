@@ -53,7 +53,8 @@
 					</view>
 					<view>
 						<view><text>小林</text><text>满意度</text>
-							<image src="../../../static/index/xingxing.png" mode=""></image>
+							<image v-for="count in 4" :key="this" src="../../../static/index/xingxing.png" mode=""></image>
+							<image src="../../../static/index/xingxingwxz.png" mode=""></image>
 						</view>
 						<view><text>类型：</text><text>腹膜透析</text></view>
 					</view>
@@ -106,7 +107,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	@import "nurseDetail.less";
 	
 </style>
