@@ -6,11 +6,8 @@
 			<view class="myMes_box">
 				<view class="myMes_1">
 					<view class="myMes_1_1">
-						<text>{{user.userPhone}}</text>
+						<text>{{name}}</text>
 						<text>已认证</text>
-					</view>
-					<view class="myMes_1_2">
-						这是你加入小护的第1天
 					</view>
 				</view>
 				<view class="myMes_2">
@@ -87,22 +84,38 @@
 				],
 				//用户信息
 				user:null,
-				photo:''
+				//头像
+				photo:'',
+				//昵称
+				name:''
 			}
 		},
 		onLoad() {
+			
+		},
+		//页面切入之前判断是否登陆
+		onShow() {
+			const NewUser = uni.getStorageSync('user_new');
+			console.log(NewUser.userPhone,11)
 			uni.getStorage({
 				key:"user",
 				success:(res) => {
 					this.user = res.data
-					if(res.data.userHeadLogo === '') {
+					console.log(this.user)
+					if(res.data.userHeadLogo === '' || this.user==='') {
 						this.photo = '../../static/my/tx.png';
+						this.name = NewUser.userPhone;
 					}else {
 						this.photo = res.data.userHeadLogo
+						this.name = res.data.userPhone
 					}
+				},
+				fail:(res) => {
+					uni.navigateTo({
+						url:'/pages/login/login'
+					})
 				}
 			})
-			console.log(this.user)
 		},
 		methods: {
 			//跳转功能

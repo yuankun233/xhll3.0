@@ -1,5 +1,15 @@
 .container {
     overflow: hidden;
+    // 返回按钮
+    .backBtn {
+        font-size: 36rpx;
+        color: #fff;
+        position: fixed;
+        font-family: PingFang SC-Regular, PingFang SC;
+        right: 30rpx;
+        top: 30rpx;
+        z-index: 9;
+    }
     .banner {
         position: fixed;
         top: 0;
@@ -110,6 +120,20 @@
             background: #274c82;
             border-radius: 40rpx;
             opacity: 1;
+        }
+
+        // 用户协议
+        .YH_login {
+            margin: 0 auto;
+            margin-top: 20rpx;
+            text {
+                font-family: PingFang-SC-Medium;
+                font-size: 20rpx;
+                color: #cccccc;
+                .Text_1 {
+                    color: #41d9cd;
+                }
+            }
         }
     }
 }
