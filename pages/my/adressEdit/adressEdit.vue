@@ -55,11 +55,11 @@
 					archivesName: '',
 					archivesSex: '',
 					archivesAge: null,
-					archivesPhone:null,
+					archivesPhone: null,
 					archivesRegion: '',
 					archivesAddress: '',
 					archivesText: '',
-					archivesUid:1
+					archivesUid: 1
 				},
 				radioForm: [{
 					sex: '男',
@@ -79,14 +79,17 @@
 				//表单错误提示
 				errorType,
 				//判断是增加还是修改
-				isStatus:false
+				isStatus: false,
+				//判断页面跳转
+				isServeDetail: ''
 			}
 		},
 		onLoad(option) {
-			if(option.id === 'true') {
+			this.isServeDetail = option.isGo;
+			if (option.id === 'true') {
 				this.isStatus = true;
 				var list = uni.getStorage({
-					key:'user_address',
+					key: 'user_address',
 					success: (res) => {
 						console.log(res.data)
 						this.form.archivesName = res.data.archivesName
@@ -120,10 +123,16 @@
 					}
 				})
 				//判断是否添加成功，跳转到列表页面
-				if(res.data.savePatient === true) {
-					uni.navigateTo({
-						url:'../adressList/adressList'
-					})
+				if (res.data.savePatient === true) {
+					if (this.isServeDetail == 1) {
+						uni.navigateTo({
+							url: '/pages/index/serveDetail/serveDetail?isGo=1'
+						})
+					} else {
+						uni.navigateTo({
+							url: '../adressList/adressList'
+						})
+					}
 				}
 			},
 			//修改接口封装
@@ -137,16 +146,16 @@
 				})
 				console.log(aditRes)
 				//判断是否修改成功，跳转到列表页面
-				if(res.data.editPatient === true) {
+				if (res.data.editPatient === true) {
 					uni.navigateTo({
-						url:'../adressList/adressList'
+						url: '../adressList/adressList'
 					})
 				}
 			},
 			//添加
 			addBtn(e) {
 				//判断是添加还是修改
-				if(e === false) {
+				if (e === false) {
 					//正则验证
 					if (this.form.archivesRegion === '') {
 						uni.showToast({
@@ -163,13 +172,13 @@
 						if (valid) {
 							this.getPort()
 						} else {
-							
+
 						}
 					})
-				}else {
+				} else {
 					this.aditAdress()
 				}
-				
+
 			}
 		},
 		components: {

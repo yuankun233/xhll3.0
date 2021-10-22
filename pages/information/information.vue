@@ -97,22 +97,6 @@
                    orgin:"问上医",
                    commentNum:"62",
                    issueTime:"昨天"
-               },
-               {
-                   id:4,
-                   title:"世界上两大抗生素：阿莫西林和头孢，你知道他们的区别么？",
-                   cover:"../../static/information/cover3.png",
-                   orgin:"问上医",
-                   commentNum:"62",
-                   issueTime:"昨天"
-               },
-               {
-                   id:5,
-                   title:"世界上两大抗生素：阿莫西林和头孢，你知道他们的区别么？",
-                   cover:"../../static/information/cover3.png",
-                   orgin:"问上医",
-                   commentNum:"62",
-                   issueTime:"昨天"
                }
                ],
          

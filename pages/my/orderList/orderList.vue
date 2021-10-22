@@ -32,7 +32,7 @@
 										</view>
 									</view>
 									<view class="orderList_3">
-										<view @click="goDetail(item.orderId)"
+										<view @click="goDetail(item.orderId,index)"
 											:class="item.status === '已完成' || current ==3 ? qh : ''">
 											{{item.status === '待支付'  && current ==0 ? ifStatusDfk : ifStatusDfw}}
 										</view>
@@ -71,7 +71,7 @@
 				ifshow: true,
 				//请求参数
 				data: {
-					userId: 1,
+					userId: '',
 					status: '',
 					currentPage: 1
 				},
@@ -108,6 +108,12 @@
 		},
 		//页面加载时请求数据
 		onLoad(option) {
+			const user = uni.getStorageSync('user');
+			if(user === null) {
+				this.data.userId = '';
+			}else {
+				this.data.userId = user.userId;
+			}
 			this.current = option.id;
 			this.swiperCurrent = option.id;
 			this.ifStatus(option.id);
@@ -132,7 +138,7 @@
 					this.isMore = 1
 				}
 			},
-			//请求列表
+			//请求订单
 			async getList() {
 				const res = await this.$myRequest1({
 					url: 'xhll/order/selectOrder',
@@ -142,6 +148,17 @@
 					}
 				})
 				this.list = res.data.selectOrder.data;
+			},
+			async cancolOrder(index) {
+				const res = await this.$myRequest1({
+					url:'xhll/order/cancelOrder',
+					methods:'POST',
+					data:{
+						id:this.list[index].id,
+						types:0
+					}
+				})
+				this.getList();
 			},
 			//请求分页列表
 			async getListFy() {
@@ -178,6 +195,7 @@
 			},
 			//判断订单状态
 			tabsChange(index) {
+				this.list = [];
 				this.swiperCurrent = index;
 				this.current = index;
 				this.data.currentPage = 1
@@ -186,15 +204,27 @@
 			},
 			//tab随着swiper一起走
 			getIndex(e) {
+				this.list = [];
 				this.current = e.detail.current;
 				this.data.currentPage = 1
 				this.ifStatus(e.detail.current);
 				this.getList();
 			},
 			//跳转订单详情
-			goDetail(id) {
-				if (this.list.status === "待支付") {
-
+			goDetail(id,index) {
+				//判断选项卡是否是待付款，是的话取消订单，如果不是的话就跳转到订单详情
+				if (this.current == 0) {
+					uni.showModal({
+						title:'是否取消',
+						content:'你好',
+						success: res => {
+							if(res.confirm) {
+								this.cancolOrder(index)
+							}else if(res.cancel){
+								
+							}
+						}
+					})
 				} else {
 					uni.navigateTo({
 						url: '../orderDetail/orderDetail?orderId=' + id

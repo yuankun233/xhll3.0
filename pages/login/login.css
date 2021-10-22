@@ -1,6 +1,15 @@
 .container {
   overflow: hidden;
 }
+.container .backBtn {
+  font-size: 36rpx;
+  color: #fff;
+  position: fixed;
+  font-family: PingFang SC-Regular, PingFang SC;
+  right: 30rpx;
+  top: 30rpx;
+  z-index: 9;
+}
 .container .banner {
   position: fixed;
   top: 0;
@@ -97,4 +106,16 @@
   background: #274c82;
   border-radius: 40rpx;
   opacity: 1;
+}
+.container .main .YH_login {
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.container .main .YH_login text {
+  font-family: PingFang-SC-Medium;
+  font-size: 20rpx;
+  color: #cccccc;
+}
+.container .main .YH_login text .Text_1 {
+  color: #41d9cd;
 }

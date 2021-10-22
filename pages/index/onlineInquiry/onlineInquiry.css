@@ -1,0 +1,94 @@
+.container {
+  font-size: 0;
+  background-color: #ffffff;
+  height: 100%;
+}
+.container .banner {
+  width: 100%;
+}
+.container .main {
+  margin-top: 30rpx;
+  padding: 0 36rpx 0 30rpx;
+}
+.container .main .message .textarea {
+  height: 314rpx;
+  width: 684rpx;
+}
+.container .main .tabs {
+  display: flex;
+  align-items: center;
+}
+.container .main .tabs .item {
+  margin-left: 20rpx;
+  width: 156rpx;
+  height: 50rpx;
+  background: #f4f4f4;
+  border-radius: 12rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #000000;
+  line-height: 50rpx;
+}
+.container .main .tabs .item:nth-of-type(1) {
+  margin-left: 0;
+}
+.container .main .uploadImg {
+  margin-top: 48rpx;
+}
+.container .main .text {
+  text-align: center;
+  font-size: 20rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  margin-bottom: 400rpx;
+}
+.container .main .nextStep {
+  margin-left: 20rpx;
+  margin-bottom: 110rpx;
+  width: 652rpx;
+  height: 90rpx;
+  background: #41d9cd;
+  border-radius: 76rpx;
+}
+.container .popup .content {
+  position: relative;
+  overflow: hidden;
+  width: 444rpx;
+  height: 548rpx;
+  background: linear-gradient(134deg, #41d9cd 0%, #40cdc1 100%);
+}
+.container .popup .content .img {
+  margin: 0 auto;
+  display: block;
+  width: 200rpx;
+  margin-top: 68rpx;
+}
+.container .popup .content .bottom {
+  position: absolute;
+  bottom: 0;
+  width: 444rpx;
+  height: 240rpx;
+  background: #ffffff;
+  border-radius: 0px 0px 12rpx 12rpx;
+  padding: 44rpx 34rpx 0 20rpx;
+}
+.container .popup .content .bottom .text {
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+}
+.container .popup .content .bottom .backindex {
+  margin: 24rpx auto;
+  display: block;
+  width: 280rpx;
+  height: 64rpx;
+  border-radius: 52rpx;
+  border: 2rpx solid #41d4c8;
+  background-color: #fff;
+  color: #41d4c8;
+  line-height: 64rpx;
+}
