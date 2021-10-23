@@ -64,7 +64,8 @@
 					}, {
 						name: '黄浦区'
 					}, {
-						name: '静安区'
+						name: '静安区',
+						id:1
 					},
 					{
 						name: '徐汇区'
@@ -93,8 +94,6 @@
 				},
 				//tab样式
 				pad: {
-					// fontSize: "36rpx",
-					// width:"75rpx"
 				}
 			}
 		},
@@ -106,18 +105,32 @@
 		},
 		methods: {
 			//请求数据
-			async getNursingStatList() {
+			async getNursingStatList(id) {
 				const res = await this.$myRequest1({
 					url: 'xhll/NursingStationList/selectStation',
 					methods:'POST'
 				})
-				console.log(res.data.selectStation,'hushiliebiao');
-				this.nursingStatList = res.data.selectStation
+				//如果查看全部就重新赋值一遍然后跳出
+				if(this.current == 0) {
+					this.nursingStatList = res.data.selectStation;
+					return
+				}
+				//重新赋值为了下面做过滤
+				this.nursingStatList = res.data.selectStation;
+				//根据地址过滤对应的
+				var demo = this.nursingStatList.filter(item =>{
+					if(this.list[this.current].name === item.nursingRegion.substring(item.nursingRegion.length-3)) {
+						return true
+					}
+				})
+				//过滤之后赋值给列表
+				this.nursingStatList = demo;
 			},
 			//选项卡切换
 			changeTabs(index) {
 				this.current = index;
-				this.fons = 36
+				this.getNursingStatList(index);
+				
 			},
 			//跳转详情页
 			goDetail(id) {
