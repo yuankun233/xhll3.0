@@ -441,16 +441,24 @@
 					}
 				})
 				console.log(res.data.saveOrder, '支付');
-				uni.requestPayment({
-					provider: 'wxpay',
-					orderInfo: res.data.saveOrder,
-					success: function(res) {
-						console.log('success:' + JSON.stringify(res));
-					},
-					fail: function(err) {
-						console.log('fail:' + JSON.stringify(err));
-					}
-				});
+				if(res.message === '成功') {
+					uni.getProvider({
+					    service: 'payment',
+					    success:  (res) => {
+							console.log(res.provider);
+					        // uni.requestPayment({
+					        // 	provider: 'wxpay',
+					        // 	orderInfo: res.data.saveOrder,
+					        // 	success: (res1) => {
+					        // 		console.log('success:' + JSON.stringify(res1));
+					        // 	},
+					        // 	fail: (err) => {
+					        // 		console.log('fail:' + JSON.stringify(err));
+					        // 	}
+					        // });
+					    }
+					});
+				}
 			},
 			// 3 正式提交订单，并调起支付
 			submitOrder() {

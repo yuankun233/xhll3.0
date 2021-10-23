@@ -149,6 +149,7 @@
 				})
 				this.list = res.data.selectOrder.data;
 			},
+			//取消订单
 			async cancolOrder(index) {
 				const res = await this.$myRequest1({
 					url:'xhll/order/cancelOrder',
@@ -158,7 +159,15 @@
 						types:0
 					}
 				})
+				this.data.currentPage = 1
 				this.getList();
+				
+				if(res.data.cancelOrder === true) {
+					uni.showToast({
+						title:'取消成功',
+					})	
+				}
+				
 			},
 			//请求分页列表
 			async getListFy() {
@@ -201,6 +210,7 @@
 				this.data.currentPage = 1
 				this.ifStatus(index);
 				this.getList();
+				this.isMore = 0
 			},
 			//tab随着swiper一起走
 			getIndex(e) {
@@ -209,17 +219,19 @@
 				this.data.currentPage = 1
 				this.ifStatus(e.detail.current);
 				this.getList();
+				this.isMore = 0
 			},
 			//跳转订单详情
 			goDetail(id,index) {
 				//判断选项卡是否是待付款，是的话取消订单，如果不是的话就跳转到订单详情
 				if (this.current == 0) {
 					uni.showModal({
-						title:'是否取消',
-						content:'你好',
+						title:'提示',
+						content:'是否取消订单',
+						confirmColor:'#41D9CD',
 						success: res => {
 							if(res.confirm) {
-								this.cancolOrder(index)
+								this.cancolOrder(index);
 							}else if(res.cancel){
 								
 							}

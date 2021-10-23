@@ -40,7 +40,7 @@
 					</block>
 					<block>
 						<swiper-item>
-							<image src="../../static/index/gyhd.png" @click="tobanner3" :lazy-load="true"></image>
+							<image src="../../static/index/bannergyhby.png" @click="tobanner3" :lazy-load="true"></image>
 						</swiper-item>
 					</block>
 				</swiper>
@@ -60,7 +60,7 @@
 			<!-- 专科护理 -->
 			<view class="nurseTitle">专科护理</view>
 			<view class="zkNurse">
-				<view @click="goOrder(43)">
+				<view @click="goOrder(43)" style="border-radius: 12rpx;">
 					<image src="../../static/index/fmtx.png" :lazy-load="true"></image>
 					<view class="zkNurse_1">腹膜透析</view>
 					<view class="zkNurse_2">查看详情 ></view>
