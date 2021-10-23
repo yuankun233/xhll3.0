@@ -138,7 +138,11 @@
 				key:"user",
 				success:(res) => {
 					this.inMes.name = res.data.userPhone;
-					this.inMes.sex = res.data.userSex;
+					if(res.data.userSex == 1) {
+						this.inMes.sex = '男';
+					}else {
+						this.inMes.sex = '女';
+					}
 					this.inMes.phone = res.data.userPhone;
 					if(res.data.userHeadLogo === '') {
 						this.chooseImg = '../../../static/my/tx.png'

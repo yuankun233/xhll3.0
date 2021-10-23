@@ -2,8 +2,8 @@
 	<view class="container">
 		<!-- 头部 -->
 		<view class="status_bar"></view>
-		<view class="myMes" @click="goMes">
-			<view class="myMes_box">
+		<view class="myMes">
+			<view class="myMes_box" @click="goMes">
 				<view class="myMes_1">
 					<view class="myMes_1_1">
 						<text>{{name}}</text>
