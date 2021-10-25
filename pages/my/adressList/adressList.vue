@@ -33,11 +33,26 @@
 				ifFx: false,
 				//列表
 				addList: [],
-				isedit:false
+				isedit:false,
+                // 当前登录用户id
+                userId:""
 			}
 		},
 		onLoad() {
-			this.getAddressList();
+            try {
+                // 获取用户信息本地储存
+                const res = uni.getStorageSync('user')
+                console.log(res)
+                if (res) {
+                    this.userId = res.userId
+                    // 获取用户所有健康档案
+                    this.getAddressList();
+                }
+            } catch (e) {
+                //TODO handle the exception
+            }
+            
+			
 		},
 		methods: {
 			//封装请求列表接口
@@ -46,7 +61,7 @@
 					url: 'xhll/patient/selectPatient',
 					methods: 'POST',
 					data: {
-						userId: 1
+						userId: this.userId
 					}
 				})
 				this.addList = res.data.selectPatient.data;
