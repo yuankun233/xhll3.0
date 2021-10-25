@@ -166,6 +166,8 @@ export default {
                     console.log('调用失败!')
                 }
             })
+
+            plus.device.dial('4009155291', true)
         }
     },
     onLoad(options) {

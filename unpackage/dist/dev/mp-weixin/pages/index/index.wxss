@@ -1,0 +1,236 @@
+.indexBox.data-v-57280228 {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  padding-bottom: 20rpx;
+  box-shadow: 0rpx -20rpx 25rpx -20rpx #cfcece inset;
+}
+.top_box.data-v-57280228 {
+  height: 200rpx;
+}
+.top.data-v-57280228 {
+  width: 100%;
+  height: 200rpx;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background: #41D9CD;
+  border-radius: 0px 0px 20px 20px;
+}
+.location.data-v-57280228 {
+  position: absolute;
+  top: 90rpx;
+  left: 40rpx;
+}
+.icon-dizhi.data-v-57280228 {
+  font-size: 46rpx;
+  margin-left: 7rpx;
+  color: #FFFFFF;
+}
+.location view.data-v-57280228:nth-child(2) {
+  font-size: 24rpx;
+  color: #FFFFFF;
+  text-align: center;
+}
+.seek.data-v-57280228 {
+  position: absolute;
+  top: 94rpx;
+  left: 166rpx;
+}
+.seek view input.data-v-57280228 {
+  width: 430rpx;
+  height: 76rpx;
+  background: #FFFFFF;
+  border-radius: 100rpx;
+  font-size: 34rpx;
+  line-height: 48rpx;
+  padding-left: 88rpx;
+}
+.icon-a-sousuo1.data-v-57280228 {
+  font-size: 56rpx;
+  position: absolute;
+  top: 10rpx;
+  left: 20rpx;
+  color: rgba(0, 0, 0, 0.2);
+}
+.titleXh.data-v-57280228 {
+  margin-top: 36rpx;
+  margin-left: 30rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #41D9CD;
+}
+.I_swiper.data-v-57280228 {
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-top: 28rpx;
+}
+.I_swiper swiper.data-v-57280228 {
+  height: 240rpx;
+}
+.I_swiper image.data-v-57280228 {
+  width: 100%;
+  height: 100%;
+}
+.func.data-v-57280228 {
+  display: flex;
+  width: 580rpx;
+  margin-left: 84rpx;
+  margin-top: 60rpx;
+  text-align: center;
+  justify-content: space-between;
+}
+.func view image.data-v-57280228 {
+  width: 124rpx;
+  height: 100rpx;
+}
+.func view.data-v-57280228:nth-child(2) {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #000000;
+}
+.func view.data-v-57280228:nth-child(3) {
+  font-size: 20rpx;
+  color: #999999;
+  font-weight: lighter;
+}
+.nurseTitle.data-v-57280228 {
+  font-size: 36rpx ;
+  color: #333333;
+  font-weight: 500 ;
+  margin-top: 36rpx;
+  margin-left: 30rpx;
+}
+.zkNurse.data-v-57280228 {
+  margin-left: 30rpx;
+  margin-top: 16rpx;
+  display: flex;
+  width: 690rpx;
+  justify-content: space-between;
+}
+.zkNurse > view.data-v-57280228:nth-child(1) {
+  width: 330rpx;
+  height: 330rpx;
+  background: #F4F9FF;
+  position: relative;
+}
+.zkNurse > view:nth-child(1) image.data-v-57280228 {
+  width: 100%;
+  height: 100%;
+  background: #F4F9FF;
+  border-radius: 20rpx;
+}
+.zkNurse > view.data-v-57280228:nth-child(2) {
+  width: 330rpx;
+  height: 330rpx;
+  position: relative;
+}
+.zkNurse > view:nth-child(2) > view.data-v-57280228 {
+  width: 330rpx;
+  height: 150rpx;
+}
+.zkNurse > view:nth-child(2) image.data-v-57280228 {
+  width: 100%;
+  height: 100%;
+}
+.zkNurse > view:nth-child(2) > view.data-v-57280228:nth-child(2) {
+  margin-top: 36rpx;
+}
+.nurseTeam.data-v-57280228 {
+  margin-left: 30rpx;
+  margin-top: 32rpx;
+  display: flex;
+  width: 690rpx;
+  justify-content: space-between;
+}
+.nurseTeam > view.data-v-57280228 {
+  width: 330rpx;
+  height: 150rpx;
+  background: #F4F9FF;
+  border-radius: 8rpx;
+}
+.nurseTeam view image.data-v-57280228 {
+  width: 100%;
+  height: 100%;
+}
+.wdMes.data-v-57280228 {
+  margin-top: 36rpx;
+  display: flex;
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #000000;
+  width: 690rpx;
+}
+.wdMes image.data-v-57280228 {
+  width: 37rpx;
+  height: 37rpx;
+}
+.wdMes view.data-v-57280228:nth-child(2) {
+  margin-left: 22rpx;
+  width: 620rpx;
+}
+.wdMes.data-v-57280228:nth-child(2) {
+  padding-bottom: 20rpx;
+  border-bottom: 4rpx solid #0000001A;
+}
+.pledge.data-v-57280228 {
+  width: 690rpx;
+  height: 70rpx;
+  background: #F4F4F4;
+  border-radius: 8rpx;
+  padding: 0rpx 26rpx 0rpx 26rpx;
+  margin-left: 30rpx;
+  margin-top: 52rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.pledge view.data-v-57280228 {
+  flex: 1;
+  text-align: center;
+  line-height: 70rpx;
+  color: #666666;
+  font-size: 28rpx;
+}
+.pledge view.data-v-57280228:nth-child(1) {
+  font-weight: 500;
+  color: #000000;
+}
+.zkNurse_1.data-v-57280228 {
+  position: absolute;
+  top: 24rpx;
+  left: 30rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #686767;
+}
+.zkNurse_2.data-v-57280228 {
+  width: 130rpx;
+  height: 36rpx;
+  border-radius: 10rpx;
+  background: #46A2FF;
+  position: absolute;
+  text-align: center;
+  line-height: 36rpx;
+  top: 82rpx;
+  left: 30rpx;
+  font-size: 16rpx;
+  color: #FFFFFF;
+}
+.zkNurse_3.data-v-57280228 {
+  position: absolute;
+  top: 120rpx;
+  left: 30rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: red;
+}
+.zkNurseRight_2.data-v-57280228 {
+  position: absolute;
+  top: 200rpx;
+  left: 30rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #686767;
+}
+

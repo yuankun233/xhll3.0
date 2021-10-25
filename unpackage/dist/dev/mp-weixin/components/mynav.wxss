@@ -1,0 +1,11 @@
+.container .icon-back {
+  font-size: 60rpx;
+  color: #666666;
+  opacity: 1;
+}
+.container .icon-fenxiang {
+  font-size: 60rpx;
+  color: #666666;
+  opacity: 1;
+}
+

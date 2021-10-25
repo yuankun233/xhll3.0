@@ -1,0 +1,96 @@
+.container .swiper_box.data-v-a6b450c2 {
+  flex: 1;
+}
+.container .swiper_box .orderList.data-v-a6b450c2 {
+  width: 690rpx;
+  height: 244rpx;
+  margin: 28rpx auto;
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 18rpx 28rpx 0rpx 34rpx;
+}
+.container .swiper_box .orderList .title.data-v-a6b450c2 {
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: 500 ;
+  display: flex;
+  justify-content: space-between;
+}
+.container .swiper_box .orderList .title view.data-v-a6b450c2:nth-child(2) {
+  font-weight: normal;
+}
+.container .swiper_box .orderList .orderList_box.data-v-a6b450c2 {
+  display: flex;
+  margin-top: 20rpx;
+}
+.container .swiper_box .orderList .orderList_box .orderList_1.data-v-a6b450c2 {
+  width: 132rpx;
+  height: 132rpx;
+}
+.container .swiper_box .orderList .orderList_box .orderList_1 image.data-v-a6b450c2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+.container .swiper_box .orderList .orderList_box .orderList_2.data-v-a6b450c2 {
+  margin-left: 32rpx;
+}
+.container .swiper_box .orderList .orderList_box .orderList_2 text.data-v-a6b450c2 {
+  display: block;
+  color: #000000;
+}
+.container .swiper_box .orderList .orderList_box .orderList_2 text.data-v-a6b450c2:nth-child(1) {
+  font-size: 28rpx;
+}
+.container .swiper_box .orderList .orderList_box .orderList_2 text.data-v-a6b450c2:nth-child(2) {
+  font-size: 30rpx;
+  margin-top: 32rpx;
+  font-weight: 500;
+}
+.container .swiper_box .orderList .orderList_box .orderList_2 text.data-v-a6b450c2:nth-child(3) {
+  font-size: 24rpx;
+  color: #999999;
+}
+.container .swiper_box .orderList .orderList_3 view.data-v-a6b450c2 {
+  position: absolute;
+  top: 80rpx;
+  left: 384rpx;
+  width: 128rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-size: 24rpx;
+  border-radius: 14rpx;
+  margin-top: 96rpx;
+}
+.container .swiper_box .orderList .orderList_3 view.data-v-a6b450c2:nth-child(1) {
+  border: 2rpx solid #999999;
+  color: #999999;
+}
+.container .swiper_box .orderList .orderList_3 view.data-v-a6b450c2:nth-child(2) {
+  top: 80rpx;
+  left: 530rpx;
+  background-color: #41D9CD;
+  color: #FFFFFF;
+  margin-left: 10rpx;
+}
+.container .swiper_box .orderList .qh.data-v-a6b450c2 {
+  top: 80rpx!important;
+  left: 530rpx!important;
+}
+.container .swiper_box .zwImg.data-v-a6b450c2 {
+  width: 420rpx;
+  height: 420rpx;
+  margin-left: 165rpx;
+  margin-top: 252rpx;
+}
+.container .swiper_box .toLoad.data-v-a6b450c2 {
+  font-size: 30rpx;
+  text-align: center;
+}
+.BOX.data-v-a6b450c2 {
+  display: flex;
+  flex-direction: column;
+}
+

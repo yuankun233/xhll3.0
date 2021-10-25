@@ -1,0 +1,112 @@
+.container.data-v-293111e0 {
+  width: 100%;
+  margin-top: 88rpx;
+}
+.container .top.data-v-293111e0 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 88rpx;
+  z-index: 10;
+}
+.container .top .title.data-v-293111e0 {
+  padding-left: 50rpx;
+  height: 88rpx;
+  width: 100%;
+  background-color: #ffffff;
+  line-height: 88rpx;
+  font-size: 40rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.container .heightBox .title.data-v-293111e0 {
+  height: 88rpx;
+}
+.container .articleList.data-v-293111e0 {
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+.container .articleList .article1.data-v-293111e0 {
+  position: relative;
+  padding-bottom: 30rpx;
+}
+.container .articleList .article1 .cover1.data-v-293111e0 {
+  width: 690rpx;
+  height: 344rpx;
+  background: url(/static/information/cover1.png) no-repeat;
+  background-size: 100%;
+}
+.container .articleList .article1 text.data-v-293111e0 {
+  top: 290rpx;
+  left: 12rpx;
+  position: absolute;
+  font-size: 32rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #ffffff;
+}
+.container .articleList .articleitem.data-v-293111e0 {
+  border-top: 2rpx #eaeaea solid;
+  padding: 22rpx 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.container .articleList .articleitem .left.data-v-293111e0 {
+  height: 162rpx;
+  width: 468rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .articleList .articleitem .left .title.data-v-293111e0 {
+  font-size: 32rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #0c0c0c;
+}
+.container .articleList .articleitem .left .desc.data-v-293111e0 {
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #999999;
+}
+.container .articleList .articleitem .left .desc text.data-v-293111e0 {
+  margin-right: 1rem;
+}
+.container .articleList .articleitem .right .cover.data-v-293111e0 {
+  width: 214rpx;
+  height: 162rpx;
+  border-radius: 12rpx;
+}
+.container .xhLogo.data-v-293111e0 {
+  width: 160rpx;
+  height: 122rpx;
+  margin: 26rpx auto;
+}
+.container .xhLogo image.data-v-293111e0 {
+  width: 100%;
+  height: 100%;
+}
+.container .xhJs.data-v-293111e0 {
+  display: flex;
+  width: 580rpx;
+  height: 34rpx;
+  margin: 6rpx auto;
+  justify-content: space-between;
+}
+.container .xhJs view.data-v-293111e0:nth-child(1) {
+  width: 96rpx;
+  height: 2rpx;
+  background: rgba(0, 0, 0, 0.05);
+  margin-top: 17rpx;
+}
+.container .xhJs view.data-v-293111e0:nth-child(2) {
+  font-size: 24rpx;
+  color: #d4d4d4;
+  line-height: 34rpx;
+}
+.container .xhJs view.data-v-293111e0:nth-child(3) {
+  width: 96rpx;
+  height: 2rpx;
+  background: rgba(0, 0, 0, 0.05);
+  margin-top: 17rpx;
+}
+

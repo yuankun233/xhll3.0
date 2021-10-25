@@ -55,16 +55,40 @@
     "miniprogram": {
       "list": [
         {
-          "name": "登录页",
+          "name": "首页",
           "query": "",
           "id": 0,
+          "pathName": "pages/index/index"
+        },
+        {
+          "name": "登录页",
+          "query": "",
+          "id": 1,
           "pathName": "pages/login/login"
         },
         {
           "name": "企业简介",
           "query": "",
-          "id": 1,
+          "id": 2,
           "pathName": "pages/index/companyProfile/companyProfile"
+        },
+        {
+          "name": "项目详情",
+          "query": "",
+          "id": 3,
+          "pathName": "pages/index/serveDetail/serveDetail"
+        },
+        {
+          "name": "在线问诊",
+          "query": "",
+          "id": 4,
+          "pathName": "pages/index/onlineInquiry/onlineInquiry"
+        },
+        {
+          "name": "小护社区对应服务模块",
+          "query": "",
+          "id": 5,
+          "pathName": "pages/community/serveCommunity/serveCommunity"
         }
       ]
     }

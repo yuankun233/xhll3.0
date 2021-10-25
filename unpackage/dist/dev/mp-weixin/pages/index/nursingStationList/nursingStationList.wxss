@@ -1,0 +1,122 @@
+.container.data-v-441c1709 {
+  width: 100%;
+}
+.container .banner.data-v-441c1709 {
+  width: 690rpx;
+  margin: 46rpx 0rpx 0rpx 30rpx ;
+  display: flex;
+  justify-content: space-between;
+}
+.container .banner view.data-v-441c1709 {
+  width: 324rpx;
+  height: 172rpx;
+}
+.container .banner view image.data-v-441c1709 {
+  width: 100%;
+  height: 100%;
+}
+.container .banner view text.data-v-441c1709 {
+  position: absolute;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  margin-top: 16rpx;
+  margin-left: 20rpx ;
+}
+.container .banner view.data-v-441c1709:nth-child(1) {
+  background: url(/static/index/hzjgbanner3.png) no-repeat;
+  background-size: 100% 100%;
+}
+.container .banner view.data-v-441c1709:nth-child(2) {
+  background: url(/static/index/hzjgbanner4.png) no-repeat;
+  background-size: 100% 100%;
+}
+.container .nursingStatList.data-v-441c1709 {
+  width: 690rpx;
+  height: 200rpx;
+  background-color: #FFFFFF;
+  border-radius: 8rpx;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+  padding-top: 26rpx ;
+  display: flex;
+}
+.container .nursingStatList .nursingStatList_1.data-v-441c1709 {
+  margin-left: 36rpx;
+  width: 138rpx;
+  height: 138rpx;
+}
+.container .nursingStatList .nursingStatList_1 image.data-v-441c1709 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.container .nursingStatList .nursingStatList_2.data-v-441c1709 {
+  margin-left: 34rpx;
+  width: 324rpx;
+}
+.container .nursingStatList .nursingStatList_2 view.data-v-441c1709:nth-child(1) {
+  font-size: 28rpx;
+  color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .nursingStatList .nursingStatList_2 view:nth-child(2) image.data-v-441c1709 {
+  width: 20rpx;
+  height: 18rpx;
+  margin-right: 8rpx;
+}
+.container .nursingStatList .nursingStatList_2 view.data-v-441c1709:nth-child(3) {
+  font-size: 20rpx;
+  color: #999999;
+}
+.container .nursingStatList .nursingStatList_2 view.data-v-441c1709:nth-child(4) {
+  font-size: 22rpx;
+  color: #000000;
+  margin-top: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .nursingStatList .nursingStatList_3.data-v-441c1709 {
+  margin-left: 24rpx;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 150rpx;
+  font-weight: normal;
+}
+.container .xhLogo.data-v-441c1709 {
+  width: 160rpx ;
+  height: 122rpx;
+  margin: 26rpx auto;
+}
+.container .xhLogo image.data-v-441c1709 {
+  width: 100%;
+  height: 100%;
+}
+.container .xhJs.data-v-441c1709 {
+  display: flex;
+  width: 580rpx;
+  height: 34rpx;
+  margin: 6rpx auto;
+  margin-bottom: 218rpx;
+  justify-content: space-between;
+}
+.container .xhJs view.data-v-441c1709:nth-child(1) {
+  width: 96rpx ;
+  height: 2rpx;
+  background: rgba(0, 0, 0, 0.05);
+  margin-top: 17rpx;
+}
+.container .xhJs view.data-v-441c1709:nth-child(2) {
+  font-size: 24rpx;
+  color: #D4D4D4;
+  line-height: 34rpx;
+}
+.container .xhJs view.data-v-441c1709:nth-child(3) {
+  width: 96rpx ;
+  height: 2rpx;
+  background: rgba(0, 0, 0, 0.05);
+  margin-top: 17rpx;
+}
+

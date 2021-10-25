@@ -177,30 +177,37 @@
 			},
 			//退款
 			async refund(index) {
-				const res = await this.$myRequest1({
-					url: 'xhll/order/usersRefund',
-					methods: 'POST',
-					data: {
-						outTradeNo: this.list[index].outTradeNo,
-						wxRefundOrderNo: '',
-						refundDesc: ''
-					}
-				})
-				if (res.message === '成功') {
-					this.data.currentPage = 1;
-					this.getList();
+				try {
+					this.$myRequest1({
+						url: 'xhll/order/usersRefund',
+						methods: 'POST',
+						data: {
+							outTradeNo: this.list[index].outTradeNo,
+							wxRefundOrderNo: '',
+							refundDesc: ''
+						}
+					}).then(res=>{
+						this.data.currentPage = 1;
+						this.getList();
+						uni.showToast({
+							title: '取消成功',
+						})
+					})
+				} catch (e) {
+					
 				}
 			},
 			//支付0
-			
 			async pay(index) {
 				const res = await this.$myRequest1({
 					url: 'xhll/order/usersPay',
 					methods: 'POST',
 					data: {
-						body: this.list[index].serviceName,
+						serviceName: this.list[index].serviceName,
 						outTradeNo: this.list[index].outTradeNo,
 						orderFee: this.list[index].orderFee,
+						orderSource:'APP微信',
+						num:this.list[index].num,
 						// orderFee:0.01,
 						userLastIp: '',
 						wxOpenId: ''
@@ -213,10 +220,14 @@
 						provider: 'wxpay',
 						orderInfo: res.data.wxPay,
 						success: (res1) => {
-							console.log('success:' + JSON.stringify(res1));
+							uni.showToast({
+								title: '支付成功',
+							})
 						},
 						fail: (err) => {
-							console.log('fail:' + JSON.stringify(err));
+							uni.showToast({
+								title: '取消支付',
+							})
 						}
 					});
 				}
@@ -305,9 +316,6 @@
 						success: res => {
 							if (res.confirm) {
 								this.refund(index);
-								uni.showToast({
-									title: '取消成功',
-								})
 							} else if (res.cancel) {
 
 							}

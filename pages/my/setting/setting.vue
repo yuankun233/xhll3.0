@@ -2,9 +2,10 @@
     <view class="container">
         <my-nav :title="nav_title"></my-nav>
 
-        <u-button type="error" class="btn" v-if="isLogin">退出登录</u-button>
-        <u-button type="primary" class="btn" v-else>登录</u-button>
+        <u-button type="error" class="btn" v-if="isLogin" @click="show = true">退出登录</u-button>
+        <u-button type="primary" class="btn" v-else @click="login">前往登录</u-button>
         <u-modal v-model="show" content="是否退出登录？" @confirm="exit" :show-cancel-button="true"></u-modal>
+        <!-- <u-button type="warning" @click="clear">清除缓存</u-button> -->
     </view>
 </template>
 
@@ -24,33 +25,36 @@ export default {
     methods: {
         //退出登录
         exit() {
-            try{
+            try {
                 const res = uni.removeStorageSync('user')
-                if(res){
-                    uni.showToast({
-                        title:"已退出登录",
-                        icon:"none",
-                        duration:1000,
-                        success: () => {
-                           setTimeout(()=>{
-                               uni.reLaunch({
-                                   url:"/pages/index/index"
-                               })
-                           }) 
-                        }
-                    })
-                }
-            }catch(e){
+
+                uni.showToast({
+                    title: '已退出登录',
+                    icon: 'none',
+                    duration: 1000,
+                    success: () => {
+                        setTimeout(() => {
+                            uni.reLaunch({
+                                url: '/pages/index/index'
+                            })
+                        },1000)
+                    }
+                })
+            } catch (e) {
                 //TODO handle the exception
             }
-           
+        },
+        // 跳转到登录
+        login() {
+            uni.navigateTo({
+                url: '/pages/login/login'
+            })
         }
     },
-    onLoad: () => {
+    onLoad() {
         try {
             // 获取用户信息本地储存
             const res = uni.getStorageSync('user')
-            console.log(res)
             if (res) {
                 this.isLogin = true
             }
