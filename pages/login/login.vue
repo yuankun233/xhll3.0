@@ -165,7 +165,7 @@
 						}
 					})
 					//如果验证成功把个人信息保存到本地然后跳转到首页
-					if (res.response.message === '成功') {
+					if (res.response.message == '成功') {
 						console.log(res.response.message)
 						uni.setStorage({
 							key: 'user',
@@ -175,11 +175,6 @@
 									url: '../index/index'
 								})
 							}
-						})
-						uni.setStorage({
-							key: 'user_new',
-							data: res.userLoginDTO,
-							success: (res) => {}
 						})
 					}
 				} catch (e) {
