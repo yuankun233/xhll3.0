@@ -443,7 +443,7 @@ export default {
                 methods: 'POST',
                 data
             })
-            console.log("创建订单",res)
+            console.log('创建订单', res)
             console.log(res.data.saveOrder, '支付')
             if (res.message === '成功') {
                 uni.requestPayment({
@@ -469,7 +469,14 @@ export default {
                         uni.showToast({
                             title: '用户取消支付',
                             icon: 'none',
-                            duration: 1000
+                            duration: 1000,
+                            success() {
+                                setTimeout(() => {
+                                    uni.navigateTo({
+                                        url: '/pages/my/orderList/orderList?id=0'
+                                    })
+                                }, 1000)
+                            }
                         })
                     }
                 })
@@ -661,6 +668,9 @@ export default {
     onShow() {
         // 重置标识
         this.userFormFlag = true
+        // 重置弹窗
+        this.orderPop = false
+
         // 用户是否登录校验
         this.verifyIsLogin()
     },

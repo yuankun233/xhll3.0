@@ -174,6 +174,8 @@ export default {
             try {
                 // 获取本地缓存,当用户没有登录时换位默认头像和昵称
                 const res = uni.getStorageSync('user')
+                // 获取用户资料相关信息
+                const res1 = uni.getStorageSync('user_mes')
                 if (res) {
                     // 用户已登录,状态改为已登录
                     this.isLogin = true
@@ -192,6 +194,11 @@ export default {
                     }
                 } else {
                     this.name = '未登录'
+                }
+
+                if (res1) {
+                    this.name = res1.name
+                    this.photo = res1.chooseImg
                 }
             } catch (e) {
                 //TODO handle the exception

@@ -17161,6 +17161,19 @@ var render = function() {
           )
         ],
         1
+      ),
+      _c(
+        "v-uni-view",
+        {
+          staticClass: _vm._$g(48, "sc"),
+          attrs: { _i: 48 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [_vm._v("保存资料")]
       )
     ],
     1
@@ -17255,7 +17268,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".container .photo[data-v-1d6e0a3d] {\n  width: 100%;\n  height: 200rpx;\n  background: #FFFFFF;\n  padding: 26rpx 30rpx 0rpx 30rpx;\n  margin-top: 28rpx;\n}\n.container .photo .photo_box[data-v-1d6e0a3d] {\n  height: 146rpx;\n  display: flex;\n  justify-content: space-between;\n}\n.container .photo .photo_box .photo_1[data-v-1d6e0a3d] {\n  font-size: 30rpx;\n  color: #000000;\n  line-height: 146rpx;\n}\n.container .photo .photo_box .photo_2[data-v-1d6e0a3d] {\n  width: 146rpx;\n  height: 146rpx;\n  border-radius: 12rpx;\n  margin-left: 420rpx;\n}\n.container .photo .photo_box .photo_2 uni-image[data-v-1d6e0a3d] {\n  width: 100%;\n  height: 100%;\n}\n.container .photo .photo_box .icon-go[data-v-1d6e0a3d] {\n  font-size: 28rpx;\n  color: #999999;\n  line-height: 146rpx;\n}\n.container .Mes[data-v-1d6e0a3d] {\n  width: 100%;\n  padding: 0rpx 30rpx 0rpx 30rpx;\n  background: #FFFFFF;\n  margin-top: 28rpx;\n}\n.container .Mes .Mes_box[data-v-1d6e0a3d] {\n  height: 98rpx;\n  border-bottom: 2rpx solid #F3F3F3;\n}\n.container .Mes .Mes_box .Mes_1[data-v-1d6e0a3d] {\n  display: inline-block;\n  width: 128rpx;\n  font-size: 30rpx;\n  color: #000000;\n  line-height: 98rpx;\n}\n.container .Mes .Mes_box .Mes_2[data-v-1d6e0a3d] {\n  display: inline-block;\n  font-size: 30rpx;\n  color: #999999;\n  line-height: 98rpx;\n  float: right;\n  margin-right: 24rpx;\n}\n.container .Mes .Mes_box .icon-go[data-v-1d6e0a3d] {\n  font-size: 28rpx;\n  color: #999999;\n  line-height: 98rpx;\n  float: right;\n}\n.container .Mes1[data-v-1d6e0a3d] {\n  margin-bottom: 30rpx;\n  margin-top: 30rpx;\n  margin-left: 30rpx;\n}\n.container .Mes1 .Mes1_1[data-v-1d6e0a3d] {\n  font-size: 28rpx;\n  color: #000000;\n}\n", ""]);
+exports.push([module.i, ".container .photo[data-v-1d6e0a3d] {\n  width: 100%;\n  height: 200rpx;\n  background: #FFFFFF;\n  padding: 26rpx 30rpx 0rpx 30rpx;\n  margin-top: 28rpx;\n}\n.container .photo .photo_box[data-v-1d6e0a3d] {\n  height: 146rpx;\n  display: flex;\n  justify-content: space-between;\n}\n.container .photo .photo_box .photo_1[data-v-1d6e0a3d] {\n  font-size: 30rpx;\n  color: #000000;\n  line-height: 146rpx;\n}\n.container .photo .photo_box .photo_2[data-v-1d6e0a3d] {\n  width: 146rpx;\n  height: 146rpx;\n  border-radius: 12rpx;\n  margin-left: 420rpx;\n}\n.container .photo .photo_box .photo_2 uni-image[data-v-1d6e0a3d] {\n  width: 100%;\n  height: 100%;\n}\n.container .photo .photo_box .icon-go[data-v-1d6e0a3d] {\n  font-size: 28rpx;\n  color: #999999;\n  line-height: 146rpx;\n}\n.container .Mes[data-v-1d6e0a3d] {\n  width: 100%;\n  padding: 0rpx 30rpx 0rpx 30rpx;\n  background: #FFFFFF;\n  margin-top: 28rpx;\n}\n.container .Mes .Mes_box[data-v-1d6e0a3d] {\n  height: 98rpx;\n  border-bottom: 2rpx solid #F3F3F3;\n}\n.container .Mes .Mes_box .Mes_1[data-v-1d6e0a3d] {\n  display: inline-block;\n  width: 128rpx;\n  font-size: 30rpx;\n  color: #000000;\n  line-height: 98rpx;\n}\n.container .Mes .Mes_box .Mes_2[data-v-1d6e0a3d] {\n  display: inline-block;\n  font-size: 30rpx;\n  color: #999999;\n  line-height: 98rpx;\n  float: right;\n  margin-right: 24rpx;\n}\n.container .Mes .Mes_box .icon-go[data-v-1d6e0a3d] {\n  font-size: 28rpx;\n  color: #999999;\n  line-height: 98rpx;\n  float: right;\n}\n.container .Mes1[data-v-1d6e0a3d] {\n  margin-bottom: 30rpx;\n  margin-top: 30rpx;\n  margin-left: 30rpx;\n}\n.container .Mes1 .Mes1_1[data-v-1d6e0a3d] {\n  font-size: 28rpx;\n  color: #000000;\n}\n.container .btn[data-v-1d6e0a3d] {\n  width: 652rpx;\n  height: 90rpx;\n  background-color: #41D9CD;\n  border-radius: 76rpx;\n  font-size: 36rpx;\n  color: #FFFFFF;\n  text-align: center;\n  line-height: 90rpx;\n  margin: 140rpx auto;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

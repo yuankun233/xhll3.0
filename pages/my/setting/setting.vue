@@ -27,6 +27,7 @@ export default {
         exit() {
             try {
                 const res = uni.removeStorageSync('user')
+                const res1 = uni.removeStorageSync('user_mes')
 
                 uni.showToast({
                     title: '已退出登录',

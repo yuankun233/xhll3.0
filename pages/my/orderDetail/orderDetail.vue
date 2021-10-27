@@ -163,7 +163,7 @@ export default {
                 },
                 // 失败回调
                 fail: res => {
-                    console.log('调用失败!')
+                    console.log('调用失败!') 
                 }
             })
 

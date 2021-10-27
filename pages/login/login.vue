@@ -139,9 +139,15 @@ export default {
                         userPassWord: this.form.password
                     }
                 })
-                console.log(res)
+                if (res.success == false) {
+                    uni.showToast({
+                        title: '手机号或密码输入错误',
+                        icon: 'none',
+                        duration: 500
+                    })
+                }
 
-                if (res.response.message == '成功') {
+                if (res.response.success) {
                     uni.setStorage({
                         key: 'user',
                         data: res.response.data[0],
@@ -160,12 +166,7 @@ export default {
                             })
                         }
                     })
-                } else {
-                    uni.showToast({
-                        title: '手机号或密码输入错误',
-                        icon: 'none',
-                        duration: 500
-                    })
+                    return
                 }
             } catch (e) {
                 //TODO handle the exception
@@ -182,8 +183,18 @@ export default {
                         code: this.form.authcode
                     }
                 })
+
+                console.log(res.success)
+                if (res.success == false) {
+                    uni.showToast({
+                        title: '手机号或验证码输入错误',
+                        icon: 'none',
+                        duration: 500
+                    })
+                    return
+                }
                 //如果验证成功把个人信息保存到本地然后跳转到首页
-                if (res.response.message == '成功') {
+                if (res.response.success) {
                     console.log(res.response.message)
                     uni.setStorage({
                         key: 'user',
@@ -203,12 +214,7 @@ export default {
                             })
                         }
                     })
-                }else {
-                    uni.showToast({
-                        title: '手机号或验证码输入错误',
-                        icon: 'none',
-                        duration: 500
-                    })
+                    return
                 }
             } catch (e) {
                 //TODO handle the exception
