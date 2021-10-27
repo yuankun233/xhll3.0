@@ -1,0 +1,37 @@
+.list.data-v-2c959ac5 {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  width: 100%;
+  background: #FFFFFF;
+  margin-top: 28rpx;
+}
+.list .textMes.data-v-2c959ac5 {
+  margin-top: 30rpx;
+}
+.list .textMes view.data-v-2c959ac5 {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #000000;
+}
+.list .textMes view text.data-v-2c959ac5:nth-child(2) {
+  font-size: 24rpx;
+  color: #999999;
+}
+.list .textMes textarea.data-v-2c959ac5 {
+  margin-top: 30rpx;
+}
+.addBtn.data-v-2c959ac5 {
+  width: 652rpx;
+  height: 90rpx;
+  background-color: #41D9CD;
+  border-radius: 76rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 90rpx;
+  position: fixed;
+  top: 1200rpx;
+  left: 56rpx;
+  z-index: 999;
+}
+

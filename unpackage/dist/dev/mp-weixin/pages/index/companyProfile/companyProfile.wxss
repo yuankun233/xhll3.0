@@ -1,0 +1,88 @@
+.container .main {
+  overflow: hidden;
+}
+.container .main .bannerbox {
+  position: relative;
+  height: 468rpx;
+  width: 100%;
+}
+.container .main .bannerbox .banner1 {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+}
+.container .main .bannerbox .banner2 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 10;
+  top: 140rpx;
+  height: 328rpx;
+  width: 652rpx;
+}
+.container .main .text {
+  margin-top: 50rpx;
+}
+.container .main .text .title {
+  width: 196rpx;
+  height: 46rpx;
+  margin-bottom: 28rpx;
+}
+.container .main .text .content {
+  padding: 0 30rpx;
+}
+.container .main .text .content .content_text {
+  text-indent: 2.5em;
+  font-size: 28rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 40rpx;
+}
+.container .main .text .content .banner {
+  width: 100%;
+}
+.container .main .textbottom {
+  margin-bottom: 162rpx;
+}
+.container .main .textbottom .map {
+  width: 326rpx;
+  height: 180rpx;
+  opacity: 1;
+  margin-right: 34rpx;
+}
+.container .main .textbottom .contentbottom {
+  display: flex;
+  justify-content: space-between;
+}
+.container .main .textbottom .bottom_text {
+  width: 322rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 28rpx;
+}
+.container .main .textbottom .wrapblock {
+  position: relative;
+}
+.container .main .textbottom .bottom_text::before {
+  content: '';
+  position: absolute;
+  left: -16rpx;
+  top: 10rpx;
+  display: block;
+  height: 8rpx;
+  width: 8rpx;
+  background-color: #237cd2;
+}
+.container .main .textbottom .tel {
+  margin: 6rpx 0 22rpx 18rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  line-height: 42rpx;
+}
+

@@ -1,0 +1,5 @@
+.container .btn {
+  width: 600rpx;
+  margin: 60rpx auto;
+}
+

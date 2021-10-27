@@ -443,16 +443,41 @@ export default {
                 methods: 'POST',
                 data
             })
+            console.log('创建订单', res)
             console.log(res.data.saveOrder, '支付')
             if (res.message === '成功') {
                 uni.requestPayment({
                     provider: 'wxpay',
                     orderInfo: res.data.saveOrder,
-                    success: res1 => {
-                        console.log('success:' + JSON.stringify(res1))
+                    success: res => {
+                        console.log('success:' + JSON.stringify(res))
+                        uni.showToast({
+                            title: '支付成功',
+                            icon: 'none',
+                            duration: 1000,
+                            success() {
+                                setTimeout(() => {
+                                    uni.navigateTo({
+                                        url: '/pages/my/orderList/orderList?id=1'
+                                    })
+                                }, 1000)
+                            }
+                        })
                     },
                     fail: err => {
                         console.log('fail:' + JSON.stringify(err))
+                        uni.showToast({
+                            title: '用户取消支付',
+                            icon: 'none',
+                            duration: 1000,
+                            success() {
+                                setTimeout(() => {
+                                    uni.navigateTo({
+                                        url: '/pages/my/orderList/orderList?id=0'
+                                    })
+                                }, 1000)
+                            }
+                        })
                     }
                 })
             }
@@ -643,6 +668,9 @@ export default {
     onShow() {
         // 重置标识
         this.userFormFlag = true
+        // 重置弹窗
+        this.orderPop = false
+
         // 用户是否登录校验
         this.verifyIsLogin()
     },

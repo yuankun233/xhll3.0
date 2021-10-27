@@ -6,7 +6,7 @@
             <view class="myMes_box" @click="goMes">
                 <view class="myMes_1">
                     <view class="myMes_1_1">
-                        <text>{{ isLogin ? name : '未登录' }}</text>
+                        <text>{{ name }}</text>
                         <text v-show="isLogin">已认证</text>
                     </view>
                 </view>
@@ -51,11 +51,14 @@
         <!-- 常用功能 -->
         <view class="inMes" v-for="(item, index) in inMes" :key="item.mes" @click="goFun(index)">
             <view class="inMes_box">
-                <view :class="item.img"></view>
+                <!-- <view :class="item.img"></view> -->
+                <image :src="item.src" mode="widthFix" style="width: 40rpx;"></image>
                 <view>{{ item.mes }}</view>
                 <view class="iconfont icon-go"></view>
             </view>
         </view>
+        <!-- 未登录提示弹窗 -->
+        <u-modal v-model="show" content="您还没有登录,是否前往登录？" @confirm="toLogin" :show-cancel-button="true"></u-modal>
     </view>
 </template>
 
@@ -66,19 +69,23 @@ export default {
             inMes: [
                 {
                     img: 'icon-ditu iconfont',
-                    mes: '常见问题'
+                    mes: '常见问题',
+                    src: '../../static/my/question.png'
                 },
                 {
                     img: 'icon-a-dizhi2 iconfont',
-                    mes: '地址管理'
+                    mes: '地址管理',
+                    src: '../../static/my/adress.png'
                 },
                 {
                     img: 'icon-dadianhua iconfont',
-                    mes: '客服电话'
+                    mes: '客服电话',
+                    src: '../../static/my/call.png'
                 },
                 {
                     img: 'icon-shezhi iconfont',
-                    mes: '设置'
+                    mes: '设置',
+                    src: '../../static/my/setting.png'
                 }
             ],
             //用户信息
@@ -88,45 +95,25 @@ export default {
             //昵称
             name: '',
             // 用户当前是否登录
-            isLogin: false
+            isLogin: false,
+            // 未登录提示弹窗
+            show: false
         }
     },
     onLoad() {
-        try {
-            // 获取本地缓存,当用户没有登录时换位默认头像和昵称
-            const res = uni.getStorageSync('user')
-            console.log(res)
-            if (res) {
-                // 用户已登录,状态改为已登录
-                this.isLogin = true
-                // 当用户头像存在时赋值，不存在还是赋值默认
-                if (res.userHeadLogo != '') {
-                    this.photo = res.userHeadLogo
-                } else {
-                    this.photo = '../../static/my/tx.png'
-                }
-
-                // 当昵称存在时赋值，不存在默认赋值手机号
-                if (res.userName != '') {
-                    this.name = res.userName
-                } else {
-                    this.name = res.userPhone
-                }
-            }
-        } catch (e) {
-            //TODO handle the exception
-        }
+        this.verifyIsLogin()
     },
     //页面切入之前判断是否登陆
-    onShow() {},
+    onShow() {
+        this.verifyIsLogin()
+    },
     methods: {
         //跳转功能
         goFun(index) {
             if (index == 3) {
                 uni.navigateTo({
-                    url:"/pages/my/setting/setting"
+                    url: '/pages/my/setting/setting'
                 })
-                
             } else if (index == 2) {
                 uni.makePhoneCall({
                     phoneNumber: '4009155291',
@@ -140,9 +127,14 @@ export default {
                     }
                 })
             } else if (index == 1) {
-                uni.navigateTo({
-                    url: 'adressList/adressList'
-                })
+                // 如果登录跳转订单页,未登录弹出弹窗选择是否跳转登录页
+                if (this.isLogin) {
+                    uni.navigateTo({
+                        url: 'adressList/adressList'
+                    })
+                } else {
+                    this.show = true
+                }
             } else if (index == 0) {
                 uni.navigateTo({
                     url: 'normalQuestion/normalQuestion'
@@ -151,29 +143,73 @@ export default {
         },
         // 跳转订单
         goOrder(index) {
-            uni.navigateTo({
-                url: 'orderList/orderList?id=' + index
-            })
+            // 如果登录跳转订单页,未登录弹出弹窗选择是否跳转登录页
+            if (this.isLogin) {
+                uni.navigateTo({
+                    url: 'orderList/orderList?id=' + index
+                })
+            } else {
+                this.show = true
+            }
         },
         //跳转编辑资料
         goMes() {
             // 判断用户是否登录,未登录跳转登录,已登录跳转编辑资料
             if (this.isLogin) {
                 uni.navigateTo({
-                    url: '/pages/my/adressEdit/adressEdit'
+                    url: '/pages/my/profileEdit/profileEdit'
                 })
             } else {
                 // 因为在onload中获取本地缓存,所以当本地缓存中没有user时必须重定向到login页面
-                uni.reLaunch({
-                    url: '/pages/login/login'
-                })
-                // uni.navigateTo({
+                // uni.reLaunch({
                 //     url: '/pages/login/login'
                 // })
+                uni.navigateTo({
+                    url: '/pages/login/login'
+                })
             }
         },
-        // 判断用户是否登录，没有登录跳转登录
-        verifyIsLogin() {}
+        // 判断用户是否登录，没有登录给默认头像昵称，登录就显示真实信息
+        verifyIsLogin() {
+            try {
+                // 获取本地缓存,当用户没有登录时换位默认头像和昵称
+                const res = uni.getStorageSync('user')
+                // 获取用户资料相关信息
+                const res1 = uni.getStorageSync('user_mes')
+                if (res) {
+                    // 用户已登录,状态改为已登录
+                    this.isLogin = true
+                    // 当用户头像存在时赋值，不存在还是赋值默认
+                    if (res.userHeadLogo != '') {
+                        this.photo = res.userHeadLogo
+                    } else {
+                        this.photo = '../../static/my/tx.png'
+                    }
+
+                    // 当昵称存在时赋值，不存在默认赋值手机号
+                    if (res.userName != '') {
+                        this.name = res.userName
+                    } else {
+                        this.name = res.userPhone
+                    }
+                } else {
+                    this.name = '未登录'
+                }
+
+                if (res1) {
+                    this.name = res1.name
+                    this.photo = res1.chooseImg
+                }
+            } catch (e) {
+                //TODO handle the exception
+            }
+        },
+        // 跳转至登录
+        toLogin() {
+            uni.reLaunch({
+                url: '/pages/login/login'
+            })
+        }
     }
 }
 </script>

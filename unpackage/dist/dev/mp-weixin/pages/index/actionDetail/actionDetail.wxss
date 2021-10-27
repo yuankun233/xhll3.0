@@ -1,0 +1,5 @@
+.container .banner {
+  width: 750rpx;
+  height: 1334rpx;
+}
+

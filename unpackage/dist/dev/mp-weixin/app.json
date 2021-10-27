@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/login/login",
     "pages/community/community",
     "pages/index/serveList/serveList",
     "pages/index/serveDetail/serveDetail",
@@ -22,11 +23,16 @@
     "pages/my/adressEdit/adressEdit",
     "pages/my/normalQuestion/normalQuestion",
     "pages/my/profileEdit/profileEdit",
-    "pages/login/login"
+    "pages/index/onlineInquiry/onlineInquiry",
+    "pages/community/reply/reply",
+    "pages/community/publish/publish",
+    "pages/login/userArgument/userArgument",
+    "pages/my/setting/setting"
   ],
   "subPackages": [],
   "window": {
-    "navigationStyle": "custom"
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#999999",

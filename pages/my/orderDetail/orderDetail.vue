@@ -163,9 +163,11 @@ export default {
                 },
                 // 失败回调
                 fail: res => {
-                    console.log('调用失败!')
+                    console.log('调用失败!') 
                 }
             })
+
+            plus.device.dial('4009155291', true)
         }
     },
     onLoad(options) {
