@@ -80,7 +80,7 @@ export default {
     name: 'login',
     data() {
         return {
-            timenum: 30,
+            timenum: 60,
             pageState: 'authcode', //控制页面的登录状态
             form: {
                 tel: '',
@@ -264,7 +264,7 @@ export default {
                             let timer = setInterval(() => {
                                 if (this.timenum == 1) {
                                     this.isSend = false
-                                    this.timenum = 30
+                                    this.timenum = 60
                                     return
                                 }
                                 this.timenum--

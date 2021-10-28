@@ -212,7 +212,23 @@
                 "enablePullDownRefresh": false
             }
 
-        }
+        },
+		{
+		    "path": "pages/my/accountsSecurity/accountsSecurity",
+		    "style": {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		
+		},
+		{
+		    "path": "pages/my/changePassword/changePassword",
+		    "style": {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		
+		}
     ],
     "globalStyle": {
         "navigationStyle": "custom",

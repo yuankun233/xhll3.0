@@ -2,6 +2,16 @@
     <view class="container">
         <my-nav :title="nav_title"></my-nav>
 
+        <!-- 设置中的设置项表单 -->
+        <!-- 信息区域 -->
+        <view class="setting_box">
+            <view class="setting_item" @click="toAccountsSecurity">
+                <view class="title">账号与安全</view>
+                <text class="iconfont icon-go"></text>
+            </view>
+        </view>
+
+        <!-- 登录和退出登录按钮 -->
         <u-button type="error" class="btn" v-if="isLogin" @click="show = true">退出登录</u-button>
         <u-button type="primary" class="btn" v-else @click="login">前往登录</u-button>
         <u-modal v-model="show" content="是否退出登录？" @confirm="exit" :show-cancel-button="true"></u-modal>
@@ -38,7 +48,7 @@ export default {
                             uni.reLaunch({
                                 url: '/pages/index/index'
                             })
-                        },1000)
+                        }, 1000)
                     }
                 })
             } catch (e) {
@@ -49,6 +59,12 @@ export default {
         login() {
             uni.navigateTo({
                 url: '/pages/login/login'
+            })
+        },
+        // 跳转到账户与安全
+        toAccountsSecurity(){
+            uni.navigateTo({
+                url:"/pages/my/accountsSecurity/accountsSecurity"
             })
         }
     },
@@ -68,6 +84,26 @@ export default {
 
 <style lang="less">
 .container {
+    // 设置项样式
+    .setting_box {
+        margin-top: 30rpx;
+        background-color: #fff;
+        .setting_item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30rpx;
+            border-bottom: 2rpx solid #F3F3F3;
+            .title {
+                font-size: 30rpx;
+                font-family: PingFang SC-Regular, PingFang SC;
+                color: #000000;
+                letter-spacing: 1rpx;
+            }
+          
+        }
+    }
+    // 登录登出按钮
     .btn {
         width: 600rpx;
         margin: 60rpx auto;
