@@ -1,0 +1,114 @@
+.container {
+	position: relative;
+	//列表
+	.BOX{
+		width: 100%;
+		height: 1150rpx;
+		overflow: scroll;
+		.addList_box {
+			width: 690rpx;
+			height: 212rpx;
+			margin: 56rpx auto;
+			display: flex;
+			.list_1{
+				width:188rpx;
+				height: auto;
+				background-color:#41D9CD ;
+				text-align: center;
+				position: relative;
+				border-radius: 5rpx 0rpx 0rpx 5rpx;
+				overflow: hidden;
+				view:nth-child(1){
+					position: absolute;
+					transform: rotate(-45deg);
+					width: 128rpx;
+					height: 36rpx;
+					background-color: #FFFFFF;
+					color:#999999 ;
+					font-size: 20rpx;
+					top: 14rpx;
+					left: -32rpx;
+				}
+				view:nth-child(2){
+					position: absolute;
+					width: 24rpx;
+					height: 24rpx;
+					background-color: #f5f5f5;
+					top: 98rpx;
+					left: -12rpx;
+					border-radius: 50%;
+				}
+				view:nth-child(3){
+					color: #FFFFFF;
+					margin-top: 60rpx;
+					text:nth-child(1) {
+						font-size: 24rpx;
+					}
+					text:nth-child(2) {
+						font-size: 40rpx;
+					}
+				}
+				view:nth-child(4){
+					color: #FFFFFF;
+					font-size: 20rpx;
+				}
+			}
+			.list_2 {
+				width: 396rpx;
+				height: auto;
+				background-color: #FFFFFF;
+				padding:  20rpx 0rpx 0rpx 28rpx;
+				color: #000000;
+				border-right: 2rpx solid #DDDDDD;
+				view:nth-child(1) {
+					font-size: 24rpx;
+					font-weight: 500;
+				}
+				view:nth-child(2) {
+					font-size: 20rpx;
+					margin-top: 20rpx;
+				}
+				view:nth-child(3) {
+					color: #666666;
+					font-size: 16rpx;
+					margin-top:50rpx ;
+				}
+			}
+			.list_3 {
+				width: 106rpx;
+				height: auto;
+				color: #41D9CD;
+				font-size: 20rpx;
+				writing-mode: tb-rl;
+				background-color: #FFFFFF;
+				text-align: center;
+				line-height: 106rpx;
+				position: relative;
+				view {
+					position: absolute;
+					width: 24rpx;
+					height: 24rpx;
+					background-color: #f5f5f5;
+					top: 98rpx;
+					right: -12rpx;
+					border-radius: 50%;
+				}
+			}
+				}
+	}
+	//添加按钮
+	.addBtn {
+			width: 652rpx;
+			height: 90rpx;
+			background-color: #41D9CD;
+			border-radius: 76rpx;
+			font-size: 36rpx;
+			color: #FFFFFF;
+			text-align: center;
+			line-height: 90rpx;
+			position: fixed;
+			bottom: 50rpx;
+			left: 56rpx;
+			z-index: 999;
+		}
+}

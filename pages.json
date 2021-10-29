@@ -229,6 +229,24 @@
 		    }
 		
 		}
+        ,{
+            "path" : "pages/my/ticket/ticket/ticket",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/ticket/ticket",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
     "globalStyle": {
         "navigationStyle": "custom",

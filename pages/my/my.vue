@@ -13,7 +13,7 @@
                 <view class="myMes_2"><image class="imageRadio" :src="isLogin ? photo : '../../static/my/tx.png'" mode=""></image></view>
             </view>
             <view class="myMes_box_1">
-                <view class="yhq">
+                <view class="yhq" @click="goticket">
                     <view>0</view>
                     <view>优惠券</view>
                 </view>
@@ -209,7 +209,13 @@ export default {
             uni.reLaunch({
                 url: '/pages/login/login'
             })
-        }
+        },
+		//跳转到优惠券界面
+		goticket() {
+			uni.navigateTo({
+				url:'ticket/ticket?isStatus=0'
+			})
+		}
     }
 }
 </script>

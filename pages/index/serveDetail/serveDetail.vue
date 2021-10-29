@@ -80,9 +80,9 @@
         </view>
 
         <!-- 优惠券 -->
-        <view class="selectNum discount">
+        <view class="selectNum discount" @click="selectTicket">
             <view class="title common_title">优惠券</view>
-            <input type="text" value="" class="input" placeholder="暂无优惠券" :placeholder-style="placeholder" :disabled="disabled" />
+            <input type="text" value="" class="input" placeholder="请选择您的优惠券" :placeholder-style="placeholder" :disabled="disabled" />
         </view>
         <!-- 备注 -->
         <view class="remark">
@@ -653,7 +653,13 @@ export default {
             } catch (e) {
                 //TODO handle the exception
             }
-        }
+        },
+		// 13 点击选择优惠券
+		selectTicket() {
+			uni.navigateTo({
+				url:'/pages/my/ticket/ticket?isStatus=1'
+			})
+		}
     },
     onLoad(options) {
         console.log(options)
