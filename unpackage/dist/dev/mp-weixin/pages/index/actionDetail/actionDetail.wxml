@@ -1,0 +1,1 @@
+<view class="container"><my-nav vue-id="1fca9b06-1" title="{{nav_title}}" isShare="{{true}}" bind:__l="__l"></my-nav><image class="banner" src="../../../static/index/warefal_banner.png" mode="widthFix"></image></view>

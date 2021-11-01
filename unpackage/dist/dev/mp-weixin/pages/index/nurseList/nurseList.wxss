@@ -1,0 +1,97 @@
+.nurseBox.data-v-736fec7e {
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+  padding-bottom: 20rpx;
+}
+.index.data-v-736fec7e {
+  margin-left: 30rpx;
+}
+.bannerImg image.data-v-736fec7e {
+  width: 690rpx ;
+  height: 204rpx;
+  margin-top: 36rpx;
+}
+.nurseTitle.data-v-736fec7e {
+  margin-top: 32rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #000000;
+}
+.nurseList.data-v-736fec7e {
+  width: 690rpx;
+  height: 380rpx;
+  background: #FFFFFF;
+  margin-top: 32rpx;
+}
+.nurseTop.data-v-736fec7e {
+  padding-top: 36rpx;
+  margin-left: 28rpx;
+  display: flex;
+}
+.nurseTop_1.data-v-736fec7e {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+}
+.nurseTop_1 image.data-v-736fec7e {
+  width: 100%;
+  height: 100%;
+}
+.nurseTop_2.data-v-736fec7e {
+  margin-top: 6rpx;
+}
+.nurseTop_2 view.data-v-736fec7e {
+  margin-left: 14rpx;
+}
+.nurseTop_2 > view:nth-child(1) text.data-v-736fec7e:nth-child(1) {
+  font-size: 32rpx;
+  color: #000000;
+}
+.nurseTop_2 > view:nth-child(1) text.data-v-736fec7e:nth-child(2) {
+  font-size: 24rpx;
+  color: #FFFFFF;
+  background: #41D9CD;
+  padding: 4rpx 8rpx 4rpx 8rpx;
+  border-radius: 4px;
+  margin-left: 14rpx;
+}
+.nurseTop_2 > view.data-v-736fec7e:nth-child(2) {
+  margin-top: 8rpx;
+}
+.nurseTop_2 > view:nth-child(2) text.data-v-736fec7e {
+  font-size: 24rpx;
+  color: #000000;
+}
+.nurseTop_2 > view:nth-child(2) text.data-v-736fec7e:nth-child(2) {
+  margin-left: 16rpx;
+}
+.serveIn.data-v-736fec7e {
+  margin-top: 22rpx;
+  margin-left: 28rpx;
+}
+.serveIn text.data-v-736fec7e:nth-child(2n-1) {
+  font-size: 24rpx;
+  color: #666666;
+}
+.serveIn text.data-v-736fec7e:nth-child(2n) {
+  font-size: 26rpx;
+  color: #41D9CD;
+  margin-left: 8rpx;
+}
+.textIn.data-v-736fec7e {
+  width: 634rpx;
+  height: 134rpx;
+  margin-top: 20rpx;
+  margin-left: 28rpx;
+  color: #000000;
+  font-size: 24rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+

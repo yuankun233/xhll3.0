@@ -1,0 +1,98 @@
+page.data-v-bb18fbae {
+  width: 100%;
+  height: 1334rpx;
+  background: url(/static/index/hlzxq.png) no-repeat;
+  background-size: 100% 100%;
+}
+page .container .tabs view.data-v-bb18fbae:nth-child(2) {
+  width: 100%;
+  height: 88rpx;
+  padding-left: 20rpx;
+}
+page .container .tabs view:nth-child(2) .icon-back.data-v-bb18fbae {
+  font-size: 60rpx;
+  color: #666666;
+  line-height: 88rpx;
+}
+page .container .nursingStatDetail.data-v-bb18fbae {
+  width: 690rpx;
+  background: #ffffff;
+  margin-left: 30rpx;
+  margin-top: 24rpx;
+  padding-bottom: 46rpx ;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+page .container .nursingStatDetail .referral.data-v-bb18fbae {
+  width: 586rpx;
+  margin-left: 50rpx ;
+  margin-top: 34rpx ;
+  display: flex;
+  justify-content: space-between;
+}
+page .container .nursingStatDetail .referral .referral_1 view.data-v-bb18fbae:nth-child(1) {
+  font-size: 40rpx;
+  color: #000000;
+  margin-top: 10rpx;
+}
+page .container .nursingStatDetail .referral .referral_1 view.data-v-bb18fbae:nth-child(2) {
+  margin-top: 20rpx ;
+}
+page .container .nursingStatDetail .referral .referral_1 view:nth-child(2) text.data-v-bb18fbae {
+  height: 56rpx;
+  font-size: 20rpx ;
+  color: #FFFFFF;
+  line-height: 56rpx;
+  padding: 0rpx 6rpx 0rpx 8rpx;
+  background: #01CCD2;
+  border-radius: 4rpx;
+  margin-right: 20rpx ;
+}
+page .container .nursingStatDetail .referral .referral_1 view.data-v-bb18fbae:nth-child(3) {
+  margin-top: 24rpx;
+  font-size: 24rpx ;
+  color: #666666;
+}
+page .container .nursingStatDetail .referral .referral_2.data-v-bb18fbae {
+  width: 164rpx ;
+  height: 164rpx;
+}
+page .container .nursingStatDetail .referral_3.data-v-bb18fbae {
+  width: 586rpx ;
+  margin-left: 50rpx ;
+  margin-top: 32rpx ;
+  font-size: 24rpx;
+  color: #666666;
+}
+page .container .nursingStatDetail .addr.data-v-bb18fbae {
+  width: 586rpx;
+  margin-left: 50rpx ;
+  margin-top: 44rpx ;
+  display: flex;
+  justify-content: space-between;
+}
+page .container .nursingStatDetail .addr view.data-v-bb18fbae:nth-child(1) {
+  font-size: 28rpx;
+  color: #000000;
+}
+page .container .nursingStatDetail .addr view:nth-child(1) view.data-v-bb18fbae:nth-child(2) {
+  margin-top: 16rpx;
+}
+page .container .nursingStatDetail .addr .addr_2.data-v-bb18fbae {
+  display: flex;
+  margin-top: 18rpx;
+}
+page .container .nursingStatDetail .addr .addr_2 view.data-v-bb18fbae {
+  width: 52rpx ;
+  font-size: 20rpx;
+  color: #000000;
+  line-height: 32rpx;
+}
+page .container .nursingStatDetail .addr .addr_2 image.data-v-bb18fbae {
+  width: 52rpx;
+  height: 52rpx;
+}
+page .container .nursingStatDetail .addr .addr_2 view.data-v-bb18fbae:nth-child(2) {
+  margin-left: 54rpx;
+}
+

@@ -1,0 +1,1 @@
+<view class="container"><my-nav vue-id="f7d4b934-1" title="{{nav_title}}" bind:__l="__l"></my-nav><rich-text nodes="{{argument}}"></rich-text></view>

@@ -10,7 +10,7 @@
 		<view class="nursingStatDetail">
 			<view class="referral">
 				<view class="referral_1">
-					<view>{{getDetails.nursingName}}</view>
+					<view>{{ getDetails.nursingName }}</view>
 					<view>
 						<text>公立</text>
 						<text>医保</text>
@@ -23,16 +23,14 @@
 				</view>
 			</view>
 			<!-- 介绍 -->
-			<view class="referral_3">
-				{{getDetails.nursingContent}}
-			</view>
+			<view class="referral_3">{{ getDetails.nursingContent }}</view>
 		</view>
 		<!-- 地址 -->
 		<view class="nursingStatDetail" style="margin-top: 40rpx; padding-bottom: 40rpx;">
 			<view class="addr">
 				<view class="addr_1">
 					<view>护理站地址</view>
-					<view>{{getDetails.nursingAddress}}</view>
+					<view>{{ getDetails.nursingAddress }}</view>
 				</view>
 				<view class="addr_2">
 					<view @click="getAddress">
@@ -56,7 +54,7 @@
 				// 顶部状态栏高度
 				statusBarHeight: 20,
 				//数据列表
-				getDetails: "",
+				getDetails: '',
 				//详情id
 				detailId: ''
 			}
@@ -81,7 +79,6 @@
 						nursingId: this.detailId
 					}
 				})
-				console.log(res.data.selectStation, 'hushiliebiao');
 				this.getDetails = res.data.selectStation[0]
 			},
 			//拨打电话
@@ -89,18 +86,41 @@
 				uni.makePhoneCall({
 					phoneNumber: this.getDetails.nursingTel,
 					// 成功回调
-					success: (res) => {
+					success: res => {
 						console.log('调用成功!')
 					},
 					// 失败回调
-					fail: (res) => {
+					fail: res => {
 						console.log('调用失败!')
 					}
 				})
+				plus.device.dial(this.getDetails.nursingTel, true)
+			},
+			//  获取用户的地理位置，
+			getLocation() {
+				uni.getLocation({
+					type: 'gcj02', //返回可以用于uni.openLocation的经纬度
+					success: (res)=> {
+						const latitude = JSON.parse(this.getDetails.NursingStationLatitude);
+						const longitude = JSON.parse(this.getDetails.Longitude);
+						const name = this.getDetails.nursingName;
+						const address = this.getDetails.nursingAddress;
+						uni.openLocation({
+							latitude,
+							longitude,
+							name,
+							address,
+							success:(res)=> {
+								console.log(res,'success');
+							}
+						});
+					}
+				});
 			},
 			//查看地理位置
 			getAddress() {
 				//暂定
+				this.getLocation();
 			}
 		},
 		mounted() {

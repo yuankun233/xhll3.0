@@ -19,8 +19,8 @@
 					</view>
 					<view><input type="text" placeholder="股骨颈术后" /></view>
 				</view>
+				<view class="iconfont icon-a-tuisongxiaoxi1"></view>
 			</view>
-
 			<!-- 标题 -->
 			<view class="titleXh">小护来了,出院我也可以放心了！</view>
 
@@ -40,7 +40,8 @@
 					</block>
 					<block>
 						<swiper-item>
-							<image src="../../static/index/bannergyhby.png" @click="tobanner3" :lazy-load="true"></image>
+							<image src="../../static/index/bannergyhby.png" @click="tobanner3" :lazy-load="true">
+							</image>
 						</swiper-item>
 					</block>
 				</swiper>
@@ -48,12 +49,12 @@
 
 			<!-- 功能 -->
 			<view class="func">
-				<view v-for="(item,index) in funlist" :key="item.title" @click="goSpecialty(index)">
+				<view v-for="(item, index) in funlist" :key="item.title" @click="goSpecialty(index)">
 					<view>
 						<image :src="item.img" :lazy-load="true"></image>
 					</view>
-					<view>{{item.title}}</view>
-					<view>{{item.mes}}</view>
+					<view>{{ item.title }}</view>
+					<view>{{ item.mes }}</view>
 				</view>
 			</view>
 
@@ -97,7 +98,7 @@
 					<view>
 						<image :src="item.img1" :lazy-load="true"></image>
 					</view>
-					<view>{{item.mes1}}</view>
+					<view>{{ item.mes1 }}</view>
 				</view>
 			</view>
 
@@ -106,7 +107,7 @@
 				<view>服务保障</view>
 				<view>审核严格</view>
 				<view>专业问诊</view>
-				<view>流程规范</view>
+				<view></view>
 			</view>
 		</view>
 	</view>
@@ -129,13 +130,11 @@
 						img: '../../static/index/yyfw.png',
 						title: '预约服务',
 						mes: '按需求找服务'
-					},
+					}
 				],
 				wdlist: [{
 						img1: '../../static/index/wen.png',
-						mes1: '小护你好：你们上门会带些什么工具？',
-
-
+						mes1: '小护你好：你们上门会带些什么工具？'
 					},
 					{
 						img1: '../../static/index/da.png',
@@ -143,23 +142,41 @@
 					},
 					{
 						img1: '../../static/index/wen.png',
-						mes1: '小护你好,我表哥刚做完腹膜透析,那个肚子里的管子一直要放在里面的？全家人都很担心',
+						mes1: '小护你好,我表哥刚做完腹膜透析,那个肚子里的管子一直要放在里面的？全家人都很担心'
 					},
 					{
 						img1: '../../static/index/da.png',
 						mes1: '你好,一般来说腹膜透析是终生的治疗方案之一,但各项条件允许的话可以进行肾移植。那么可以停止腹膜透析治疗了。'
 					}
 				],
-				address: '上海' //地址
+				address: '正在获取...',//地址
 			}
 		},
 		onLoad() {
-			// this.getMap();
+			this.getMap();	
+		},
+		onShow() {
+			
 		},
 		methods: {
 			//调用方法获取当前地理位置
 			getMap() {
-				//uni自带获取地理位置的方法
+				setTimeout(()=>{
+					//uni自带获取地理位置的方法
+					uni.getLocation({
+						type: 'wgs84',
+						geocode:true,
+						success: (res) => {
+							console.log('当前位置的经度：' + res.longitude);
+							console.log('当前位置的纬度：' + res.latitude);
+							console.log('当前位置的城市：' + JSON.stringify(res.address.city));
+							var map = JSON.stringify(res.address.city)
+							// 把字符串引号去除
+							this.address = map.replace("\"","").replace("\"","");
+							console.log(this.address)
+						}
+					});
+				},1000)
 			},
 			//点击在线医生拨打电话和跳转到预约项目页面
 			goSpecialty(index) {
@@ -173,14 +190,18 @@
 					uni.makePhoneCall({
 						phoneNumber: '4009155291',
 						// 成功回调
-						success: (res) => {
+						success: res => {
 							console.log('调用成功!')
 						},
 						// 失败回调
-						fail: (res) => {
+						fail: res => {
 							console.log('调用失败!')
 						}
 					})
+
+					plus.device.dial('4009155291', true)
+
+
 				}
 				if (index == 2) {
 					console.log(123)
@@ -215,16 +236,14 @@
 				})
 			},
 			// 轮播图
-			tobanner2() {
-
-			},
+			tobanner2() {},
 			// 轮播图
 			tobanner3() {
 				uni.navigateTo({
 					url: '/pages/index/actionDetail/actionDetail'
 				})
 			}
-		},
+		}
 	}
 </script>
 <style lang="less" scoped>
