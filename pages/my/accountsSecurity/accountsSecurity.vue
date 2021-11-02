@@ -5,9 +5,13 @@
         <!-- 信息区域 -->
         <view class="setting_box">
             <view class="setting_item" @click="toChangePassword"> 
-                <view class="title">修改密码</view>
+                <view class="title">{{title}}</view>
                 <text class="iconfont icon-go"></text>
             </view>
+			<view class="setting_item" @click="toChangePhone">
+			    <view class="title">修改手机号码</view>
+			    <text class="iconfont icon-go"></text>
+			</view>
         </view>
 		<!-- 用户未登录的提示弹窗 -->
 		<u-modal v-model="isLoginshow" content="您还没有登录？是否前往登录" @confirm="loginConfirm"></u-modal>
@@ -20,7 +24,9 @@ export default {
     data() {
         return {
             nav_title:"账户与安全",
-			isLoginshow:true
+			isLoginshow:true,
+			//有无密码参数
+			title:'修改密码'
         }
     },
 	onLoad() {
@@ -29,6 +35,9 @@ export default {
 		    const res = uni.getStorageSync('user')
 		    if (res) {
 		        this.isLoginshow = false
+				if(res.userPassWord === '') {
+					this.title = '设置密码'
+				}
 		    }
 		} catch (e) {
 		    //TODO handle the exception
@@ -44,6 +53,12 @@ export default {
                 url:"/pages/my/changePassword/changePassword"
             })
         },
+		// 前往修改手机号码
+		toChangePhone(){
+		    uni.navigateTo({
+		        url:"/pages/my/changePhone/changePhone"
+		    })
+		},
 		//用户没有登录时弹出的登录跳转
 			loginConfirm() {
 			    uni.reLaunch({

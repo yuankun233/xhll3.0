@@ -59,7 +59,7 @@
 			</view>
 
 			<!-- 专科护理 -->
-			<view class="nurseTitle">专科护理</view>
+			<view class="nurseTitle"><text>专科护理和临床护理</text><text @click="goServeList">更多服务  ></text></view>
 			<view class="zkNurse">
 				<view @click="goOrder(43)" style="border-radius: 12rpx;">
 					<image src="../../static/index/fmtx.png" :lazy-load="true"></image>
@@ -107,7 +107,7 @@
 				<view>服务保障</view>
 				<view>审核严格</view>
 				<view>专业问诊</view>
-				<view></view>
+				<view>流程规范</view>
 			</view>
 		</view>
 	</view>
@@ -241,6 +241,12 @@
 			tobanner3() {
 				uni.navigateTo({
 					url: '/pages/index/actionDetail/actionDetail'
+				})
+			},
+			//跳转预约服务
+			goServeList() {
+				uni.navigateTo({
+					url:'serveList/serveList'
 				})
 			}
 		}

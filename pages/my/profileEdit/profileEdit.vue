@@ -96,7 +96,8 @@ export default {
                 phone: '',
                 city: '',
                 region: '',
-                chooseImg: ''
+                chooseImg: '',
+                headImg: '' //上传到服务器的头像地址
             },
             setInMes: {
                 setname: '',
@@ -147,7 +148,6 @@ export default {
     },
     onLoad() {
         const res = uni.getStorageSync('user_mes')
-        console.log(res)
         if (res) {
             this.inMes = res
             console.log(this.inMes)
@@ -156,8 +156,9 @@ export default {
             uni.getStorage({
                 key: 'user',
                 success: res => {
+                    console.log('user', res)
                     this.inMes.name = res.data.userName
-                    this.Uid = res.data.id
+                    this.Uid = res.data.userId
                     this.inMes.sex = res.data.userSex
                     this.inMes.phone = res.data.userPhone
                     this.inMes.city = res.data.userRegion
@@ -273,6 +274,20 @@ export default {
                 count: 1,
                 success: res => {
                     this.inMes.chooseImg = res.tempFilePaths[0]
+                    // 执行图片上传
+                    uni.uploadFile({
+                        url: 'https://www.xiaohulaile.com/xh/p/alipay/Upload/imgs', //仅为示例，非真实的接口地址
+                        filePath: res.tempFilePaths[0], //文件路径
+                        name: 'image',
+                        formData: {
+                            id: this.Uid
+                        },
+                        success: uploadFileRes => {
+                            console.log('图片上传', uploadFileRes.data)
+                            // 保存到本地
+                            this.inMes.headImg = uploadFileRes.data
+                        }
+                    })
                 }
             })
         },
@@ -280,19 +295,21 @@ export default {
         async saveMes() {
             console.log(this.Uid)
             try {
+                let data = {
+                    userPhone: this.inMes.phone,
+                    userSex: this.inMes.sex,
+                    userAddress: this.inMes.region,
+                    userHeadLogo: this.inMes.headImg,
+                    userName: this.inMes.name,
+                    birthday: this.inMes.date,
+                    userRegion: this.inMes.city,
+                    userId: this.Uid
+                }
+                console.log('编辑资料ajax数据:', data)
                 this.$myRequest3({
                     url: 'enroll/api/editUser',
                     methods: 'POST',
-                    data: {
-                        userPhone: this.inMes.phone,
-                        userSex: this.inMes.sex,
-                        userAddress: this.inMes.region,
-                        userHeadLogo: this.inMes.chooseImg,
-                        userName: this.inMes.name,
-                        birthday: this.inMes.date,
-                        userRegion: this.inMes.city,
-                        id: this.Uid
-                    }
+                    data
                 }).then(res => {
                     uni.setStorage({
                         key: 'user_mes',

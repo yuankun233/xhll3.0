@@ -12,7 +12,7 @@
 import uniNavBar from '@/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue'
 export default {
     name: 'mynav',
-    props: ['title', 'ifFx'],
+    props: ['title', 'ifFx','isGO'],
     data() {
         return {}
     },
@@ -21,10 +21,16 @@ export default {
     },
     methods: {
         back() {
-            console.log(1)
-            uni.navigateBack({
-                delta: 1
-            })
+            console.log(this.isGO)
+			if(this.isGO === false) {
+				uni.reLaunch({
+					url:'/pages/my/my'
+				})
+			}else {
+				uni.navigateBack({
+				    delta: 1
+				})
+			}
         }
     }
 }

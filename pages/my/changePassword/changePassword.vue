@@ -30,7 +30,7 @@
                 <view class="form_item" @click="toChangePassword">
                     <u-form-item label="确认密码" label-width="auto"><u-input placeholder="请再次输入" v-model="form.resetPassword"></u-input></u-form-item>
                 </view>
-                <u-button type="primary" :ripple="true" style="margin: 150rpx 30rpx;background-color: #41D9CD;" @click="changePassword">确认修改</u-button>
+                <u-button type="primary" :ripple="true" style="margin: 150rpx 30rpx;background-color: #41D9CD;" @click="changePassword">提交</u-button>
             </view>
         </view>
     </view>
@@ -200,6 +200,10 @@ export default {
                 this.id = res.id
                 //发送验证码
                 this.sendCode()
+				//判断用户是否设置密码
+				if(res.userPassWord === '') {
+					this.nav_title = '设置密码';
+				}
             }
         } catch (e) {
             //TODO handle the exception

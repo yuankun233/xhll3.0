@@ -139,14 +139,14 @@ export default {
         getOrderDetail() {
             try {
                 this.$myRequest1({
-                    url: 'xhll/order/ordercqDetails',
+                    url: 'xhll/order/selectOrderDetails',
                     methods: 'POST',
                     data: {
                         orderId: this.orderId
                     }
                 }).then(res => {
                     console.log('获取订单详情:', res)
-                    this.orderDetail = res.data.ordercqDetails[0]
+                    this.orderDetail = res.data.selectOrderDetails
                     console.log(this.orderDetail)
                 })
             } catch (e) {

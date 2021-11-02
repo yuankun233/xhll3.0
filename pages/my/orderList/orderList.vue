@@ -23,7 +23,7 @@
                 <swiper class="swiper" :current="swiperCurrent" @change="getIndex" style="height: 100%;">
                     <swiper-item class="swiper-item" v-for="(count, index) in 4" :key="this">
                         <scroll-view @scrolltolower="onreachBottom" style="height: 100%;" scroll-y>
-                            <view class="orderList" v-for="(item, index) in list" :key="item.id">
+                            <view class="orderList" v-for="(item, index) in list" :key="index">
                                 <view class="title">
                                     <view>{{ item.serviceName }}</view>
                                     <view>{{ item.status }}</view>
@@ -147,13 +147,13 @@ export default {
         //请求订单
         async getList() {
             const res = await this.$myRequest1({
-                url: 'xhll/order/selectOrder',
+                url: 'xhll/order/userSelectOrder',
                 methods: 'POST',
                 data: {
                     ...this.data
                 }
             })
-            this.list = res.data.selectOrder.data
+            this.list = res.data.userSelectOrder.data
         },
         //取消订单
         async cancolOrder(index) {
@@ -238,18 +238,18 @@ export default {
         //请求分页列表
         async getListFy() {
             const res = await this.$myRequest1({
-                url: 'xhll/order/selectOrder',
+                url: 'xhll/order/userSelectOrder',
                 methods: 'POST',
                 data: {
                     ...this.data
                 }
             })
             var _this = this
-            if (res.data.selectOrder.data === undefined) {
+            if (res.data.userSelectOrder.data === undefined) {
                 this.isMore = 1
                 return
             } else {
-                _this.list = _this.list.concat(res.data.selectOrder.data)
+                _this.list = _this.list.concat(res.data.userSelectOrder.data)
             }
         },
         //判断请求状态

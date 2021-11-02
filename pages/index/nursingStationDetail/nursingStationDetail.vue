@@ -84,7 +84,7 @@
 			//拨打电话
 			getPhone() {
 				uni.makePhoneCall({
-					phoneNumber: this.getDetails.nursingTel,
+					phoneNumber: 4009155291,
 					// 成功回调
 					success: res => {
 						console.log('调用成功!')
@@ -94,7 +94,7 @@
 						console.log('调用失败!')
 					}
 				})
-				plus.device.dial(this.getDetails.nursingTel, true)
+				plus.device.dial(4009155291, true)
 			},
 			//  获取用户的地理位置，
 			getLocation() {

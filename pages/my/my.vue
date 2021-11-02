@@ -174,6 +174,7 @@ export default {
             try {
                 // 获取本地缓存,当用户没有登录时换位默认头像和昵称
                 const res = uni.getStorageSync('user')
+				console.log(res)
                 // 获取用户资料相关信息
                 const res1 = uni.getStorageSync('user_mes')
                 if (res) {
