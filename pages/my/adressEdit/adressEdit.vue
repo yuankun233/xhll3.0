@@ -42,12 +42,12 @@ export default {
             form: {
                 archivesName: '',
                 archivesSex: '',
-                archivesAge: null,
-                archivesPhone: null,
+                archivesAge: '',
+                archivesPhone: '',
                 archivesRegion: '',
                 archivesAddress: '',
                 archivesText: '',
-                archivesUid: 1
+                archivesUid: ''
             },
             radioForm: [
                 {
@@ -148,7 +148,7 @@ export default {
             })
             console.log(aditRes)
             //判断是否修改成功，跳转到列表页面
-            if (res.data.editPatient === true) {
+            if (aditRes.data.editPatient === true) {
                 uni.navigateTo({
                     url: '../adressList/adressList'
                 })

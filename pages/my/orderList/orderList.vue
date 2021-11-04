@@ -37,7 +37,7 @@
                                     </view>
                                 </view>
                                 <view class="orderList_3">
-                                    <view @click="goDetail(item.orderId, index)" :class="item.status === '已完成' || current == 3 ? qh : ''">
+                                    <view @click="goDetail(item.orderId, index)" :class="item.status === '已完成' || item.status == '待评价' ? qh : ''">
                                         {{ item.status === '待支付' && current == 0 ? ifStatusDfk : ifStatusDfw }}
                                     </view>
                                     <view v-show="ifshow" @click="ispay(index)">{{ item.status === '待支付' ? ifStatusDfk1 : ifStatusDfw1 }}</view>
