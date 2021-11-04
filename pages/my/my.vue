@@ -67,15 +67,15 @@ export default {
     data() {
         return {
             inMes: [
+				{
+				    img: 'icon-a-dizhi2 iconfont',
+				    mes: '地址管理',
+				    src: '../../static/my/adress.png'
+				},
                 {
                     img: 'icon-ditu iconfont',
                     mes: '常见问题',
                     src: '../../static/my/question.png'
-                },
-                {
-                    img: 'icon-a-dizhi2 iconfont',
-                    mes: '地址管理',
-                    src: '../../static/my/adress.png'
                 },
                 {
                     img: 'icon-dadianhua iconfont',
@@ -126,7 +126,7 @@ export default {
                         console.log('调用失败!')
                     }
                 })
-            } else if (index == 1) {
+            } else if (index == 0) {
                 // 如果登录跳转订单页,未登录弹出弹窗选择是否跳转登录页
                 if (this.isLogin) {
                     uni.navigateTo({
@@ -135,7 +135,7 @@ export default {
                 } else {
                     this.show = true
                 }
-            } else if (index == 0) {
+            } else if (index == 1) {
                 uni.navigateTo({
                     url: 'normalQuestion/normalQuestion'
                 })
@@ -174,6 +174,7 @@ export default {
             try {
                 // 获取本地缓存,当用户没有登录时换位默认头像和昵称
                 const res = uni.getStorageSync('user')
+				console.log(res)
                 // 获取用户资料相关信息
                 const res1 = uni.getStorageSync('user_mes')
                 if (res) {

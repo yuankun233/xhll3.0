@@ -68,7 +68,7 @@
         <!-- 备注 -->
         <view class="remark">
             <view class="common_title title">备注信息</view>
-            <u-input class="textarea" v-model="orderDetail.chontentText" type="textarea" placeholder="如需备注，请说明情况……" maxlength="100" />
+            <u-input class="textarea" v-model="orderDetail.chontentText" type="textarea" placeholder="如需备注，请说明情况……" maxlength="100" :disabled="true" />
             <view class="text">温馨提示：详细的并请说明可以帮助我们更好的为您服务哦</view>
         </view>
 
@@ -139,14 +139,14 @@ export default {
         getOrderDetail() {
             try {
                 this.$myRequest1({
-                    url: 'xhll/order/ordercqDetails',
+                    url: 'xhll/order/selectOrderDetails',
                     methods: 'POST',
                     data: {
                         orderId: this.orderId
                     }
                 }).then(res => {
                     console.log('获取订单详情:', res)
-                    this.orderDetail = res.data.ordercqDetails[0]
+                    this.orderDetail = res.data.selectOrderDetails
                     console.log(this.orderDetail)
                 })
             } catch (e) {

@@ -9,6 +9,11 @@
                 <view class="title">账号与安全</view>
                 <text class="iconfont icon-go"></text>
             </view>
+
+            <view class="setting_item" @click="toAboutXh">
+                <view class="title">关于小护与帮助</view>
+                <text class="iconfont icon-go"></text>
+            </view>
         </view>
 
         <!-- 登录和退出登录按钮 -->
@@ -62,9 +67,15 @@ export default {
             })
         },
         // 跳转到账户与安全
-        toAccountsSecurity(){
+        toAccountsSecurity() {
             uni.navigateTo({
-                url:"/pages/my/accountsSecurity/accountsSecurity"
+                url: '/pages/my/accountsSecurity/accountsSecurity'
+            })
+        },
+        // 跳转到关于小护与帮助
+        toAboutXh() {
+            uni.navigateTo({
+                url: '/pages/my/aboutXh/aboutXh'
             })
         }
     },
@@ -93,14 +104,13 @@ export default {
             justify-content: space-between;
             align-items: center;
             padding: 30rpx;
-            border-bottom: 2rpx solid #F3F3F3;
+            border-bottom: 2rpx solid #f3f3f3;
             .title {
                 font-size: 30rpx;
                 font-family: PingFang SC-Regular, PingFang SC;
                 color: #000000;
                 letter-spacing: 1rpx;
             }
-          
         }
     }
     // 登录登出按钮

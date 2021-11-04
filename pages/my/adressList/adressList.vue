@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<!-- 头部 -->
-		<navB :title="title" :ifFx="ifFx"></navB>
+		<navB :title="title" :ifFx="ifFx"  :isGO="isGO"></navB>
 		<!-- 列表 -->
 		<view class="addList_box">
 			<view class="addList" v-for="(item,index) in addList" :key="item.id">
@@ -31,6 +31,8 @@
 				title: "地址管理",
 				//是否分享
 				ifFx: false,
+				//跳转层级
+				isGO:false,
 				//列表
 				addList: [],
 				isedit:false,

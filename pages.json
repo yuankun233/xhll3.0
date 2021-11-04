@@ -1,6 +1,4 @@
 {
-
-
     "easycom": {
         // 下载安装的方式需要前面的"@/"，npm安装的方式无需"@/"
         // 下载安装方式
@@ -230,7 +228,7 @@
 		
 		}
         ,{
-            "path" : "pages/my/ticket/ticket/ticket",
+            "path" : "pages/my/ticket/ticket",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -239,7 +237,52 @@
             
         }
         ,{
-            "path" : "pages/my/ticket/ticket",
+            "path" : "pages/my/changePhone/changePhone",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/phoneCode/phoneCode",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/news/news",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/aboutXh/aboutXh",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/search/search",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/newsDetail/newsDetail",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

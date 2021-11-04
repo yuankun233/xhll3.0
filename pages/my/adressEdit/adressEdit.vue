@@ -14,7 +14,7 @@
                 <u-form-item label="年龄:" prop="archivesAge"><u-input v-model="form.archivesAge" /></u-form-item>
                 <u-form-item label="联系电话:" prop="archivesPhone"><u-input v-model="form.archivesPhone" maxlength="11" /></u-form-item>
                 <u-form-item label="地址:">
-                    <view @click="getMtk">{{ form.archivesRegion != '' ? form.archivesRegion : '请选择' }}</view>
+                    <view style="width: 560rpx;" @click="getMtk">{{ form.archivesRegion != '' ? form.archivesRegion : '请选择' }}</view>
                     <u-picker mode="region" v-model="show" :default-selector="[0]" @confirm="getRegionMes" confirm-color="#41D9CD"></u-picker>
                 </u-form-item>
                 <u-form-item label="详细地址:" prop="archivesAddress"><u-input v-model="form.archivesAddress" /></u-form-item>
@@ -24,7 +24,7 @@
                     <text>疾病信息</text>
                     <text>(护士填写)</text>
                 </view>
-                <textarea value="" placeholder="请输入内容" v-model="form.archivesText" />
+                <textarea value="" placeholder="请输入内容(选填)" v-model="form.archivesText" />
             </view>
         </view>
         <!-- 添加按钮 -->

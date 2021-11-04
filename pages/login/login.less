@@ -1,15 +1,5 @@
 .container {
     overflow: hidden;
-    // 返回按钮
-    .backBtn {
-        font-size: 36rpx;
-        color: #fff;
-        position: fixed;
-        font-family: PingFang SC-Regular, PingFang SC;
-        right: 30rpx;
-        top: var(--status-bar-height);
-        z-index: 9;
-    }
     .banner {
         position: fixed;
         top: 0;
@@ -26,6 +16,17 @@
         background: #fff;
         border-radius: 72rpx 72rpx 0rpx 0;
         opacity: 1;
+		// 返回按钮
+		.backBtn {
+		    font-size: 36rpx;
+		    color: #41D9CD;
+		    position: absolute;
+		    font-family: PingFang SC-Regular, PingFang SC;
+		    right: 30rpx;
+		    top: 60rpx;
+			left: 88rpx;
+		    z-index: 9;
+		}
         .title {
             margin-top: 96rpx;
             margin-bottom: 62rpx;
@@ -131,7 +132,9 @@
                 font-size: 20rpx;
                 color: #cccccc;
                 .Text_1 {
-                    color: #41d9cd;
+					text {
+						color: #41d9cd;
+					}
                 }
             }
         }
