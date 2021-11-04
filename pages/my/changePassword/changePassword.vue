@@ -2,13 +2,11 @@
     <view class="container">
         <!-- 修改密码页面 -->
         <my-nav :title="nav_title"></my-nav>
-
         <!-- 信息区域 -->
         <view class="form">
             <view class="box_1" v-if="!isVerify">
                 <view class="text">已往您当前用户手机号发送验证二维码,</view>
                 <view class="text">请输入验证码校验身份</view>
-
                 <view class="form_item" @click="toChangePassword">
                     <u-form-item label="验证码" label-width="auto">
                         <u-input placeholder="请输入验证码" maxlength="4" v-model="form.code"></u-input>

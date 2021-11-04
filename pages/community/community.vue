@@ -10,10 +10,10 @@
                 <view class="flex">
                     <view class="search_input">
                         <i class="iconfont icon-a-sousuo1"></i>
-                        <input type="text" value="" class="input" placeholder="大家最近都在关注的健康…" :placeholder-style="placeholder" />
+                        <input type="text" v-model="search_sign" class="input" placeholder="大家最近都在关注的健康…" :placeholder-style="placeholder" />
                     </view>
 
-                    <u-button type="primary" class="search_btn" :ripple="true">搜索</u-button>
+                    <u-button type="primary" class="search_btn" :ripple="true" @click="search()">搜索</u-button>
                 </view>
             </view>
         </view>
@@ -32,7 +32,7 @@
                 </view>
             </view>
             <view class="content1">
-                <view class="left" @click="toServeCommunity()"><image src="../../static/community/fmtx.png" mode="widthFix" :lazy-load="true"></image></view>
+                <view class="left" @click="toServeCommunity(2)"><image src="../../static/community/fmtx.png" mode="widthFix" :lazy-load="true"></image></view>
                 <view class="right">
                     <view class="option_item">
                         <view class="flex">
@@ -82,13 +82,13 @@
                 </view>
             </view>
             <view class="content2">
-                <view class="serveitem" v-for="item in List">
+                <view class="serveitem" v-for="item in List" @click="toServeCommunity(item.servDetailId)">
                     <view class="top">
-                        <image :src="item.icon" mode="widthFix" :lazy-load="true" class="icon"></image>
-                        <view class="title">{{ item.title }}</view>
+                        <!--  <image :src="item.icon" mode="widthFix" :lazy-load="true" class="icon"></image> -->
+                        <view class="title">{{ item.serviceName }}</view>
                     </view>
 
-                    <view class="text">{{ item.text }}</view>
+                    <view class="text">{{ item.servDetailSummarize }}</view>
                 </view>
             </view>
         </view>
@@ -101,47 +101,50 @@ export default {
         return {
             // 搜索框placeholder样式
             placeholder: 'font-size:24rpx;color:#333;font-family: PingFang SC-Light, PingFang SC;line-height:70rpx;font-weight: 300;',
-            // 其他专科列表
-            List: [
-                {
-                    title: 'PICC导管维护',
-                    icon: '../../static/community/community_serveitem1.png',
-                    text: 'PICC导管维护、术后维护、术后指导维护，身体检查。'
-                },
-                {
-                    title: '造口术后护理',
-                    icon: '../../static/community/community_serveitem2.png',
-                    text: 'PICC导管维护、术后维护、术后指导维护，身体检查。'
-                },
-                {
-                    title: '一些专科护理',
-                    icon: '../../static/community/community_serveitem3.png',
-                    text: 'PICC导管维护、术后维护、术后指导维护，身体检查。'
-                },
-                {
-                    title: '一些专科护理',
-                    icon: '../../static/community/community_serveitem4.png',
-                    text: 'PICC导管维护、术后维护、术后指导维护，身体检查。'
-                },
-                {
-                    title: 'PICC导管维护',
-                    icon: '../../static/community/community_serveitem1.png',
-                    text: 'PICC导管维护、术后维护、术后指导维护，身体检查。'
-                },
-                {
-                    title: 'PICC导管维护',
-                    icon: '../../static/community/community_serveitem1.png',
-                    text: 'PICC导管维护、术后维护、术后指导维护，身体检查。'
-                }
-            ]
+            // 搜索关键词
+            search_sign: '',
+            List: []
         }
     },
     methods: {
-        toServeCommunity() {
+        // 测试搜索
+        async search() {
+            try {
+                const res = await this.$myRequest3({
+                    url: 'servicelist/api/ServiceListSearch',
+                    methods: 'POST',
+                    data: {
+                        serviceName: this.search_sign
+                    }
+                })
+                console.log('搜索结果:', res)
+            } catch (e) {
+                //TODO handle the exception
+            }
+        },
+        // 获取所有服务项目列表
+        async getServeList() {
+            try {
+                const res = await this.$myRequest3({
+                    url: 'serv/api/ServDetailList'
+                })
+                console.log(res)
+                if (res) {
+                    this.List = res
+                }
+            } catch (e) {
+                //TODO handle the exception
+            }
+        },
+        // 跳转到服务项目模块详情
+        toServeCommunity(servDetailId) {
             uni.navigateTo({
-                url: '/pages/community/serveCommunity/serveCommunity'
+                url: '/pages/community/serveCommunity/serveCommunity?servDetailId=' + servDetailId
             })
         }
+    },
+    onLoad() {
+        this.getServeList()
     }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<navB :title="title" :ifFx="ifFx"></navB>
+		<navB :title="currentServe.serviceName" :ifFx="ifFx"></navB>
         
         <!-- 顶部图片 -->
 		<view class="banner">
@@ -38,10 +38,10 @@
             <view class="message_item" v-for="item1 in messageList" :key="item1.id">
                 <view class="top">
                     <view class="left">
-                        <image class="head_img" :src="item1.head_img" mode="widthFix" :lazy-load="true"></image>
+                        <image class="head_img" :src="item1.userHeadLogo" mode="widthFix" :lazy-load="true"></image>
                         <view class="text">
-                            <view class="name">{{item1.name}}</view>
-                            <view class="illness">{{item1.illness}}</view>
+                            <view class="name">{{item1.userName}}</view>
+                            <view class="illness">{{item1.serviceName}}</view>
                         </view>
                         <view class="label" v-if="item1.inPerson">亲身经历者</view>
                     </view>
@@ -54,7 +54,7 @@
                         {{item1.title}}
                     </view>
                     <view class="desc" v-if="item1.desc!=''">
-                        {{item1.desc}}
+                        {{item1.messageContent}}
                     </view>
                     <view class="covers">
                        <block v-for="item2 in item1.covers">
@@ -71,7 +71,7 @@
                     <view class="right">
                         <view class="like">
                             <i class="iconfont icon-like"></i>
-                            <text class="num">{{item1.likeNum}}</text>
+                            <text class="num">{{item1.messageLikeNum}}</text>
                         </view>
                         <view class="comment">
                             <i class="iconfont icon-comment"></i>
@@ -100,36 +100,11 @@
 	export default {
 		data() {
 			return {
-                // 留言列表(模拟数据)
-                messageList:[
-                    {
-                        id:1,
-                        head_img:"../../../static/community/community_headimg1.png",
-                        name:"患者A",
-                        illness:"肾衰竭",
-                        inPerson:true,
-                        title:"建立信心，积极对抗慢性肾衰竭",
-                        desc:"",
-                        likeNum:233,
-                        covers:["../../../static/community/cover1.png","../../../static/community/cover1.png","../../../static/community/cover1.png"],
-                        seenNum:666
-              
-                    },
-                    {
-                        id:2,
-                        head_img:"../../../static/community/community_headimg2.png",
-                        name:"患者B",
-                        illness:"肾衰竭",
-                        inPerson:false,
-                        title:"腹膜透析—为尿毒症患者撑起半边天",
-                        desc:"规律腹膜透析治疗，定期隧道口及伤口换药，严格无菌操作，记录超滤量检测体重，避免隧道口湿水。",
-                        likeNum:45,
-                        covers:["../../../static/community/cover2-1.png","../../../static/community/cover2-2.png","../../../static/community/cover2-3.png"],
-                        seenNum:453
-                                  
-                    } 
-                ],
-            
+                // 当前服务项目数据
+                currentServe:"",
+                // 留言列表
+                messageList:"",
+                
 				//nav标题
 				title: "腹膜透析",
 				//是否分享
@@ -152,14 +127,54 @@
 				}
 			}
 		},
-		onLoad() {
-			
+		onLoad(options) {
+            // 获取服务详情id
+            let servDetailId = options.servDetailId
+			this.getServeDetail(servDetailId)
 		},
 		components: {
 			navB,
 		},
 		methods: {
-
+            // 获取服务项目详情模块
+            async getServeDetail(servDetailId) {
+                try {
+                    const res = await this.$myRequest3({
+                        url: 'serv/api/Specialtyid',
+                        methods: 'POST',
+                        data: {
+                            servDetailId
+                        }
+                    })
+                    console.log("获取服务项目详情模块",res)
+                    if(res){
+                        // 保存当前服务项目模块信息
+                        this.currentServe=res[0]
+                        // 请求当前服务对应留言
+                        this.getinquiry()
+                    }
+                } catch (e) {
+                    //TODO handle the exception
+                }
+            },
+            // 获取留言
+            async getinquiry(){
+ 
+               try {
+                   const res = await this.$myRequest3({
+                       url: 'serv/api/specialist',
+                       methods:"POST",
+                       data:{
+                           serviceName:this.currentServe.serviceName
+                       }
+                   })
+                   console.log("留言列表",res)
+                    this.messageList=res
+               } catch (e) {
+                   //TODO handle the exception
+               }
+            },
+                        
 			//选项卡切换
 			changeTabs(index) {
 				this.current = index;

@@ -21,7 +21,6 @@ export default {
     },
     methods: {
         back() {
-            console.log(this.isGO)
 			if(this.isGO === false) {
 				uni.reLaunch({
 					url:'/pages/my/my'

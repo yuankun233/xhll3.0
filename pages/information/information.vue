@@ -15,8 +15,6 @@
         <!-- 顶部导航和状态栏占位高度 -->
         <view class="heightBox">
             <view class="status_bar"></view>
-            
-           
         </view>
         
 		<!-- 选项卡切换 -->

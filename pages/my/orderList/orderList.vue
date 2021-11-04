@@ -183,9 +183,11 @@ export default {
                     data: {
                         outTradeNo: this.list[index].outTradeNo,
                         wxRefundOrderNo: '',
-                        refundDesc: ''
+                        refundDesc: '',
+						distance:1
                     }
                 }).then(res => {
+					console.log(res)
                     this.data.currentPage = 1
                     this.getList()
                     uni.showToast({

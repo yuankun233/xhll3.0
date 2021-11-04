@@ -19,7 +19,7 @@
 					</view>
 					<view><input type="text" placeholder="股骨颈术后" /></view>
 				</view>
-				<view class="iconfont icon-a-tuisongxiaoxi1"></view>
+				<view @click="goNews" class="iconfont icon-a-tuisongxiaoxi1"></view>
 			</view>
 			<!-- 标题 -->
 			<view class="titleXh">小护来了,出院我也可以放心了！</view>
@@ -247,6 +247,12 @@
 			goServeList() {
 				uni.navigateTo({
 					url:'serveList/serveList'
+				})
+			},
+			//跳转到消息通知
+			goNews() {
+				uni.navigateTo({
+					url:'/pages/index/news/news'
 				})
 			}
 		}

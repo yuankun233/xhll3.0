@@ -268,28 +268,39 @@ export default {
                 }
             }
         },
+		
         //上传头像
         getImg() {
-            uni.chooseImage({
-                count: 1,
-                success: res => {
-                    this.inMes.chooseImg = res.tempFilePaths[0]
-                    // 执行图片上传
-                    uni.uploadFile({
-                        url: 'https://www.xiaohulaile.com/xh/p/alipay/Upload/imgs', //仅为示例，非真实的接口地址
-                        filePath: res.tempFilePaths[0], //文件路径
-                        name: 'image',
-                        formData: {
-                            id: this.Uid
-                        },
-                        success: uploadFileRes => {
-                            console.log('图片上传', uploadFileRes.data)
-                            // 保存到本地
-                            this.inMes.headImg = uploadFileRes.data
-                        }
-                    })
-                }
-            })
+			// uni.authorize({
+			//     scope: 'scope.camera',
+			//     success: res => {
+			        uni.chooseImage({
+			            count: 1,
+						crop:{
+							width:'73',
+							height:'73',
+							// quality:'100'
+						},
+			            success: res => {
+			                this.inMes.chooseImg = res.tempFilePaths[0]
+			                // 执行图片上传
+			                uni.uploadFile({
+			                    url: 'https://www.xiaohulaile.com/xh/p/alipay/Upload/imgs', //仅为示例，非真实的接口地址
+			                    filePath: res.tempFilePaths[0], //文件路径
+			                    name: 'image',
+			                    formData: {
+			                        id: this.Uid
+			                    },
+			                    success: uploadFileRes => {
+			                        console.log('图片上传', uploadFileRes.data)
+			                        // 保存到本地
+			                        this.inMes.headImg = uploadFileRes.data
+			                    }
+			                })
+			            }
+			        })
+			//     }
+			// })
         },
         //保存资料
         async saveMes() {

@@ -91,7 +91,7 @@
 		<!-- 备注 -->
 		<view class="remark">
 			<view class="common_title title">备注信息</view>
-			<u-input class="textarea" v-model="form.remarks" type="textarea" placeholder="如需备注，请说明情况……"
+			<u-input class="textarea" v-model="form.chontentText" type="textarea" placeholder="如需备注，请说明情况……"
 				maxlength="100" />
 			<view class="text">温馨提示：详细的并请说明可以帮助我们更好的为您服务哦</view>
 		</view>
@@ -273,7 +273,7 @@
 					//服务时间
 					timeSlot: '',
 					//备注
-					remarks: ''
+					chontentText: ''
 					//订单价格
 					// orderFee:this.data.total_fee,
 					//服务日期
@@ -441,7 +441,7 @@
 					//服务时间
 					timeSlot: this.form.timeSlot,
 					//备注
-					remarks: this.form.remarks,
+					chontentText: this.form.chontentText,
 					//订单总价
 					orderFee: this.form.orderFee,
 					//openid
