@@ -154,27 +154,35 @@ export default {
                 try {
                     const res = await this.$myRequest3({
                         url: '/enroll/api/alterregist',
-                        methods: 'POST',
                         data: {
-                            // userId: this.userId,
-                            id: this.id,
+                            userId: this.id,
                             userPassWord: this.form.newPassword
                         }
                     })
                     console.log(res)
                     if (res.success) {
-                        uni.showToast({
-                            title: '修改成功',
-                            icon: 'success',
-                            duration: 1000,
-                            success() {
-                                setTimeout(() => {
-                                    uni.switchTab({
-                                        url: '/pages/my/my'
-                                    })
-                                }, 1000)
-                            }
-                        })
+                        if (res.success === true) {
+                        	uni.showToast({
+                        		title: '修改成功需重新登陆',
+                        		duration: 2000,
+                        		icon: 'success',
+                        		success: () => {
+                        			const res = uni.removeStorageSync('user')
+                        			const res1 = uni.removeStorageSync('user_mes')
+                        			setTimeout(() => {
+                        				uni.reLaunch({
+                        					url: '/pages/my/my'
+                        				})
+                        			}, 1000)
+                        		}
+                        	})
+                        } else if (res.success === false) {
+                        	uni.showToast({
+                        		title: '修改失败稍后再试',
+                        		duration: 2000,
+                        		icon: 'none',
+                        	})
+                        }
                     }
                 } catch (e) {
                     //TODO handle the exception
@@ -195,7 +203,7 @@ export default {
             const res = uni.getStorageSync('user')
             if (res) {
                 this.userPhone = res.userPhone
-                this.id = res.id
+                this.id = res.userId
                 //发送验证码
                 this.sendCode()
 				//判断用户是否设置密码

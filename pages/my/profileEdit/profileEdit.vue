@@ -26,11 +26,11 @@
                 <text class="iconfont icon-go"></text>
                 <text class="Mes_2">{{ inMes.date }}</text>
             </view>
-            <view class="Mes_box" @click="setMes(3)">
+            <!-- <view class="Mes_box" @click="setMes(3)">
                 <text class="Mes_1">电话</text>
                 <text class="iconfont icon-go"></text>
                 <text class="Mes_2">{{ inMes.phone }}</text>
-            </view>
+            </view> -->
             <view class="Mes_box" @click="setMes(4)">
                 <text class="Mes_1">城市</text>
                 <text class="iconfont icon-go"></text>

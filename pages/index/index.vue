@@ -13,17 +13,26 @@
 				</view>
 
 				<!-- 搜索框 -->
-				<view class="seek">
+				<view class="seek" @click="toSearch">
 					<view>
 						<view class="iconfont icon-a-sousuo1"></view>
 					</view>
-					<view><input type="text" placeholder="股骨颈术后" /></view>
+					<view><input :disabled="true" type="text" placeholder="股骨颈术后" /></view>
 				</view>
 				<view @click="goNews" class="iconfont icon-a-tuisongxiaoxi1"></view>
 			</view>
 			<!-- 标题 -->
-			<view class="titleXh">小护来了,出院我也可以放心了！</view>
-
+			<!-- <view class="titleXh">小护来了,出院我也可以放心了！</view> -->
+			<!-- 功能 -->
+			<view class="func">
+				<view v-for="(item, index) in funlist" :key="item.title" @click="goSpecialty(index)">
+					<view>
+						<image :src="item.img" :lazy-load="true"></image>
+					</view>
+					<view>{{ item.title }}</view>
+					<view>{{ item.mes }}</view>
+				</view>
+			</view>
 			<!-- 轮播图 -->
 			<view class="I_swiper">
 				<swiper autoplay="true" interval="2000" duration="500" circular="true" indicator-active-color="#000000"
@@ -47,19 +56,8 @@
 				</swiper>
 			</view>
 
-			<!-- 功能 -->
-			<view class="func">
-				<view v-for="(item, index) in funlist" :key="item.title" @click="goSpecialty(index)">
-					<view>
-						<image :src="item.img" :lazy-load="true"></image>
-					</view>
-					<view>{{ item.title }}</view>
-					<view>{{ item.mes }}</view>
-				</view>
-			</view>
-
 			<!-- 专科护理 -->
-			<view class="nurseTitle"><text>专科护理和临床护理</text><text @click="goServeList">更多服务  ></text></view>
+			<view class="nurseTitle"><text>专科护理和临床护理</text><text @click="goServeList">更多服务 ></text></view>
 			<view class="zkNurse">
 				<view @click="goOrder(43)" style="border-radius: 12rpx;">
 					<image src="../../static/index/fmtx.png" :lazy-load="true"></image>
@@ -149,34 +147,34 @@
 						mes1: '你好,一般来说腹膜透析是终生的治疗方案之一,但各项条件允许的话可以进行肾移植。那么可以停止腹膜透析治疗了。'
 					}
 				],
-				address: '正在获取...',//地址
+				address: '正在获取...', //地址
 			}
 		},
 		onLoad() {
-			this.getMap();	
+			this.getMap();
 		},
 		onShow() {
-			
+
 		},
 		methods: {
 			//调用方法获取当前地理位置
 			getMap() {
-				setTimeout(()=>{
+				setTimeout(() => {
 					//uni自带获取地理位置的方法
 					uni.getLocation({
 						type: 'wgs84',
-						geocode:true,
+						geocode: true,
 						success: (res) => {
 							console.log('当前位置的经度：' + res.longitude);
 							console.log('当前位置的纬度：' + res.latitude);
 							console.log('当前位置的城市：' + JSON.stringify(res.address.city));
 							var map = JSON.stringify(res.address.city)
 							// 把字符串引号去除
-							this.address = map.replace("\"","").replace("\"","");
+							this.address = map.replace("\"", "").replace("\"", "");
 							console.log(this.address)
 						}
 					});
-				},1000)
+				}, 1000)
 			},
 			//点击在线医生拨打电话和跳转到预约项目页面
 			goSpecialty(index) {
@@ -246,13 +244,19 @@
 			//跳转预约服务
 			goServeList() {
 				uni.navigateTo({
-					url:'serveList/serveList'
+					url: 'serveList/serveList'
 				})
 			},
 			//跳转到消息通知
 			goNews() {
 				uni.navigateTo({
-					url:'/pages/index/news/news'
+					url: '/pages/index/news/news'
+				})
+			},
+			//跳转到搜索页面
+			toSearch() {
+				uni.navigateTo({
+					url: '/pages/index/search/search'
 				})
 			}
 		}
