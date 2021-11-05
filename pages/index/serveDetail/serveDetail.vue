@@ -100,10 +100,10 @@
 		<view class="bottom_message">
 			<view>
 				<view class="title">耗材需求</view>
-				<view class="content2"></view>
+				<view class="content2">{{serveDetail.consumable}}</view>
 			</view>
 			<view class="title">服务流程</view>
-			<view class="content"></view>
+			<view class="content">{{serveDetail.serviceContent}}</view>
 			<view class="title">操作流程</view>
 			<view class="content">
 				<view v-for="item in xdlc" :key="this">{{ item.text }}</view>
@@ -154,12 +154,12 @@
 
 		<!-- 选择器 -->
 		<!-- 服务对象选择 -->
-		<u-picker v-model="picker.patient" mode="selector" :range="picker_patient" @confirm="pickerCallback1">
+		<u-picker  confirm-color="#41D9CD" v-model="picker.patient" mode="selector" :range="picker_patient" @confirm="pickerCallback1">
 		</u-picker>
 		<!-- 时间选择 -->
-		<u-picker v-model="picker.time" mode="selector" :range="pickerDate_time" @confirm="pickerCallback2"></u-picker>
+		<u-picker  confirm-color="#41D9CD" v-model="picker.time" mode="selector" :range="pickerDate_time" @confirm="pickerCallback2"></u-picker>
 		<!-- 日期选择 -->
-		<u-picker v-model="picker.date" mode="time" @confirm="pickerDate" :default-time="dateTime"></u-picker>
+		<u-picker confirm-color="#41D9CD" v-model="picker.date"  :start-year="dateYear" mode="time" @confirm="pickerDate" :default-time="dateTime"></u-picker>
 		<!-- 当用户没有健康档案时的提示弹出层 -->
 		<u-modal v-model="userFormPop" content="您还没有添加服务对象,是否立即添加？" @confirm="userFormConfirm"
 			:show-cancel-button="true"></u-modal>
@@ -240,7 +240,10 @@
 	export default {
 		data() {
 			return {
+				//当前时间
 				dateTime: '',
+				//当前年龄
+				dateYear:'',
 				// 代表当前用户是否登录标识
 				isLogin: false,
 				isLoginshow: true,
@@ -610,12 +613,12 @@
 			// 8 导航栏返回按钮
 			back() {
 				console.log(this.isAdressEdit)
-				if (this.isAdressEdit === undefined) {
+				if (this.isAdressEdit === '') {
 					uni.navigateBack({
 						delta: 1
 					})
 				} else {
-					uni.navigateTo({
+					uni.switchTab({
 						url: '/pages/index/index'
 					})
 				}
@@ -634,8 +637,8 @@
 			},
 			// 10 患者没有健康档案的弹窗确定回调
 			userFormConfirm() {
-				uni.reLaunch({
-					url: '/pages/my/adressEdit/adressEdit?isGo=1'
+				uni.navigateTo({
+					url: '/pages/my/adressEdit/adressEdit?isGo='+this.form.projecetId
 				})
 			},
 			// 11 用户没有登录时弹出的登录跳转
@@ -678,10 +681,10 @@
 				let month = dateTime.getMonth() + 1; //获取当前月份(0-11,0代表1月)
 				let day = dateTime.getDate() + 1; //获取当前日(1-31)
 				this.dateTime = year + '-' + month + '-' + day
+				this.dateYear = year
 			}
 		},
 		onLoad(options) {
-			console.log(options)
 			this.isAdressEdit = options.isGo
 			// 获取传过来的项目id
 			this.form.projecetId = options.projecetId

@@ -32,9 +32,9 @@
                 </view>
             </view>
             <view class="content1">
-                <view class="left" @click="toServeCommunity(2)"><image src="../../static/community/fmtx.png" mode="widthFix" :lazy-load="true"></image></view>
+                <view class="left" @click="toServeCommunity(3)"><image src="../../static/community/fmtx.png" mode="widthFix" :lazy-load="true"></image></view>
                 <view class="right">
-                    <view class="option_item">
+                    <view class="option_item" @click="goDetail()">
                         <view class="flex">
                             <image src="../../static/community/community_mini1.png" mode="widthFix" :lazy-load="true" class="limg"></image>
                             <view>
@@ -45,7 +45,7 @@
 
                         <image src="../../static/community/community_next.png" mode="widthFix" :lazy-load="true" class="rimg"></image>
                     </view>
-                    <view class="option_item">
+                    <view class="option_item" @click="goDetail()">
                         <view class="flex">
                             <image src="../../static/community/community_mini2.png" mode="widthFix" :lazy-load="true" class="limg"></image>
                             <view>
@@ -56,7 +56,7 @@
 
                         <image src="../../static/community/community_next.png" mode="widthFix" :lazy-load="true" class="rimg"></image>
                     </view>
-                    <view class="option_item">
+                    <view class="option_item" @click="goDetail()">
                         <view class="flex">
                             <image src="../../static/community/community_mini3.png" mode="widthFix" :lazy-load="true" class="limg"></image>
                             <view>
@@ -138,10 +138,20 @@ export default {
         },
         // 跳转到服务项目模块详情
         toServeCommunity(servDetailId) {
-            uni.navigateTo({
-                url: '/pages/community/serveCommunity/serveCommunity?servDetailId=' + servDetailId
-            })
-        }
+			uni.showToast({
+				title:'功能暂未开放',
+				icon:'none'
+			})
+            // uni.navigateTo({
+            //     url: '/pages/community/serveCommunity/serveCommunity?servDetailId=' + servDetailId
+            // })
+        },
+		goDetail() {
+			uni.showToast({
+				title:'功能暂未开放',
+				icon:'none'
+			})
+		}
     },
     onLoad() {
         this.getServeList()

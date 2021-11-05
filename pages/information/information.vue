@@ -3,8 +3,6 @@
 		
         <!-- 状态栏 -->
        <!-- <statusbar></statusbar> -->
-   
-           
       
         <!-- 顶部标题 -->
         <view class="top">
@@ -23,35 +21,43 @@
 				bar-height="8" bg-color="#F5F5F5" active-color="#000000" inactive-color="#666666" gutter="30">
 			</u-tabs>
 		</view>
+        
+        <!-- 暂无内容提示图片 -->
+        <view class="image" v-if="isShow">
+            <image src="../../static/my/ddzwy.png" mode="widthFix" class="zwImg"></image>
+        </view>
 		<!-- 文章列表 -->
-		<view class="articleList">
-            <view class="article1" @click="goArticleDetail">
+		<view class="articleList" v-else>
+            <!-- <view class="article1" @click="goArticleDetail">
                 <view class="cover1">
                     
                 </view>
                 <text>缺乏维生素，这些身体“信号”告诉你！</text>
-            </view>
-           <block v-for="item in articleList" :key="item.id">
-               <view class="articleitem" @click="goArticleDetail">
+            </view> -->
+           <block v-for="item in articleList" :key="item.articleId">
+               <view class="articleitem" @click="goArticleDetail(item.articleId)">
                    <view class="left">
                        <view class="title">
-                           {{item.title}}
+                           {{item.biaoti}}
                        </view>
                        <view class="desc">
-                           <text>{{item.orgin}}</text>
-                           <text>{{item.commentNum}}评论</text>
+                           <text>{{item.zuozhe}}</text>
+                           <text>评论{{item.discuss}}</text>
                            <text>{{item.issueTime}}</text>
                        </view>
                    </view>
                    <view class="right">
-                       <image class="cover" :src="item.cover" mode="widthFix" :lazy-load="true"></image>
+                       <image class="cover" :src="item.picture" mode="widthFix" :lazy-load="true"></image>
                    </view>
                    
                </view>
            </block>
          
         </view>
-		<!-- 小护logo -->
+		
+       
+        
+        <!-- 小护logo -->
 		<view class="xhLogo">
 			<image src="../../static/index/xhLogo.png" mode=""></image>
 		</view>
@@ -71,34 +77,10 @@
 		data() {
 			return {
                 // 文章列表(模拟数据)
-               articleList:[
-                   {
-                    id:1,
-                   title:"普通人日常有必要吃蛋白粉么？这七类人要禁用",
-                   cover:"../../static/information/cover2.png",
-                   orgin:"北青网",
-                   commentNum:"65",
-                   issueTime:"昨天"
-               },
-               {
-                   id:2,
-                   title:"世界上两大抗生素：阿莫西林和头孢，你知道他们的区别么？",
-                   cover:"../../static/information/cover3.png",
-                   orgin:"问上医",
-                   commentNum:"62",
-                   issueTime:"昨天"
-               },
-               {
-                   id:3,
-                   title:"世界上两大抗生素：阿莫西林和头孢，你知道他们的区别么？",
-                   cover:"../../static/information/cover3.png",
-                   orgin:"问上医",
-                   commentNum:"62",
-                   issueTime:"昨天"
-               }
-               ],
-         
-                     
+               articleList:[],
+                
+                // 是否显示没订单的图片
+                     isShow:false,
 				//是否分享
 				ifFx:false,
 				text: "", //简介
@@ -120,22 +102,37 @@
 			}
 		},
 		onLoad() {
-			
+			this.getArticleList()
 		},
 		components: {
 			navB,
             statusbar
 		},
 		methods: {
-
+            // 获取文章列表
+            getArticleList(){
+              
+                 this.$myRequest3({
+                      url:"wenzhang/api/queryWenzhangliebiao"
+                    }).then((res)=>{
+                        
+                        this.articleList=res
+						console.log("文章列表",this.articleList.length)
+						if(this.articleList.length == 0){
+							console.log(1111)
+						     this.isShow=true
+						     return
+						}
+                    })
+            },
 			//选项卡切换
 			changeTabs(index) {
 				this.current = index;
 			},
 			// 跳转对应文章详情
-            goArticleDetail(){
+            goArticleDetail(articleId){
                 uni.navigateTo({
-                    url:"/pages/information/articleDetail/articleDetail"
+                    url:"/pages/information/articleDetail/articleDetail?id="+articleId
                 })
             }
 		}

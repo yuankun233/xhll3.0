@@ -55,7 +55,7 @@
 		methods: {
 			// 返回到首页
 			back() {
-				uni.navigateTo({
+				uni.switchTab({
 					url:'/pages/index/index'
 				})
 			},

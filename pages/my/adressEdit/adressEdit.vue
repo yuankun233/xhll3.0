@@ -126,9 +126,10 @@ export default {
             })
             //判断是否添加成功，跳转到列表页面
             if (res.data.savePatient === true) {
-                if (this.isServeDetail == 1) {
+                if (this.isServeDetail != "") {
+					console.log(111111111)
                     uni.navigateTo({
-                        url: '/pages/index/serveDetail/serveDetail?isGo=1'
+                        url: '/pages/index/serveDetail/serveDetail?projecetId='+this.isServeDetail
                     })
                 } else {
                     uni.navigateTo({
