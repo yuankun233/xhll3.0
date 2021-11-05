@@ -4,7 +4,7 @@
 		<navB :title="title" :ifFx="ifFx"></navB>
 		<!-- 专科列表 -->
 		<view class="list">
-			<view class="list_1">专科列表</view>
+			<view class="list_1">专科护理</view>
 			<view class="list_2"></view>
 			<view class="mar"></view>
 			<view class="list_3" v-for="item in zkserveList" :key="item.id" @click="goOrder(item.id)">
@@ -30,7 +30,7 @@
 
 		<!-- 临床列表 -->
 		<view class="list">
-			<view class="list_1">临床列表</view>
+			<view class="list_1">临床护理</view>
 			<view class="list_2"></view>
 			<view class="mar"></view>
 			<view class="list_3" v-for="item in lcserveList" :key="item.id" @click="goOrder(item.id)">

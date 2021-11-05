@@ -47,12 +47,12 @@
 							<image src="../../static/index/banneryyfw.png" @click="tobanner2" :lazy-load="true"></image>
 						</swiper-item>
 					</block>
-					<block>
+					<!-- <block>
 						<swiper-item>
-							<image src="../../static/index/bannergyhby.png" @click="tobanner3" :lazy-load="true">
+							<image src="../../static/index/bannergyhby.png"  :lazy-load="true">
 							</image>
 						</swiper-item>
-					</block>
+					</block> -->
 				</swiper>
 			</view>
 
@@ -234,7 +234,11 @@
 				})
 			},
 			// 轮播图
-			tobanner2() {},
+			tobanner2() {
+				uni.navigateTo({
+					url:'/pages/index/serveList/serveList'
+				})
+			},
 			// 轮播图
 			tobanner3() {
 				uni.navigateTo({

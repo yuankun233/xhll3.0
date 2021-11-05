@@ -68,17 +68,27 @@
 				@click="checkoutLogin('authcode')">返回手机号一键登录</u-button>
 
 			<!-- 用户协议 -->
-			<view class="YH_login">
-				<u-checkbox-group>
+			<view class="YH_login" style="display: flex;">
+				<view>
+					<checkbox-group @change="checkboxChange" style="width: 40rpx;">
+						<label>
+							<checkbox style="transform:scale(0.7)" value="0" :checked="false" color="#41d9cd" />
+						</label>
+					</checkbox-group>
+				</view>
+				
+				<!-- <u-checkbox-group>
 					<u-checkbox @change="checkboxChange" v-model="checked" icon-size="30rpx" active-color="#41d9cd"
 						shape="circle"></u-checkbox>
-				</u-checkbox-group>
-				<text>
-					注册/登录即表示您同意
-					<text class="Text_1"><text @click="toUserArgument">《上海小护来了用户协议》</text>和<text
-							@click="toUserPrivacy">《上海小护来了隐私政策》</text></text>
-					小护来了向您保证：您的隐私绝不会外泄，请放心注册使用。
-				</text>
+				</u-checkbox-group> -->
+				<view style="margin-left: 10rpx;">
+					<text>
+						注册/登录即表示您同意
+						<text class="Text_1"><text @click="toUserArgument">《上海小护来了用户协议》</text>和<text
+								@click="toUserPrivacy">《上海小护来了隐私政策》</text></text>
+						小护来了向您保证：您的隐私绝不会外泄，请放心注册使用。
+					</text>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -108,8 +118,6 @@
 				errorType,
 				// 表单校验规则
 				rules,
-				//是否同意用户协议单选框
-				checked: false,
 				//是否选中同意协议
 				isagree: false
 			}
@@ -301,8 +309,8 @@
 				}
 			},
 			//勾选同意用户协议发生的事件
-			checkboxChange() {
-				if (!this.checked) {
+			checkboxChange(value) {
+				if (value.detail.value[0] == 0) {
 					this.isagree = true
 				}
 			},

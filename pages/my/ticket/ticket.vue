@@ -4,7 +4,7 @@
 		<navB :title="title" :ifFx="ifFx"></navB>
 		<!-- 列表 -->
 		<view class="BOX">
-			<view class="addList_box" v-for="(item,index) in  list" :key='item.uCouId' @click="PickOn(index)">
+			<view class="addList_box" v-for="(item,index) in  0" :key='item.uCouId' @click="PickOn(index)">
 				<view class="list_1">
 					<view v-show="index == isPickOn">已选中</view>
 					<view></view>
@@ -13,7 +13,7 @@
 				</view>
 				<view class="list_2">
 					<view>{{item.couponsName}}</view>
-					<view>该优惠券仅限腹膜透析项目使用</view>
+					<!-- <view>该优惠券仅限腹膜透析项目使用</view> -->
 					<view>有效期：{{item.couponsDeadline}}</view>
 				</view>
 				<view class="list_3">立即使用
@@ -40,7 +40,7 @@
 				//判断是从哪个页面跳转过来
 				status: null,
 				//优惠券列表
-				list:[]
+				list:null
 			}
 		},
 		onLoad(option) {
@@ -50,7 +50,7 @@
 			const user = uni.getStorageSync('user');
 			//在进入页面时加载优惠券
 			this.getList(user.userId);
-			
+			console.log(this.list)
 		},
 		methods: {
 			//点击优惠券发生的事件
@@ -77,7 +77,7 @@
 						}
 					}).then(res => {
 						console.log('获取优惠券列表:', res);
-						this.list.push(res.data.selectUserCoupon);
+						this.list = res.data.selectUserCoupon;
 					})
 				} catch (e) {
 					//TODO handle the exception

@@ -148,15 +148,17 @@ export default {
     },
     onLoad() {
         const res = uni.getStorageSync('user_mes')
+		const resUser = uni.getStorageSync('user')
         if (res) {
             this.inMes = res
-            console.log(this.inMes)
+			this.Uid = resUser.userId
+            console.log(resUser.userId)
         } else {
             //获取用户信息
             uni.getStorage({
                 key: 'user',
                 success: res => {
-                    console.log('user', res)
+                    console.log('user', res.userId)
                     this.inMes.name = res.data.userName
                     this.Uid = res.data.userId
                     this.inMes.sex = res.data.userSex
@@ -277,9 +279,8 @@ export default {
 			        uni.chooseImage({
 			            count: 1,
 						crop:{
-							width:'73',
-							height:'73',
-							// quality:'100'
+							width:'132',
+							height:'132'
 						},
 			            success: res => {
 			                this.inMes.chooseImg = res.tempFilePaths[0]
@@ -304,7 +305,7 @@ export default {
         },
         //保存资料
         async saveMes() {
-            console.log(this.Uid)
+            console.log(this.Uid,1111)
             try {
                 let data = {
                     userPhone: this.inMes.phone,
@@ -326,10 +327,23 @@ export default {
                         key: 'user_mes',
                         data: this.inMes,
                         success: res => {
-                            uni.reLaunch({
-                                url: '/pages/my/my'
-                            })
-                        }
+							uni.showToast({
+								title:'修改成功',
+								icon:'none',
+								duration:2000,
+								success: () => {
+									uni.reLaunch({
+									    url: '/pages/my/my'
+									})
+								}
+							})
+                        },
+						fail: err => {
+							uni.showToast({
+								title:'修改失败稍后再试',
+								icon:'none',
+							})
+						}
                     })
                 })
             } catch (e) {}

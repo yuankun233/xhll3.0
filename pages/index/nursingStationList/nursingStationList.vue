@@ -29,7 +29,7 @@
 					<image v-for="count in 4" :key="this" src="../../../static/index/xingxing.png" mode=""></image>
 					<image src="../../../static/index/xingxingwxz.png" mode=""></image>
 				</view>
-				<view>距离：11.33km</view>
+				<!-- <view>距离：11.33km</view> -->
 				<view>{{item.nursingAddress}}</view>
 			</view>
 			<view class="nursingStatList_3" >查看详情</view>
